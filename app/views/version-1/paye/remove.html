@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}  {% include "includes/version1/payeNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back to PAYE Scheme",
+  href: "../paye"
+}) }}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                  <h1 class="govuk-heading-xl" style="" id="company-Name"> <span class="govuk-caption-l">PAYE Scheme</span>123/SFAT037</h1>
+          
+               
+
+<form action="payeRemove" method="get" class="form">
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">Remove this scheme?  </h2>
+                <p style="margin-top:25px">The <span style="font-weight:700">; DROP TABLE "COMPANIES";-- LTD</span> account will stop receiving funds through this PAYE scheme.</p>
+            </legend>
+            <div class="govuk-radios ">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="permissionchange-1" name="removePaye" type="radio" value="true">
+                    <label class="govuk-label govuk-radios__label" for="permissionchange-1">
+                       Yes, remove scheme
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="permissionchange-2" name="removePaye" type="radio" value="false" checked="true">
+                    <label class="govuk-label govuk-radios__label" for="permissionchange-2">
+                        No, don't remove
+                    </label>
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+    <button class="govuk-button">Continue</button>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

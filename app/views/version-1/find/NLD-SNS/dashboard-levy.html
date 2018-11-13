@@ -1,0 +1,464 @@
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+// this fixes the negative count bug
+   $(document).ready(function () {
+
+function fixBug() {
+         if (appCount < 0) {
+                 appCount = 0
+                 Cookies.set("appCount", appCount);
+        } else {};
+
+         if (proCount < 0) {
+                 proCount = 0
+                 Cookies.set("proCount", proCount);
+        } else {}
+}
+fixBug()
+});
+
+
+// this removes number 4 on a click rather than going to the page that asks if you are sure.
+function deleteMe() {
+    console.log("arse")
+            $("a.delete").parents("tr").remove();
+            $(".delete a").parents(".app").remove();
+            $("#4").addClass("hidden")
+            appCount--;
+            Cookies.set("appCount", appCount);
+
+        if (appCount < 1) {
+                  $("#5").show();
+                   $("#6").hide();
+        } else {}
+}
+</script>
+<script>
+ var fundingStatus =JSON.parse(localStorage.getItem('nonLevy.fundingSet'));
+console.log(fundingStatus)
+$(document).ready(function() {
+      $(coInvestPayer).addClass("rj-dont-display")
+    $(levyPayer).removeClass("rj-dont-display")
+    
+
+  var changeStuff = function() {
+  if (fundingStatus=='yes') {
+   // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   // document.getElementById("providerName").textContent = "Provider:" ;
+   // $(coInvestPayer).addClass("rj-dont-display")
+    //$(levyPayer).removeClass("rj-dont-display")
+    
+   // $(commitmentStatus).addClass("rj-dont-display");
+   //  $(addDate).addClass("rj-dont-display")
+    }
+else {};
+
+if (fundingStatus=='nope' || fundingStatus=='wakanai' ) {
+  //  $(eligibilityCoinvestment).removeClass("rj-dont-display")
+    }
+else { };
+
+//if (fundingStatus=='transferFunding') {
+  // $(eligibilityTransfer).removeClass("rj-dont-display")
+    //}
+//else { };
+  }
+changeStuff();
+});
+</script>
+<script>
+
+function whereNow() {
+  var status = $('input[name=radio-group]:checked').val();
+       switch (true) {
+          case  (status == 'yes'):
+          localStorage.setItem("nonLevy.fundingSet", JSON.stringify("transferFunding"));
+                 window.location.href='./getting-a-transfer';
+                break;
+
+        case  (status == 'no'):
+             window.location.href='./co-investment-payer';
+            break
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+            break;
+        }
+    }
+ </script>
+
+
+
+    <link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/flexboxgrid.min.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_dashboard.css" rel="stylesheet" />
+    <script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+    <main id="content" role="main">
+
+    <div class="breadcrumbs back-breadcrumb">
+            <div class="column-two-thirds">
+                <ol role="breadcrumbs">
+                       {% include "includes/breadcrumbs/register-back.html" %}
+                </ol>
+            </div>
+                <!--div class="account-info" id="bannerSignedIn">
+                    <a href="dashboard" title="Shortlist"><i class="fa fa-list-alt"></i>Shortlisted training and providers(<span>0</span>)</a>
+                </div-->
+             </div>
+    </div>
+
+        <!--    <nav class="primary-nav">
+            <div class="outer-block">
+                <ul>
+                    <li><a href="pta-home-1">Home</a></li>
+                    <li><a href="#" class="active-nav-item">Find training and providers</a></li>
+                    <li><a href="paye-home-v4">Manage your money</a></li>
+                    <li><a href="#">Manage your apprentice</a></li>
+                </ul>
+            </div>
+        </nav>
+-->
+
+        <div class="grid-row" id="shortlistResult" style="padding: 0 30px  0 30px">
+           <h1 class="heading-large">
+                Your saved apprenticeships</h1>
+                 <table>
+                    <thead>
+                    <tr>
+                      <th scope="col" style="width:200px" >Apprenticeship</th>
+                      <th class="" style="width:200px" scope="col">Level</th>
+                      <th class="numeric" style="width:100px" scope="col">Cost per apprentice</th>
+                      <th class="numeric" style="width:180px" scope="col">Number of apprentices</th>
+                       <th class="numeric" scope="col">Total cost</th>
+                       <th class="numeric" scope="col"></th>
+                         <th class="numeric" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="rjTableName">Investment operations administration</td>
+                      <td class="">2 (equivalent to GCSEs at grades A* to C)</td>
+                      <td class="numeric">£3,000</td>
+                      <td class="numeric">1 </td>
+                       <td class="numeric">£3,000</td>
+                       <td class="numeric"><a href="">Change number</a></td>
+                        <td class="numeric"><a href="">Remove</a></td>
+                    </tr>
+                    <tr>
+                      <td class="rjTableName">Workplace pensions consultant or administrator</td>
+                      <td class="">3 (equivalent to A levels at grades A to E)</td>
+                      <td class="numeric">£3,000</td>
+                      <td class="numeric">1 </td>
+                       <td class="numeric">£3,000</td>
+                       <td class="numeric"><a href="">Change number</a></td>
+                        <td class="numeric"><a href="">Remove</a></td>
+                    </tr>
+  
+                </table>
+                   
+        </div>
+        <div class="grid-row" id="shortlistResult" style="padding: 0 30px  0 30px">
+                <table>
+                    <thead>
+                    <tr>
+                      <th scope="col" style="width:200px" ></th>
+                      <th class="" style="width:200px" scope="col"></th>
+                      <th class="numeric" style="width:100px" scope="col"></th>
+                      <th class="numeric" style="width:167px" scope="col"></th>
+                       <th class="numeric" style="width:90px" scope="col"></th>
+                       <th class="numeric" scope="col"></th>
+                         <th class="numeric" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                      <td class="rjTableName" style="font-weight:700; font-size:19px">Total estimated cost</td>
+                      <td class=""></td>
+                      <td class="numeric"></td>
+                      <td class="numeric"> </td>
+                       <td class="numeric" style="font-weight:700; font-size:19px">£6,000</td>
+                       <td class="numeric"><a href=""></a></td>
+                        <td class="numeric"><a href=""></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p style="margin-top:15px"><a href="">Add another apprenticeship</a></p>
+          </div>
+
+
+        <div class="grid-row" id="shortlistResult" style="padding: 0 30px  0 30px">
+                       <h2 class="heading-medium">Estimated monthly payments for saved apprenticeships</h2>
+        <table>
+         <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th class="numeric" scope="col">Levy credit<br /> (£27,504)</th>
+                      <th class="numeric" scope="col">Cost of training<br /> (£6,000)</th>
+                      <th class="numeric" scope="col">Available to spend</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="rjTableName">September 2018</td>
+                      <td class="numeric">£2,292</td>
+                      <td class="numeric">£436</td>
+                      <td class="numeric">£1,856</td>
+                    </tr>
+                    <tr>
+                      <td class="rjTableName">October 2018</td>
+                      <td class="numeric">£2,292</td>
+                      <td class="numeric">£436</td>
+                      <td class="numeric">£3,712</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">November 2018</td>
+                     <td class="numeric">£2,292</td>
+                     <td class="numeric">£436</td>
+                      <td class="numeric ">£5,568</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">December 2018</td>
+                     <td class="numeric">£2,292</td>
+                     <td class="numeric">£436</td>
+                      <td class="numeric ">£7,424</td>
+                    </tr>
+                   <tr>
+                     <td class="rjTableName">January 2019</td>
+                     <td class="numeric">£2,292</td>
+                     <td class="numeric">£436</td>
+                      <td class="numeric ">£9,280</td>
+                    <tr>
+                     <td class="rjTableName">February 2019</td>
+                     <td class="numeric">£2,292</td>
+                     <td class="numeric">£436</td>
+                      <td class="numeric ">£11,136</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">March 2019</td>
+                     <td class="numeric">£2,292</td>
+                     <td class="numeric">£436</td>
+                      <td class="numeric">£12,992</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">April 2019</td>
+                     <td class="numeric">£2,292</td>
+                     <td class="numeric">£436</td>
+                      <td class="numeric negativNumber">£14,848</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">May 2019</td>
+                     <td class="numeric">£2,292</td>
+                     <td class="numeric">£436</td>
+                      <td class="numeric ">£16,704</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">June 2019</td>
+                     <td class="numeric">£2,292</td>
+                     <td class="numeric">£436</td>
+                      <td class="numeric ">£18,560</td>
+                    </tr>
+                     <tr>
+                     <td class="rjTableName">July 2019</td>
+                     <td class="numeric">£2,292</td>
+                     <td class="numeric">£436</td>
+                      <td class="numeric ">£20,416</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">August 2019</td>
+                     <td class="numeric">£2,292</td>
+                     <td class="numeric">£1,204</td>
+                      <td class="numeric ">£21,504</td>
+                    </tr>
+                  </tbody>
+                 </table>
+             </div>
+  <div style="padding-top:35px" >  <form action="">
+       <label class="form-label-bold" style="padding-bottom:10px" for="">Update levy forecast?</label>
+    <input id="source" name="source" type="hidden" value="employer" />
+    <fieldset>
+      <legend class="visuallyhidden">Update levy forecast</legend>
+
+                        <div class="multiple-choice">
+                          <input id="radio-1" type="radio" name="radio-group" value="yes" >
+                          <label for="radio-1">Yes, I want to update my levy forecast</label>
+                        </div>
+
+                       <div class="multiple-choice">
+                                  <input id="radio-4" type="radio" name="radio-group" value="no" >
+                          <label for="radio-4">No, take me back to the task list</label>
+                        </div>
+
+
+ </fieldset>
+
+
+    <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" style="margin-top:30px" value="Continue">
+  </form>
+</div>
+        </div>
+
+
+         <div class="column-two-thirds">
+     
+          </div>
+    </div>
+</main>
+<script>
+     $(document).ready(function () {
+         $(".label-danger").click(function (e) {
+             e.preventDefault();
+             $(this).parentsUntil(".table").next().css({
+                 "color": "red"
+             }).hide();
+             $(this).parentsUntil(".table-section").hide();
+         })
+
+         $(".remove-provider").click(function (e) {
+             $(this).parentsUntil("tbody").hide();
+         })
+
+
+
+         //   $("#dashboard").text(Cookies.getJSON("appArray"));
+         //     $("#dashboard2").text(Cookies.getJSON("proArray"));
+
+
+         $(".toggleProviders").click(function (e) {
+             e.preventDefault();
+
+             //   if ($(".provider-item.hidden").length) {
+             if ($(this).parent().parent().parent().next().hasClass("hidden")) {
+                 $("span", this).text("Hide training providers");
+                 //$(".provider-item").removeClass("hidden");
+                 $(this).parent().parent().parent().next().removeClass("hidden");
+
+                 $("i", this).removeClass("fa-eye").addClass("fa-eye-slash")
+             } else {
+                 $("span", this).text("Show training providers");
+                 $(".provider-item").addClass("hidden");
+                 //$(this).parents().css("color", "green");
+
+                 $("i", this).removeClass("fa-eye-slash").addClass("fa-eye")
+             }
+         });
+
+
+         console.log("_app: " + appCount + " _pro: " + proCount);
+
+
+         // #4 is the incomplete shortlist-item
+         // #5 is the notice
+         // #6 is add more (ROB ADDITION)
+
+         if (appCount > 0 ) {
+             //if there is 1 app and 0 pros
+             console.log("if 2: a1 p0");
+             $("#1, #2").show();
+             $("#3, #4,#5").hide();
+         } else  {
+             // if there is 1 app and 1 pro (assume its nested)
+             console.log("if 3: a1 p1");
+             $("#2,#3,#4,#5").hide();
+             $("#1").show();
+         } 
+
+       
+
+/*
+         else if (proCount == 1 && appCount == 2) {
+             // if theres two apps and 1 pro
+             $("#2,#3,#5").hide();
+             console.log("if 4: a2 p1");
+         } else if (proCount == 2 && appCount == 2) {
+             // show two complete shortlisted items
+             $("#5,#4,#3").hide();
+             console.log("if 5: a2 p2");
+
+         } else if (proCount == 0 && appCount == 2) {
+             // show two complete shortlisted items
+             $("#5,#4,#3").hide();
+             console.log("if 5: a2 p0");
+
+         } else if (proCount == 0 && appCount == 3) {
+             // show two complete shortlisted items
+             $("#5,#4").hide();
+             console.log("if 5: a3 p0");
+
+         } else if (proCount == 2 && appCount == 3) {
+             // show 2 complete and 1 incomplete
+             $("#5,#3").hide();
+             console.log("if 6: a3 p2");
+         } else if (proCount == 3 && appCount == 3) {
+             // show 3 complete apprenticeships
+             console.log("if 7: a3 p3");
+             $("#5,#4").hide();
+         } else if (proCount == 1 && appCount == 0) {
+             $("#2,#3,#4,#5").hide();
+             console.log("if 8: a0 p1");
+         } else if (proCount == 2 && appCount == 0) {
+             $("#3,#4,#5").hide();
+         }
+         if (proCount == 3 && appCount == 0) {
+             console.log("if 9: a0 p2");
+             $("#4,#5").hide();
+         } else if (proCount == 0 && appCount == 0) {
+             //if there is nothing shortlisted show the notice
+             $("#1,#2,#3,#4,#6,#7").hide();
+             console.log("if 1 : a0 p0");
+             $("#5").show();
+         } else {
+             $("#5").hide();
+         }
+*/
+
+         $("body").on("keydown", function (event) {
+
+             if (event.which == 49) {
+                 //1
+                 $("#1").toggle();
+             } else if (event.which == 50) {
+                 //2
+                 $("#2").toggle()
+             } else if (event.which == 51) {
+                 //3
+                 $("#3").toggle()
+             } else if (event.which == 52) {
+                 //4
+                 $("#4").toggle()
+             } else if (event.which == 53) {
+                 //5
+                 $("#5").toggle()
+             } else if (event.which == 54) {
+                 //6
+                 $("#6").toggle()
+             }
+         });
+
+  
+
+     });
+     </script>
+
+
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="/public/ty/assets/javascripts/marked.min.js"></script>
+    <script src="/public/ty/assets/javascripts/underscore-min.js"></script>
+    <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+    <script src="/public/ty/assets/javascripts/footable.all.min.js"></script>
+    <script src="/public/ty/assets/javascripts/_app.js"></script>
+    <script src="/public/ty/assets/javascripts/_dashboard.js" id="xmlDataApp" xmlData="/public/ty/assets/data/appList.xml"></script>
+
+
+
+{% endblock %}

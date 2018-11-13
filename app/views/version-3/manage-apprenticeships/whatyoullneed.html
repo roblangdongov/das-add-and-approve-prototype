@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "usedServiceBefore"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<script>
+  function whereNow() {
+  var status = $('input[name=whatsNeeded]:checked').val();
+       switch (true) {
+          case  (status == 'true'):
+                 window.location.href='../manage-apprenticeships/userSetUp';
+                break;
+
+        case  (status == 'false'):
+                  $(gatewayError).removeClass("rj-dont-display");
+            $(addTheError).addClass("govuk-form-group--error");
+            break
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+             $(gatewayError).removeClass("rj-dont-display");
+            $(addTheError).addClass("govuk-form-group--error");
+            break;
+        }
+    }
+ </script>
+
+<script>
+
+   $(document).ready(function() {
+ //    $(gatewayError).removeClass("rj-dont-display");
+  //    $(addTheError).addClass("govuk-form-group--error");
+});
+
+ //      document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+  //  document.getElementById("providerName").textContent = "Provider:" ;
+/*
+// putting this here so i don't forget it.
+
+  //store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+    */
+</script>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--form  method="get" class="form"-->
+
+        <h1 class="govuk-heading-xl" style="margin-bottom:30px">
+          What you'll need
+        </h1>
+        <p class="govuk-body">To set up an account you'll need:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>at least one PAYE scheme</li>
+                <li>the Government Gateway login details for your PAYE scheme(s) - ask your payroll department if you don't have access to this information</li>
+              </ul>
+
+        <a href="https://www.gov.uk/log-in-register-hmrc-online-services/problems-signing-in" target='_blank' class="link-copy-normal" style="">Can't find your Government Gateway details?</a>
+
+        <div id="addTheError" class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading" style="margin-top:25px">
+            Do you have everything you need?
+            </h2>
+          </legend>
+
+          <span id="gatewayError" class="govuk-error-message rj-dont-display">
+                You need your Government Gateway login details to create an account
+          </span>
+
+          <div class="govuk-radios ">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="needed-1" name="whatsNeeded" type="radio" value="true">
+              <label class="govuk-label govuk-radios__label" for="needed-1">
+                Yes, I have everything I need
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="needed-2" name="whatsNeeded" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="needed-2">
+                No, I don't have everything I need
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" onClick="whereNow()">Continue</button>
+
+      <!--/form-->
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layout.html" %} {% block beforeContent %} {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %} {% from "back-link/macro.njk" import govukBackLink %} {{ govukBackLink({ text: "Back to apprentices", href: "../" }) }} {% endblock %} {% block content %}
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <h1 class="govuk-heading-xl">Review your cohort</h1>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <div class="block-panel block-panel-blue" style="max-height:190px">
+                        <h2 class="govuk-heading-xl govuk-!-font-size-80 govuk-!-font-weight-bold">1</h2>
+                        <p class="govuk-heading-m goWhite">Apprentices</p>
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <div class="block-panel block-panel-purple" style="max-height:190px">
+                        <h2 class="govuk-heading-xl govuk-!-font-size-80 govuk-!-font-weight-bold">0</h2>
+                        <p class="govuk-heading-m goWhite">Incomplete records</p>
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <div class="block-panel block-panel-pink" style="max-height:190px; height:150px">
+                        <h2 class="govuk-heading-xl govuk-!-font-size-48 govuk-!-font-weight-bold">£9,000</h2>
+                        <p class="govuk-heading-m goWhite" style="margin-top:50px">Total cost</p>
+                    </div>
+                </div>
+            </div>
+            <div class="" style="margin-top:45px">
+                <div class="flex-support-meta">
+                    <div class=" " style="margin-right:25px; width:300px">
+                        <p style="margin-bottom:0; font-weight:700">Training provider:<span style="font-weight:400">QA LIMITED</span></p>
+                    </div>
+                    <div class="">
+                        <p style="margin-bottom:0; font-weight:700">Message</p>
+                    </div>
+                </div>
+                <div class="flex-support-meta">
+                    <div class=" " style="margin-right:25px; width:300px">
+                        <p style="margin-bottom:0; font-weight:700">Status: <span style="font-weight:400">New request</p>
+                        </div>
+                        <div class="">
+                            <p style="margin-bottom:0">No message added</p>
+                        </div>
+                    </div>
+        </div>
+<div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <a class="govuk-button" style="margin-bottom:0" <a href="Finished">Save and continue</a>
+                <a class="govuk-button button-grey-secondary" style="margin-bottom:0; margin-left:15px" <a href="../cohorts/add-apprentice">Add an apprentice</a>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m" style="margin-bottom:0">1 x Able seafarer (deck), Level: 2 (Standard)</h2>
+        <p>Training code: 34</p>
+
+
+
+    <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header" scope="col">Name</th>
+        <th class="govuk-table__header" scope="col">Unique learner number</th>
+        <th class="govuk-table__header" scope="col">Date of birth</th>
+        <th class="govuk-table__header" scope="col">Training dates</th>
+        <th class="govuk-table__header" scope="col">Cost</th>
+        <th class="govuk-table__header" scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">      
+   
+      <tr class="govuk-table__row">                
+        <td class="govuk-table__cell"> Rob Edwards</td>
+        <td class="govuk-table__cell"> 9021090210</td>
+        <td class="govuk-table__cell"> 1 Jan 2000</td>
+        <td class="govuk-table__cell"> January 2018 to January 2020</td>
+        <td class="govuk-table__cell"> £9,000</td>
+        <td class="govuk-table__cell">
+            <a href="edit-apprentice">Edit</a>
+        </td>
+      </tr>
+   
+    </tbody>
+  </table>
+
+</div>
+</div>
+</main>
+
+
+{% endblock %}

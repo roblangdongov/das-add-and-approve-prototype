@@ -1,0 +1,47 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back to apprentices", href: "./" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Your cohort requests</h1>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+                <a href="#" class="block-panel block-panel-blue">
+                    <h2 class="govuk-heading-xl">0</h2>
+                    <p class="govuk-body govuk-!-font-size-19">Ready for review</p>
+                </a>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <a href="cohorts/provider" class="block-panel block-panel-blue">
+                    <h2 class="govuk-heading-xl">{{ providers_count }}1</h2>
+                    <p class="govuk-body govuk-!-font-size-19">With training providers</p>
+                </a>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <a href="cohorts/draft" class="block-panel block-panel-blue">
+                    <h2 class="govuk-heading-xl">{{ draft_count }}1</h2>
+                    <p class="govuk-body govuk-!-font-size-19">Draft</p>
+                </a>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <a href="#" class="block-panel block-panel-blue">
+                    <h2 class="govuk-heading-xl" style="margin-bottom:15px">0</h2>
+                    <p class="govuk-body govuk-!-font-size-19" style="margin-bottom:0">With transfer sending employers</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

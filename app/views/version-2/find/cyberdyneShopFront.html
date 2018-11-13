@@ -1,0 +1,220 @@
+{% extends "layout.html" %} {% block beforeContent %}  {% from "back-link/macro.njk" import govukBackLink %} {{ govukBackLink({ text: "Back", href: "providernamelist" }) }} {% endblock %} {% block content %}
+<script>
+function whereNow() {
+    // var status = $('input[name=radio-group]:checked').val();
+    switch (true) {
+        //  case  (status == 'provider-1'):
+        //          window.location.href='./levy-list';
+        //         break;
+        // case  (status == 'provider-2'):
+        //      window.location.href='./non-levy-list';
+        //     break
+        // case  (status == 'provider-3'):
+        //      window.location.href='./explain-levy';
+        //     break
+        default: window.location.href = 'proResults';
+        // console.log('gyahhhhhhhh, bork bork bork')
+        break;
+    }
+}
+</script>
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">
+                            CYBERDYNE INC</h1>
+                <div class="govuk-grid-row attachment-full-width" style="margin-top:15px">
+                    <div class="govuk-grid-column-one-third">
+                        <h2 class="govuk-heading-s">UKPRN:</h2></div>
+                    <div class="govuk-grid-column-two-thirds">
+                        <p style="">10001353</p>
+                    </div>
+                </div>
+                <h2 class="govuk-heading-m">About this provider</h2>
+                <p class="">Cyberdyne Inc is a Further Education College in the heart of Mid Essex.</p>
+                <p>We currently offer a wide range of Apprenticeships in many different subject areas. These are predominantly at levels 2 and 3 and we have also just started two Higher Apprenticeships at level 4/5.</p>
+                <p>We are constantly looking at ways of developing our provision to suit local employment and skills needs. Therefore if you can't find what you are looking for then please contact us for further discussions as we are happy to assist you and your business.</p>
+                <p>We look forward to working with you!</p>
+                <div style="margin-top:55px"></div>
+                <h2 class="govuk-heading-m" style="margin-bottom:0">What employers are saying</h2>
+                <p style="font-size:16px; margin-top:0">Based on 12 reviews from 2 employers over the last 6 months</p>
+                <div class="">
+                    <div class=" " style="margin-right:25px">
+                        <h3 class="govuk-heading-s" style="margin:27px 0 0 0; font-weight:700; ">March 2018 to now</h3>
+                        <div style="height:30px; margin:10px 0 20px 0;{display: table;}">
+                            <div style=" display: table-cell;vertical-align: middle; display: inline-block; margin: 0 5px 0 0; width:80px; padding-bottom:5px ">Excellent</div>
+                            <div style="display: table-cell;vertical-align: middle; display: inline-block; height:30px; background: linear-gradient(to right, #006435 33%, white 1%);width:60%;" class="feedback-block "> </div>
+                            <div style=" display: table-cell;vertical-align: middle; display: inline-block; margin: 0 0 0 5px; padding-bottom:5px">4 reviews</div>
+                        </div>
+                        <div style="height:30px; margin:10px 0 20px 0;{display: table;}">
+                            <div style=" display: table-cell;vertical-align: middle; display: inline-block; margin: 0 5px 0 0; width:80px; padding-bottom:5px">Good</div>
+                            <div style="display: table-cell;vertical-align: middle; display: inline-block; height:30px; width:60%; background: linear-gradient(to right, #85994b 17%, white 1%);" class="feedback-block "> </div>
+                            <div style=" display: table-cell;vertical-align: middle; display: inline-block; margin: 0 0 0 5px; padding-bottom:5px">2 reviews</div>
+                        </div>
+                        <div style="height:30px; margin:10px 0 20px 0;{display: table;}">
+                            <div style=" display: table-cell;vertical-align: middle; display: inline-block; margin: 0 5px 0 0; width:80px; padding-bottom:5px">Poor</div>
+                            <div style="display: table-cell;vertical-align: middle; display: inline-block; height:30px; background: linear-gradient(to right, #f47738 17%, white 1%);width:60%;" class="feedback-block "> </div>
+                            <div style=" display: table-cell;vertical-align: middle; display: inline-block; margin: 0 0 0 5px; padding-bottom:5px">2 reviews</div>
+                        </div>
+                        <div style="height:30px; margin:10px 0 20px 0;{display: table;}">
+                            <div style=" display: table-cell;vertical-align: middle; display: inline-block; margin: 0 5px 0 0; width:80px; padding-bottom:5px">Very poor</div>
+                            <div style="display: table-cell;vertical-align: middle; display: inline-block; height:30px; background: linear-gradient(to right, #df3034 33%, white 1%);width:60%;" class="feedback-block "> </div>
+                            <div style=" display: table-cell;vertical-align: middle; display: inline-block; margin: 0 0 0 5px; padding-bottom:5px">4 reviews</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="margin-top:45px">
+                    <div class="flex-support-meta">
+                        <div class=" " style="margin-right:25px; width:300px">
+                            <p style="margin-bottom:0; font-weight:700">Strengths</p>
+                        </div>
+                        <div class="">
+                            <p style="margin-bottom:0; font-weight:700">Things to improve</p>
+                        </div>
+                    </div>
+                    <div class="flex-support-meta">
+                        <div class=" " style="margin-right:25px; width:300px">
+                            <p style="margin-bottom:0">Training quality (12)</p>
+                        </div>
+                        <div class="">
+                            <p style="margin-bottom:0">Assessing apprentice progress (3)</p>
+                        </div>
+                    </div>
+                    <div class="flex-support-meta">
+                        <div class=" " style="margin-right:25px; width:300px">
+                            <p style="margin-bottom:0">Assessing apprentice progress (9)</p>
+                        </div>
+                        <div class="">
+                            <p style="margin-bottom:0">Onboarding new apprentices (3)</p>
+                        </div>
+                    </div>
+                    <div class="flex-support-meta">
+                        <div class=" " style="margin-right:25px; width:300px">
+                            <p style="margin-bottom:0">Onboarding new apprentices (9)</p>
+                        </div>
+                        <div class="">
+                            <p style="margin-bottom:0">Adapting to my needs (1)</p>
+                        </div>
+                    </div>
+                    <div class="flex-support-meta">
+                        <div class=" " style="margin-right:25px; width:300px">
+                            <p style="margin-bottom:0">Improving apprentice skills (8)</p>
+                        </div>
+                        <div class="">
+                            <p style="margin-bottom:0"></p>
+                        </div>
+                    </div>
+                    <div class="flex-support-meta">
+                        <div class=" " style="margin-right:25px; width:300px">
+                            <p style="margin-bottom:0">Improving business outcomes (6)</p>
+                        </div>
+                        <div class="">
+                            <p style="margin-bottom:0"></p>
+                        </div>
+                    </div>
+                    <div class="flex-support-meta">
+                        <div class=" " style="margin-right:25px; width:300px">
+                            <p style="margin-bottom:0">Design of training (6)</p>
+                        </div>
+                        <div class="">
+                            <p style="margin-bottom:0"></p>
+                        </div>
+                    </div>
+                    <div class="flex-support-meta">
+                        <div class=" " style="margin-right:25px; width:300px">
+                            <p style="margin-bottom:0">Delivery of training (5)</p>
+                        </div>
+                        <div class="">
+                            <p style="margin-bottom:0"></p>
+                        </div>
+                    </div>
+                </div>
+                  <h2 class="govuk-heading-m" style="margin-top:35px">7 Apprenticeships offered</h2>
+                <table class="govuk-table table-19-font" style="">
+                    <thead class="govuk-table__head">
+                      
+                        <tr class="govuk-table__row">
+                            <th class="govuk-table__header">Apprenticeship</th>
+                            <th class="govuk-table__header" style="width:100px">Type</th>
+                            <th class="govuk-table__header" style="width:30px">Level</th>
+                            <th class="govuk-table__header" style="width:90px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="govuk-table__row">
+                            <td class="rjTableName govuk-table__cell">Accounting</td>
+                            <td class="rjTableName govuk-table__cell">Framework</td>
+                            <td class="govuk-table__cell" style="">2</td>
+                            <td class="looks-like-a-link-underline govuk-table__cell">Details</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="rjTableName govuk-table__cell">Accounting</td>
+                            <td class="rjTableName govuk-table__cell">Framework</td>
+                            <td class="govuk-table__cell">3</td>
+                            <td class="looks-like-a-link-underline govuk-table__cell ">Details</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="rjTableName govuk-table__cell">Adult social care</td>
+                            <td class="rjTableName govuk-table__cell">Framework</td>
+                            <td class="govuk-table__cell">3</td>
+                            <td class="looks-like-a-link-underline govuk-table__cell">Details</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="rjTableName govuk-table__cell">Business and Administration</td>
+                            <td class="rjTableName govuk-table__cell">Framework</td>
+                            <td class="govuk-table__cell">2</td>
+                            <td class="looks-like-a-link-underline govuk-table__cell ">Details</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="rjTableName govuk-table__cell">Business and Administration</td>
+                            <td class="rjTableName govuk-table__cell">Framework</td>
+                            <td class="govuk-table__cell">3</td>
+                            <td class="looks-like-a-link-underline govuk-table__cell">Details</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="rjTableName govuk-table__cell">Business and Professional Administration</td>
+                            <td class="rjTableName govuk-table__cell">Framework</td>
+                            <td class="govuk-table__cell">3</td>
+                            <td class="looks-like-a-link-underline govuk-table__cell ">Details</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="rjTableName govuk-table__cell">Children and Young People's Workforce</td>
+                            <td class="rjTableName govuk-table__cell">Framework</td>
+                            <td class="govuk-table__cell">3</td>
+                            <td class="looks-like-a-link-underline govuk-table__cell">Details</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="rjTableName govuk-table__cell">Financial Services Administrator </td>
+                            <td class="rjTableName govuk-table__cell">Framework</td>
+                            <td class="govuk-table__cell">3</td>
+                            <td class="govuk-table__cell"> <a href="findsummary">Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <aside class="related-container related">
+                    <div class="panel--contact">
+                        <h2 class="govuk-heading-m">Contact details</h2>
+                        <dl>
+                                <dt class="govuk-heading-s" style="margin-bottom:0px">Website:</dt>
+                                <p><a href="http://www.cranfield.ac.uk/business/develop-your-people/masterships/masterships-courses" rel="external" target="_blank" class="course-link apprenticeshipContact">
+Cyberdyne Inc website</a>
+                                </p>
+                                <div class="govuk-heading-s" style="margin-top:0px; margin-bottom:0; padding-top:0">Phone number:</div>
+                                <p id="phone" class="phone">01234 754930</p>
+                        </dl>
+                    </div>
+                    <hr />
+                    <h3 class="govuk-heading-s">Content disclaimer</h3>
+                    <p style="font-size:14px">Education and Skills Funding Agency cannot guarantee the accuracy of course information on this site and makes no representations about the quality of any courses which appear on the site. Education and Skills Funding Agency is not liable for any losses suffered as a result of any party relying on the course information provided.</p>
+                </aside>
+            </div>
+    </section>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

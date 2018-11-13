@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+<script>
+/*
+// putting this here so i don't forget it.
+
+  //store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+*/
+</script>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="searchOrg" method="get" class="form">
+     <h1 class="govuk-heading-xl" style="">
+Set up your account
+        </h1>
+        <p>To access funds you need to set up an account.</p>
+        <p>To do this you'll need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>the Government Gateway login details for your PAYE schemes (ask your payroll department if you don't have access to this)</li>
+        </ul>
+
+        <div class="govuk-form-group">
+        <button class="govuk-button">Continue</button>
+      </form>
+      <h2 class="govuk-heading-m">If your organisation already has an account</h2>
+      <p>If someone in your organisation has already created an account, you'll need to ask them to invite you to the account.</p>
+    </div>
+  </div>
+{% endblock %}

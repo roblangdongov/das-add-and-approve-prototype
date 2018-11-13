@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% block beforeContent %} {% include "includes/version3/microNav.html" %} {% include "includes/version3/microStoriesNav.html" %} {% endblock %} {% block content %}
+<style>
+#navigation-primary,
+#kill-me,
+.govuk-header__logo,
+.govuk-header__link--service-name {
+    display: none;
+}
+
+.govuk-header__content {
+    height: 45px;
+    border-bottom: 0;
+}
+
+.govuk-header__container {
+    border-bottom: none;
+}
+</style>
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="">
+                <h1 class="govuk-heading-xl">
+        Real stories
+      </h1>
+                <p style="width:66%; margin-bottom: 0">Hear from leaders up and down the country how apprentices have helped them re-energise their business.</p>
+                <p style="width:66%; margin-top: 15px">From the biggest to the smallest companies in the UK, they tell the story of how their business have been fired up by apprentices.</p>
+                <div class="david" style="margin-top:25px">
+                    <div style="position:absolute; margin:20px 0 0 0px; width:45%; height:75px; background-color:#000">
+                        <h2 class="govuk-heading-m" style="margin:10px 0 0 20px; color:#fff">David Apan, IBM Software Engineering Apprentice </h2>
+                        <h2 class="govuk-heading-s" style="margin:0 0 5px 20px; margin-bottom:10px; color:#fff">Apprenticeship 2018-2021</h2>
+                    </div>
+                    <!--      <img src="/public/images/xavier.webp" width="100%" height="auto">
+ -->
+                    <img class="play-btn" src="https://www.getingofar.gov.uk/img/icons/xplay-btn.png.pagespeed.ic.WsDW9VyeOZ.webp" alt="Play">
+                </div>
+                <p style="margin:20px 0 0 0">David chose an apprenticeship instead of taking one of the 5 offers he had from university. Video shows both sides - what he gets from the apprenticeship and the inpact he has had on the company. Emotional and rational reasons.</p>
+                <div class="abbi" style="margin-top:25px">
+                    <div style="position:absolute; margin:20px 0 0 0px; width:35%; height:75px; background-color:#000">
+                        <h2 class="govuk-heading-m" style="margin:10px 0 0 20px; color:#fff">Abbi Richards, CEO of BBC Plumbing </h2>
+                        <h2 class="govuk-heading-s" style="margin:0 0 5px 20px; margin-bottom:10px; color:#fff">Apprenticeship 2000-2004</h2>
+                    </div>
+                    <!--      <img src="/public/images/xavier.webp" width="100%" height="auto">
+ -->
+                    <img class="play-btn" src="https://www.getingofar.gov.uk/img/icons/xplay-btn.png.pagespeed.ic.WsDW9VyeOZ.webp" alt="Play">
+                </div>
+                <p style="margin:20px 0 0 0">Abbi is passionate about how apprentices help BBC plumbing energised and content here would be about why she is passionate and how it energises her business and what the apprentices get from the deal. Emotional and rational reasons.</p>
+                <!--       <div class="slides" style="height:250px; padding:25px">
+
+      <h2 class="govuk-heading-l" style="color:#fff;">Find out about apprenticeships</h2>
+      <p style="width:66%">Find out more about what an apprenticeship is and how they are structured. Also, which different levels of apprenticeships are available to suit your business.</p>
+          <form action="./microsite/guide"><div class="actions">
+      <button type="submit" class="govuk-button" style="margin-bottom:15px">Get started</button>
+      </div></form>
+      </div> -->
+                <!--       <div class="slides" style="height:250px; padding:25px">
+
+      <h2 class="govuk-heading-l" style="color:#fff;">Find out about apprenticeships</h2>
+      <p style="width:66%">Find out more about what an apprenticeship is and how they are structured. Also, which different levels of apprenticeships are available to suit your business.</p>
+          <div class="actions">
+      <button type="submit" class="govuk-button" style="margin-bottom:15px">Get started</button>
+      </div>
+      </div> -->
+            </div>
+        </div>
+    </main>
+    {% endblock %}

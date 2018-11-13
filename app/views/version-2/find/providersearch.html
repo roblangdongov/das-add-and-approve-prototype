@@ -1,0 +1,83 @@
+ {% extends "layout.html" %} 
+ {% block beforeContent %} 
+
+ {% from "back-link/macro.njk" import govukBackLink %} 
+ {{ govukBackLink(
+    { text: "Back", href: "findsummary" }) 
+}}
+  {% endblock %} 
+  {% block content %}
+
+<script>
+
+ $(document).ready(function() { var changeStuff = function() { var changeTheThing =JSON.parse(localStorage.getItem('nonLevy.whichApprenticeship')); switch (true) { case (changeTheThing == 'finServ'): // $(financialServicesAdmin).addClass("rj-dont-display") // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd"; // document.getElementById("providerName").textContent = "Provider:" ; // $(commitmentStatus).addClass("rj-dont-display"); // $(addDate).addClass("rj-dont-display") break; case (changeTheThing == 'cooking'): $(financialServicesAdmin).addClass("rj-dont-display") $(chefDePartie).removeClass("rj-dont-display") break; case (changeTheThing == 'building'): $(financialServicesAdmin).addClass("rj-dont-display") $(buildingServices).removeClass("rj-dont-display") break; default: console.log('gyahhhhhhhh, bork bork bork') break; } } changeStuff(); });
+</script>
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <section class="test 01">
+                    <h1 class="govuk-heading-xl">Find a training provider</h1>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds">
+                            <p class="govuk-body-l">Find a training provider for:
+                                <span id="financialServicesAdmin" class="govuk-!-font-size-24 govuk-!-font-weight-bold">Financial Services Administrator, level 3</span>
+                                <span id="chefDePartie" class="govuk-!-font-size-24 govuk-!-font-weight-bold rj-dont-display">Chef De Partie, level 3</span>
+                                <span id="buildingServices" class="govuk-!-font-size-24 govuk-!-font-weight-bold rj-dont-display">Building services design engineer, level 6</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <form method="post" id="local-locator-form" class="find-location-for-service" style="background-color: #dee0e2; display: block; float: left; padding: 20px;">
+                                    <fieldset class="govuk-fieldset">
+                                        <div class="ask_location">
+                                            <h2 class="govuk-heading-l">Enter a postcode</h2>
+                                            <label class="govuk-label govuk-!-font-size-19 govuk-!-font-weight-bold" for="postcode">Enter the full postcode of your apprentice's workplace</label>
+                                                <span id="changed-name-hint" class="govuk-hint">For example: 'SW1A 2AA'</span>
+   
+                                            <input class="postcode govuk-input" id="postcode" name="postcode" type="text" value="" style="width:50%">
+                                         
+                                        </div>
+                                    </fieldset>
+
+
+                                        <div class="govuk-form-group">
+                                            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl" style="margin-bottom:0" >
+                                                    <h2 class="govuk-heading-s" style="margin-bottom:0; margin-top:20px">Is your organisation a <a href="https://www.gov.uk/government/publications/apprenticeship-levy-how-it-will-work/apprenticeship-levy-how-it-will-work#pay-apprenticeship-levy">levy-payer</a> or are you going to receive a transfer of funds from another employer to pay for this apprenticeship? </h2>
+                                                </legend>
+                                                <span id="changed-name-hint" class="govuk-hint">
+                                             We use this information to show you approved training providers that can work with organisations of your size
+
+                                            </span>
+                                                <div class="govuk-radios govuk-radios--inline">
+                                                    <div class="govuk-radios__item">
+                                                        <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes" checked="true">
+                                                        <label class="govuk-label govuk-radios__label" for="changed-name-1">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="govuk-radios__item">
+                                                        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                                                        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                
+                                            </fieldset>
+                                        </div>
+                                    <a href="proResults" class="govuk-button" id="search-button" style="">Search</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

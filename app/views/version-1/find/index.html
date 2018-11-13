@@ -1,0 +1,73 @@
+{% extends "layout.html" %} {% block beforeContent %}  {% from "back-link/macro.njk" import govukBackLink %} {{ govukBackLink({ text: "Home", href: "./home" }) }} {% endblock %} {% block content %}
+<style>
+.survey-panel {
+    background: #DEE0E2;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.survey-panel:before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #DEE0E2;
+    clear: both;
+}
+
+.survey-panel p {
+    margin-bottom: 0;
+}
+
+.phase-tag {
+    line-height: 1.1428571429;
+    font-weight: 700;
+    text-transform: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: f47738;
+    font-weight: 900;
+    /* background: orange; */
+    padding: 5px;
+    /* clear: right; */
+    position: relative;
+    float: left;
+    margin-top: 4px;
+    margin-right: 5px
+}
+</style>
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl ">Find apprenticeship training</h1>
+                <p>For employers looking to take on apprentices.</p>
+                <p>Use this service to:</p>
+   
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>search for apprenticeship training by job role or keyword</li>
+                    <li>find training providers who offer the apprenticeship training you choose</li>
+                    <li>find a named training provider you want to use</li>
+
+                </ul>
+
+            <a href="find/ApprenticeshipOrProvider"  class="govuk-button govuk-button--start">Start</a>
+                            <h2 class="govuk-heading-m " >Help</h2>
+                <p> You can contact the National Apprenticeship Service for advice or help using the service.</p>
+                    <h2 class="govuk-heading-s " style="margin-bottom:0">National Apprenticeship Service</h2>
+                <p> Telephone: 0800 015 0600 <a href="#"> Find out about call charges</a></p>
+            </div>
+
+
+
+
+        </div>
+    </main>
+    {% endblock %}

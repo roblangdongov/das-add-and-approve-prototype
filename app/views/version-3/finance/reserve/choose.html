@@ -1,0 +1,60 @@
+{% extends "layout.html" %} 
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}    {% include "includes/version1/financeNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "./" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row"">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="get" action="reserveSavedApprenticeship">
+         
+            <h1 class="govuk-heading-xl">Reserve funding</h1>
+           <!--  <p class="govuk-body-l">Do you want to use a saved apprenticeship?</p> -->
+            <div class="govuk-form-group">
+            </div>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                          Do you want to use a saved apprenticeship?
+
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="confirm-yes" name="confirm" type="radio" value="yes">
+                            <label class="govuk-label govuk-radios__label" for="confirm-yes">
+                               Yes, I want to use a saved apprenticeship
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="confirm-no" name="confirm" type="radio" value="no" >
+                            <label class="govuk-label govuk-radios__label" for="confirm-no">
+                               No, I want to find a new apprenticeship
+                            </label>
+                        </div>  
+                        <div class="govuk-radios__divider">or</div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live-6" name="where-do-you-live" type="radio" value="abroad">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
+                              I am a British citizen living abroad
+                            </label>
+                          </div>                      
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

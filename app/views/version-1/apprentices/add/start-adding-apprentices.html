@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back to apprentices",
+  href: "../"
+}) }}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl">
+           Start adding apprentices
+        </h1>
+
+        <p class="ukgov-body">You can start adding details of your apprentices or ask your training provider to add them for you.</p>
+        <p class="ukgov-body">If you ask your training provider to add them, you need to check and agree the details before any payments are made.</p>.
+        
+        <form action="addingApprentices" method="get" class="form">            
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="addApprentices-true" name="addApprentices" type="radio" value="true" {{ checked("addApprentices", "True") }}>
+                        <label class="govuk-label govuk-radios__label" for="addApprentices-true">
+                            I will add apprentices
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="addApprentices-false" name="addApprentices" type="radio" value="false" {{ checked("addApprentices", "False") }}>
+                        <label class="govuk-label govuk-radios__label" for="addApprentices-false">
+                            I would like my provider to add apprentices
+                        </label>
+                    </div>                  
+                </div>                
+            </div>
+    
+            <button class="govuk-button">Continue</button>
+    
+          </form>          
+    </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

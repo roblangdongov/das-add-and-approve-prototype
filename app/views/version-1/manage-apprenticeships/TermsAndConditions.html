@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+
+
+
+{% block content %}
+
+<script>
+/*
+// putting this here so i don't forget it.
+
+  //store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+*/
+</script>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/choosefromalistofaccounts" method="get" class="form">
+
+     <h1 class="govuk-heading-xl">
+          Terms of use
+        </h1>
+
+<p>You must sign out of this service at the end of each session. </p>
+<p>You must not do any of the following when using this service:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>input untruthful or inaccurate information</li>
+  <li>upload any files that contain computer viruses or malware</li>
+  <li>commit any cybercrime as described by the <a href="http://www.legislation.gov.uk/ukpga/1990/18/contents" target="_blank">Computer Misuse Act 1990</a></li>
+    <li>share your sign in details with anybody else</li>
+      <li>give security information to anyone not authorised to view the account</li>
+        <li>use discriminatory wording, as per the Equality Act 2010</li>
+</ul>
+<p>Your contact details and information associated with your account will be collected and used for the support and administration of your account.</p>
+<p>We will not:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>use or disclose this information for other purposes (except where we're legally required to do so)</li>
+  <li>use your details for any marketing purposes or for any reason unrelated to the use of your account</li>
+</ul>
+<p>We may update these terms of use at any time without notice. You'll agree to any changes if you continue to use this service ​after the terms of use have been updated​.​</p>
+
+
+  </div>
+{% endblock %}

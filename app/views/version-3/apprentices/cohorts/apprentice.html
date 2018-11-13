@@ -1,0 +1,115 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+{% endblock %}
+ {% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="../manage" class="govuk-back-link">Back to manage your apprentices</a>
+
+        <h1 class="govuk-heading-xl">
+            {{ apprentice.name }}
+        </h1>
+
+        <table class="govuk-table details-list">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row">Status</th>
+                    <td class="govuk-table__cell" scope="row">
+                        {{ apprentice.status }}
+
+                    </td>
+                    <td class="govuk-table__cell" scope="row">
+                        {% if apprentice.status != 'Stopped' %}
+                        <a href='{{ apprentice.id }}/EditStatus'>Edit status</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% if apprentice.stopped_date %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Stop applies from</td>
+                    <td class="govuk-table__cell" scope="row" colspan="2">{{ apprentice.stopped_date | date("DD MMM YYYY") }}</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+
+        <table class="govuk-table details-list">
+            <caption class="govuk-table__caption">Overview</caption>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Training provider</td>
+                    <td class="govuk-table__cell" scope="row">{{ apprentice.training_provider }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Cohort reference</td>
+                    <td class="govuk-table__cell" scope="row">{{ apprentice.cohort_reference }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="govuk-table details-list">
+            <caption class="govuk-table__caption">
+                Apprentice
+                {% if apprentice.status != 'Stopped' %}
+                <a href='{{ apprentice.id }}/edit' class="float-right">Edit</a>
+                {% endif %}
+            </caption>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Name</th>
+                        <td class="govuk-table__cell" scope="row">{{ apprentice.name }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Unique learner number</th>
+                        <td class="govuk-table__cell" scope="row">{{ apprentice.unique_learner_number }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Date of birth</th>
+                        <td class="govuk-table__cell" scope="row">{{ apprentice.dob | date('D MMM YYYY') }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Apprenticeship training course</th>
+                        <td class="govuk-table__cell" scope="row">{{ apprentice.apprenticeship_training_course }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Traning start date</th>
+                        <td class="govuk-table__cell" scope="row">{{ apprentice.training_start_date | date('MMM YYYY') }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Training end date</th>
+                        <td class="govuk-table__cell" scope="row">{{ apprentice.training_end_date | date('MMM YYYY') }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Total cost of training</th>
+                        <td class="govuk-table__cell" scope="row">{{ apprentice.total_cost_of_training }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Reference</th>
+                        <td class="govuk-table__cell" scope="row">{{ apprentice.reference }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="govuk-table details-list">
+            <caption class="govuk-table__caption">End Point Assessor</caption>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">End point Assessor</th>
+                        <td class="govuk-table__cell" scope="row">{{ apprentice.end_point_assessor }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            {{ apprentice | dump }}
+            <textarea class="govuk-textarea" rows="5">
+                {{ qs }}
+            </textarea>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

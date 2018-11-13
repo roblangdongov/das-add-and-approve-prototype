@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+ 
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}
+  {% include "includes/version1/teamNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Home",
+  href: "./home"
+}) }}
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" style="padding-top:5px">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     <h1 class="govuk-heading-xl" style="margin-top:25px" id="company-Name">Your team</h1>
+     <p class="govuk-body-l">Invite members, control what they can do, remove members and cancel or resend invitations.</p>
+   </div>
+   <form action="./team/add-new-user">
+    <div class="govuk-grid-column-one-third weird-floating-button">
+         <button type="submit" class="govuk-button" style="" >Invite a new member</button>
+    </div>
+  </form>
+ </div>
+ <div class="govuk-width-container">
+      <div class="">
+                      <table class="govuk-table">
+                          <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                              <th class="govuk-table__header" scope="col"style="padding-top:0">Name</th>
+                              <!--th scope="col" style="padding-top:0">Email address</th-->
+                              <th class="govuk-table__header" scope="col" class="" style="padding-top:0; min-width:300px">What they can do</th>
+                               <th class="govuk-table__header" scope="col" class="" style="padding-top:0; width:100px">Status</th>
+                               <th class="govuk-table__header" scope="col"" style="padding-top:0"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="govuk-table__row">
+                              <!--quick hack, will fix -->
+                              <td class="govuk-table__cell "d >Rob Edwards <span class="teamEmail">rob@acme.com</span> </td>
+                              <td class="govuk-table__cell ">Accept agreements, view information and manage PAYE schemes, organisations, apprentices and team members</td>
+                              <!--td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td-->
+                              <td class="govuk-table__cell ">Active</td>
+                              <td class="govuk-table__cell "><a href="./team/active-user-rob">View</a></td>
+                            </tr>
+
+                             <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">Susan Hamazaki <span class="teamEmail">susan@acme.com</span></td>
+                              <td class="govuk-table__cell ">View information but can’t make changes</td>
+                              <!--td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td-->
+                               <td class="govuk-table__cell ">Active</td>
+                              <td class="govuk-table__cell ""><a href="#">View</a></td>
+                            </tr>
+                          </tbody>
+                     </table>
+             </div>
+         </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

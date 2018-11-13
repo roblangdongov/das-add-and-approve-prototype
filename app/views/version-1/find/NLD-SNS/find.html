@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<!--script>
+
+$(document).on('click', 'input[type="radio"]', function (e) {
+  if ($(e.target).attr('id') === 'radio-3' || $(e.target).attr('id') === 'radio-4' || $(e.target).attr('id') === 'radio-5') 
+  { $('#other-organisation-options').removeClass('js-hidden') ; } 
+       else {$('#other-organisation-options').addClass('js-hidden');};
+});
+
+</script-->
+
+
+
+<script>
+       // localStorage.setItem("nonLevy.whichApprenticeship", JSON.stringify("cooking"));
+function whereNow() {
+  var status = $('#input-keywords').val();
+
+       switch (true) {
+          case  (status == 'admin'):
+            window.location.href = 'appresults';
+            break;
+        case  (status == 'catering'):
+             window.location.href='appresults-cook';
+            break
+        case  (status == 'construction'):
+             window.location.href='appresults-construct';
+            break
+
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+            window.location.href='appresults';
+            break;
+        }
+    }
+ </script>
+
+<script>
+ $(".shortlist.app").click(function (e) {
+        e.preventDefault();
+        console.log("shortlist button clicked: " + appCount);
+
+
+        if ($("i", this).hasClass("fa-star-o")) {
+            console.log("isnt shortlisted");
+            appCount = appCount + 1;
+            console.log(appCount);
+            Cookies.set("appCount", appCount);
+            $("i", this).removeClass("fa-star-o").addClass("fa-star");
+            $("span", this).text("Remove");
+            $("#bannerSignedIn span").text(Number(proCount) + Number(appCount));
+
+        } else {
+            console.log("is shortlisted");
+            $("i", this).removeClass("fa-star").addClass("fa-star-o");
+            $("span", this).text("Shortlist");
+            appCount--;
+            Cookies.set("appCount", appCount);
+            console.log(appCount);
+            $("#bannerSignedIn span").text(Number(proCount) + Number(appCount));
+        }
+    })
+</script>
+
+    <link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/animate.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_appResults.css" rel="stylesheet" />
+
+    <script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+
+
+    <main id="content" role="main">
+    <div class="column-two-thirds" style="margin-top:25px"><a href="./" class="link-back">Back</a> </div>
+        <div id="search" class="grid-row">
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge">
+                    Find apprenticeship training
+                </h1>
+                <form action="appresults">
+                    <div class="form-group">
+                        <legend>
+                            <label for="input-keywords">
+                                <span>Enter a job role or keyword (for example: 'accountant' or 'engineering').</span></label>
+                            <span class="error-message"></span>
+                        </legend>
+                         <input type="text" id="input-keywords" class="text-box form-control" name="q" maxlength="200" style="width: 100%;">
+                    </div>
+                   <!-- <button type="submit" class="button margin-top-x2" style="display: block;">Search</button> -->
+                    <input class="button" id="searchButton" type="button" onclick="whereNow()" value="Search">
+                </form>
+            </div>
+        </div>
+            <div style="margin-top:35px">
+                <h2 class="heading-medium">Explore by job category</h2>
+            </div>
+            <div class="grid-row">
+                    <div class="column-one-third category-list">
+                        <p class=""><a class="find-list" href="#">Agriculture, environmental and animal care</a></p>
+                        <p class=""><a class="find-list" href="/{% include "includes/sprint-link.html" %}/NLD-find/BusinessAndAdministration">Business and administration</a></p>
+                        <p class=""><a class="find-list" href="/{% include "includes/sprint-link.html" %}/NLD-find/catering-and-hospitality">Catering and hospitality</a></p>
+                        <p class=""><a class="find-list" href="#">Childcare and education</a></p>
+                        <p class=""><a class="find-list" href="/{% include "includes/sprint-link.html" %}/NLD-find/construction">Construction</a></p>
+                    </div>
+                    <div class="column-one-third category-list">
+                        <p class=""><a class="find-list" href="#">Digital</a></p>
+                        <p class=""><a class="find-list" href="#">Engineering and manufacturing</a></p>
+                        <p class=""><a class="find-list" href="/{% include "includes/sprint-link.html" %}/NLD-find/HairAndBeauty">Hair and beauty </a></p>
+                        <p class=""><a class="find-list" href="#">Health and science </a></p>
+                         <p class=""><a class="find-list" href="/{% include "includes/sprint-link.html" %}/NLD-find/lawApprenticeList">Legal, finance and accounting </a></p>
+                    </div>
+                    <div class="column-one-third category-list">
+                        <p class=""><a class="find-list" href="#">Protective services </a></p>
+                        <p class=""><a class="find-list" href="#">Sales, marketing and procurement</a></p>
+                        <p class=""><a class="find-list" href="#">Hospitality and food</a></p>
+                        <p class=""><a class="find-list" href="#">Social care </a></p>
+                        <p class=""><a class="find-list" href="#">Transport and logistics </a></p>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/public/ty/assets/javascripts/d3.min.js"></script>
+    <script src="/public/ty/assets/javascripts/c3.min.js"></script>
+    <script src="/public/ty/assets/javascripts/marked.min.js"></script>
+    <script src="/public/ty/assets/javascripts/underscore-min.js"></script>
+    <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+    <script src="/public/ty/assets/javascripts/tinysort.min.js"></script>
+    <script src="/public/ty/assets/javascripts/jPages.min.js"></script>
+    <script src="/public/ty/assets/javascripts/_app.js"></script>
+    <script>
+        $("#appShortlistRemove").click(function (e) {
+            $("#dialog-1").attr("aria-hidden", "false")
+                //            e.preventDefault();
+                //location.replace("appShortlistRemove.html");
+
+        })
+    </script>
+
+
+{% endblock %}

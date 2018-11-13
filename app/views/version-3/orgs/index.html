@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}
+  {% include "includes/version1/orgsNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Home",
+  href: "./home"
+}) }}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+          <div style= "width:66%; " id="deletedUserAlertMessage" class="success-summary rj-dont-display"> 
+                   <h1 class="govuk-heading-l" style="margin-bottom:10px">Agreement signed</h1>
+                   <p>You've successfully signed an organisation agreement. There are outstanding agreements to be signed. Review the list below to sign all remaining agreements.</p>
+               </div>
+  <main class="govuk-main-wrapper govuk-main-wrapper--l">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+     <h1 class="govuk-heading-xl" style="" id="company-Name">Your organisations and agreements</h1>
+     <p class="">Add each organisation that will contract with your training providers.</p>
+      <p class="">There is no restriction on the number of <a href="https://www.gov.uk/government/publications/employment-allowance-more-detailed-guidance" target="_blank">connected organisations</a> you can add.</p>
+      <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    Transfers status:<span style="font-weight:700"> Disabled</span></span>
+  </summary>
+  <div class="govuk-details__text">
+You must sign the most up-to-date agreement for all organisations to use transfers functionality.
+  </div>
+</details>
+   </div>
+   <form action="./orgs/searchOrg">
+    <div class="govuk-grid-column-one-third weird-floating-button">
+         <button type="submit" class="govuk-button" style="" >Add new organisation</button>
+    </div>
+  </form>
+ </div>
+ <div class="govuk-width-container">
+      <div class="">
+                      <table class="govuk-table">
+                          <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                              <th class="govuk-table__header" scope="col"style="padding-top:0">Organisation</th>
+                              <!--th scope="col" style="padding-top:0">Email address</th-->
+                              <th class="govuk-table__header" scope="col" class="" style="padding-top:0; min-width:300px">Agreement status</th>
+                               <th class="govuk-table__header" scope="col" class="" style="padding-top:0; width:100px">Action</th>
+                               <th class="govuk-table__header" scope="col"" style="padding-top:0">  Agreement Id</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="govuk-table__row">
+                              <!--quick hack, will fix -->
+                              <td class="govuk-table__cell " >; DROP TABLE "COMPANIES";-- LTD</td>
+                              <td class="govuk-table__cell ">Updated agreement available</td>
+                              <!--td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td-->
+                                <td class="govuk-table__cell " id="signAgreement"><a href="./orgs/droptablesign">Sign agreement</a></td>
+                                <td class="govuk-table__cell rj-dont-display " id="viewAgreement"><a href="./orgs/droptablesview">View </a></td>
+                              <td class="govuk-table__cell ">YVRBJV</td>
+                              
+                            </tr>
+
+                             <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">Cyberdyne Inc</td>
+                              <td class="govuk-table__cell ">Agreement not signed</td>
+                              <!--td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td-->
+                                <td class="govuk-table__cell ""><a href="#">Sign agreement</a></td>
+                               <td class="govuk-table__cell ">Sign agreement to receive an agreement ID</td>
+                              
+                            </tr>
+                          </tbody>
+                     </table>
+             </div>
+         </div>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+   var updatedAgreement  = JSON.parse(localStorage.getItem('orgs.updatedAgreement'));
+  var changeStuff = function() {
+  if (updatedAgreement=='done') {
+   // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   // document.getElementById("providerName").textContent = "Provider:" ;
+   // $(notesStuff).addClass("rj-dont-display");
+   // $(addReference).addClass("rj-dont-display");
+   // $(ULNTable).addClass("rj-dont-display");
+      $(deletedUserAlertMessage).removeClass("rj-dont-display");
+      $(viewAgreement).removeClass("rj-dont-display");
+      $(signAgreement).addClass("rj-dont-display");
+      localStorage.setItem("orgs.updatedAgreement", JSON.stringify("nope"))
+    }
+else {
+  //  $(notesStuff).removeClass("rj-dont-display");
+  //  $(addReference).removeClass("rj-dont-display");
+        };
+  };
+changeStuff();
+});
+
+</script>
+
+{% endblock %}

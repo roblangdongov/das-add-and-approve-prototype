@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/teamNav.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+                             <div style= "" id="deletedUserAlertMessage" class="success-summary"> 
+                   <h1 class="govuk-heading-l" style="margin-bottom:10px">Invitation sent</h1>
+                   <p>You've sent an invitation to <span style="font-weight:700">test@test.com</span></p>
+               </div>
+                <h1 class="govuk-heading-l" style="" id="company-Name">What's next?</h1>               
+
+<form action="whatsNextTeam" method="get" class="form">
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <!--h2 class="govuk-fieldset__heading">
+                         Team member access
+                           <span id="email-hint" class="govuk-hint">
+             Choose the level of access this user can have.
+            </span>
+                </h2-->
+            </legend>
+            <div class="govuk-radios ">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="team-whats-next--1" name="teamwhatsnext" type="radio" value="another" checked="true">
+                    <label class="govuk-label govuk-radios__label" for="team-whats-next--1">
+                        Add another team member
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="team-whats-next--2" name="teamwhatsnext" type="radio" value="viewall">
+                    <label class="govuk-label govuk-radios__label" for="team-whats-next--2">
+                        View all team members
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="team-whats-next--3" name="teamwhatsnext" type="radio" value="returnhome" >
+                    <label class="govuk-label govuk-radios__label" for="team-whats-next--3">
+                       Return to homepage
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <button class="govuk-button">Continue</button>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .financial-nav a, .nav-forecast a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<script>
+
+function whereNow() {
+
+             window.location.href='../find';
+    }
+ </script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta_float_help.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+       <a href="" class="link-back" onclick="goBack()">Back</a>
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >You pay the levy</h1>
+
+ 
+
+     <p>If you’re an employer who pays the apprenticeship levy you will need to set up an account on the apprenticeship service so that you can:</p>
+           <ul class="list list-bullet">
+      <li>receive levy funds for you to spend on apprenticeships</li>
+      <li>manage your apprentices</li>
+      <li>pay your training provider</li>
+      <li>stop or pause payments to your training provider</li>
+    </ul>
+    <p>The government will also add a 10% top-up to the monthly funds you receive in your apprenticeship account.  This will be credited to you monthly.</p>
+
+
+  <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" style="margin-top:30px" value="Continue to find apprentices">
+
+</div>
+
+            <div class="column-one-third">
+
+                <aside class="related">
+                <h2 class="heading-medium" style="margin-top:10px">Further guidance</h2>
+                <nav role="navigation">
+                      <ul class="robSideNav">
+                            <li><a href="https://www.gov.uk/government/publications/apprenticeship-levy-how-it-will-work/apprenticeship-levy-how-it-will-work" >Apprenticehip funding: how it will work</a></li>
+                              <li><a href="https://www.gov.uk/guidance/pay-apprenticeship-levy" >Pay Apprenticeship Levy</a></li>
+                                <li><a href="https://www.gov.uk/guidance/manage-apprenticeship-funds" >How to register and use the apprenticeship service as an employer</a></li>
+                        </ul>
+                    </nav>
+                 </aside>
+          </div>
+</div>
+</main>
+
+{% endblock %}

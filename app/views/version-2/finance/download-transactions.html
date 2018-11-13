@@ -1,0 +1,95 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %}{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/financeNav.html" %}
+{% endblock %} {% block content %}
+
+<!-- <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../../accounts">Your Accounts</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../{{ employer.id }}">{{ employer.name }}</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../finance">Finance</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Download Transactions</li>
+    </ol>
+</div> -->
+
+<h1 class="govuk-heading-xl">
+    Download Transactions
+</h1>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <form>
+            <div class="govuk-form-group">
+                <label class="govuk-label">
+                    Start date
+                </label>
+                <span class="govuk-hint">
+                    For example, 5 2017
+                </span>
+                <div class="form-date">
+                    <div class="form-date-month">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="startDate_month">
+                                Month
+                            </label>
+                            <input class="govuk-input" id="startDate_month" name="startDate_month" type="text" maxlength="2" min="1" max="12" />
+                        </div>
+                    </div>
+                    <div class="form-date-year">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="startDate_year">
+                                Year
+                            </label>
+                            <input class="govuk-input" id="startDate_year" name="startDate_year" type="text" maxlength="4" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label">
+                    End date
+                </label>
+                <span class="govuk-hint">
+                    For example, 10 2017
+                </span>
+                <div class="form-date">
+                    <div class="form-date-month">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="endDate_month">
+                                Month
+                            </label>
+                            <input class="govuk-input" id="endDate_month" name="endDate_month" type="text" maxlength="2" min="1" max="12" />
+                        </div>
+                    </div>
+                    <div class="form-date-year">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="endDate_year">
+                                Year
+                            </label>
+                            <input class="govuk-input" id="endDate_year" name="endDate_year" type="text" maxlength="4" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="format">
+                    Select format
+                </label>
+                <select class="govuk-select" id="sort" name="format">
+                    <option value="csv">CSV</option>
+                    <option value="excel">Excel</option>
+                </select>
+            </div>
+            <button type="submit" class="govuk-button">
+                Download
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

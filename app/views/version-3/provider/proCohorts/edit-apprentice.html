@@ -1,0 +1,2773 @@
+{% extends "layout.html" %} {% block beforeContent %}
+ {% include "includes/version1/provider/providerNav.html" %}
+  {% include "includes/version1/provider/cohortsNav.html" %}
+ {% from "back-link/macro.njk" import govukBackLink %} 
+ {{ govukBackLink({ text: "Back", href: "cohortView" }) }}
+  {% endblock %} 
+  {% block content %}
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+
+<h1 class="govuk-heading-xl">Edit apprentice details</h1>
+
+<div class="govuk-inset-text">
+    <p>You must add the apprentice’s first and last names - fill in as many other fields as you can. You'll be able to return
+        later to make changes or add more information.</p>
+    <p>
+        You'll only be able to authorise payments for this apprentice once all the fields have been completed - either by yourself
+        or your training provider.</p>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="get" action="./cohortView">
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+            <div class="govuk-form-group">
+                <label class="govuk-label--s" for="FirstName">First name</label>
+                <input class="govuk-input" id="firstName" name="FirstName" type="text" value="Rob"/>
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label--s" for="LastName">Last name</label>
+                <input class="govuk-input" id="LastName" name="LastName" type="text" value="Edwards" />
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Date of birth
+                    </legend>
+                    <span id="dob-hint" class="govuk-hint">
+                        For example, 31 3 1980
+                    </span>
+                    <div class="govuk-date-input" id="dob">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label--s govuk-date-input__label" for="dob-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2 undefined" id="dob-day" name="dob-day" type="number"
+                                    pattern="[0-9]*" value="01">
+                            </div>
+                        </div>
+
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label--s govuk-date-input__label" for="dob-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2 undefined" id="dob-month" name="dob-month" type="number"
+                                    pattern="[0-9]*" value="01">
+                            </div>
+                        </div>
+
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group govuk-form-group--year">
+                                <label class="govuk-label--s govuk-date-input__label" for="dob-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4 undefined" id="dob-year" name="dob-year" type="number"
+                                    pattern="[0-9]*" value="2000">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+
+     <div class="govuk-form-group">
+                <label class="govuk-label--s" for="ULN"> Unique learner number</label>
+                <input class="govuk-input" id="ULN" name="ULN" type="text" value="9021090210"/>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+
+            <div class="govuk-form-group">
+                <label class="govuk-label--s" for="training_course">
+                    Apprenticeship training course
+                </label>
+                <span id="training_course_hint" class="govuk-hint">
+                    Choose an option from the list
+                </span>
+                <select class="govuk-select" id="training_course" name="training_course">
+                        <option value="">Please select</option>
+                        <option value="274">
+                            Abattoir Worker, Level: 2 (Standard)
+                        </option>
+                        <option value="34" selected>
+                            Able seafarer (deck), Level: 2 (Standard)
+                        </option>
+                        <option value="272">
+                            Academic Professional, Level: 7 (Standard)
+                        </option>
+                        <option value="176">
+                            Accident Repair Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="204">
+                            Accountancy Taxation Professional, Level: 7 (Standard)
+                        </option>
+                        <option value="454-3-1">
+                            Accounting, Level: 2
+                        </option>
+                        <option value="454-2-1">
+                            Accounting, Level: 3
+                        </option>
+                        <option value="460-3-3">
+                            Activity Leadership: Coaching, Level: 2
+                        </option>
+                        <option value="460-3-2">
+                            Activity Leadership: Exercise and Fitness, Level: 2
+                        </option>
+                        <option value="460-3-4">
+                            Activity Leadership: Leadership, Level: 2
+                        </option>
+                        <option value="460-3-1">
+                            Activity Leadership: Outdoors, Level: 2
+                        </option>
+                        <option value="17">
+                            Actuarial technician, Level: 4 (Standard)
+                        </option>
+                        <option value="255">
+                            Actuary, Level: 7 (Standard)
+                        </option>
+                        <option value="119">
+                            Adult care worker, Level: 2 (Standard)
+                        </option>
+                        <option value="271">
+                            Advanced Baker, Level: 3 (Standard)
+                        </option>
+                        <option value="152">
+                            Advanced butcher, Level: 3 (Standard)
+                        </option>
+                        <option value="240">
+                            Advanced Carpentry and Joinery, Level: 3 (Standard)
+                        </option>
+                        <option value="252">
+                            Advanced Clinical Practitioner, Level: 7 (Standard)
+                        </option>
+                        <option value="148">
+                            Advanced credit controller / debt collection specialist, Level: 3 (Standard)
+                        </option>
+                        <option value="149">
+                            Advanced dairy technologist, Level: 5 (Standard)
+                        </option>
+                        <option value="37">
+                            Aerospace engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="38">
+                            Aerospace software development engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="528-3-1">
+                            Agriculture, Level: 2
+                        </option>
+                        <option value="528-2-1">
+                            Agriculture, Level: 3
+                        </option>
+                        <option value="528-20-2">
+                            Agriculture: Agricultural Business Management, Level: 4
+                        </option>
+                        <option value="114">
+                            Aircraft maintenance certifying engineer, Level: 4 (Standard)
+                        </option>
+                        <option value="121">
+                            Airside operator, Level: 2 (Standard)
+                        </option>
+                        <option value="298">
+                            Ambulance Support Worker (Emergency, Urgent and Non-Urgent), Level: 3 (Standard)
+                        </option>
+                        <option value="439-3-1">
+                            Animal Care, Level: 2
+                        </option>
+                        <option value="439-2-1">
+                            Animal Care, Level: 3
+                        </option>
+                        <option value="179">
+                            Animal Technologist, Level: 3 (Standard)
+                        </option>
+                        <option value="180">
+                            Arborist, Level: 2 (Standard)
+                        </option>
+                        <option value="300">
+                            Architect (degree), Level: 7 (Standard)
+                        </option>
+                        <option value="299">
+                            Architectural Assistant (degree), Level: 6 (Standard)
+                        </option>
+                        <option value="303">
+                            Asbestos Analyst/Surveyor, Level: 3 (Standard)
+                        </option>
+                        <option value="133">
+                            Assistant accountant, Level: 3 (Standard)
+                        </option>
+                        <option value="85">
+                            Assistant technical director (visual effects), Level: 4 (Standard)
+                        </option>
+                        <option value="156">
+                            Associate Ambulance Practitioner, Level: 4 (Standard)
+                        </option>
+                        <option value="128">
+                            Associate project manager, Level: 4 (Standard)
+                        </option>
+                        <option value="283">
+                            Autocare Technician, Level: 2 (Standard)
+                        </option>
+                        <option value="304">
+                            Automotive Glazing Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="87">
+                            Aviation ground operative, Level: 2 (Standard)
+                        </option>
+                        <option value="86">
+                            Aviation ground specialist, Level: 3 (Standard)
+                        </option>
+                        <option value="141">
+                            Aviation maintenance mechanic (military), Level: 2 (Standard)
+                        </option>
+                        <option value="123">
+                            Aviation operations manager, Level: 4 (Standard)
+                        </option>
+                        <option value="405-3-1">
+                            Aviation Operations on the Ground, Level: 2
+                        </option>
+                        <option value="405-2-1">
+                            Aviation Operations on the Ground, Level: 3
+                        </option>
+                        <option value="177">
+                            Baker, Level: 2 (Standard)
+                        </option>
+                        <option value="507-3-1">
+                            Barbering, Level: 2
+                        </option>
+                        <option value="507-2-1">
+                            Barbering, Level: 3
+                        </option>
+                        <option value="422-3-1">
+                            Beauty Therapy: Beauty Therapy General, Level: 2
+                        </option>
+                        <option value="422-2-1">
+                            Beauty Therapy: Beauty Therapy General, Level: 3
+                        </option>
+                        <option value="422-3-2">
+                            Beauty Therapy: Beauty Therapy Make-up, Level: 2
+                        </option>
+                        <option value="422-2-2">
+                            Beauty Therapy: Beauty Therapy Make-up, Level: 3
+                        </option>
+                        <option value="422-2-3">
+                            Beauty Therapy: Beauty Therapy Massage, Level: 3
+                        </option>
+                        <option value="183">
+                            Bespoke Saddler, Level: 3 (Standard)
+                        </option>
+                        <option value="72">
+                            Bespoke tailor and cutter, Level: 5 (Standard)
+                        </option>
+                        <option value="76">
+                            Boatbuilder, Level: 3 (Standard)
+                        </option>
+                        <option value="294">
+                            Brewer, Level: 4 (Standard)
+                        </option>
+                        <option value="287">
+                            Bricklayer, Level: 2 (Standard)
+                        </option>
+                        <option value="112">
+                            Broadcast production assistant, Level: 3 (Standard)
+                        </option>
+                        <option value="605-22-1">
+                            Broadcast Technology Higher Apprenticeship - BBC: Broadcast Technology, Level: 6
+                        </option>
+                        <option value="198">
+                            Building Services Design Engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="178">
+                            Building Services Design Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="173">
+                            Building Services Engineering Craftsperson, Level: 3 (Standard)
+                        </option>
+                        <option value="185">
+                            Building Services Engineering Ductwork Craftsperson, Level: 3 (Standard)
+                        </option>
+                        <option value="192">
+                            Building Services Engineering Ductwork Installer, Level: 2 (Standard)
+                        </option>
+                        <option value="164">
+                            Building Services Engineering Installer, Level: 2 (Standard)
+                        </option>
+                        <option value="193">
+                            Building Services Engineering Service and Maintenance Engineer, Level: 3 (Standard)
+                        </option>
+                        <option value="276">
+                            Building Services Engineering Site Management (Degree), Level: 6 (Standard)
+                        </option>
+                        <option value="275">
+                            Building Services Engineering Technician, Level: 4 (Standard)
+                        </option>
+                        <option value="543-2-2">
+                            Building Services Engineering Technology and Project Management: Design Technician, Level: 3
+                        </option>
+                        <option value="543-2-1">
+                            Building Services Engineering Technology and Project Management: Technician, Level: 3
+                        </option>
+                        <option value="194">
+                            Building Services Engineering Ventilation Hygiene Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="431-2-3">
+                            Bus and Coach Engineering and Maintenance: Body, Level: 3
+                        </option>
+                        <option value="431-2-2">
+                            Bus and Coach Engineering and Maintenance: Electrical, Level: 3
+                        </option>
+                        <option value="431-2-4">
+                            Bus and Coach Engineering and Maintenance: Mechanical and Electrical, Level: 3
+                        </option>
+                        <option value="431-2-1">
+                            Bus and Coach Engineering and Maintenance: Mechanical, Level: 3
+                        </option>
+                        <option value="136">
+                            Bus and coach engineering manager, Level: 4 (Standard)
+                        </option>
+                        <option value="134">
+                            Bus and coach engineering technician, Level: 3 (Standard)
+                        </option>
+                        <option value="196">
+                            Business Administrator, Level: 3 (Standard)
+                        </option>
+                        <option value="490-3-1">
+                            Business and Administration, Level: 2
+                        </option>
+                        <option value="490-2-1">
+                            Business and Administration, Level: 3
+                        </option>
+                        <option value="490-3-2">
+                            Business and Administration: Legal Administration, Level: 2
+                        </option>
+                        <option value="490-2-2">
+                            Business and Administration: Legal Administration, Level: 3
+                        </option>
+                        <option value="490-3-3">
+                            Business and Administration: Medical Administration, Level: 2
+                        </option>
+                        <option value="490-2-3">
+                            Business and Administration: Medical Administration, Level: 3
+                        </option>
+                        <option value="620-20-1">
+                            Business and Professional Administration, Level: 4
+                        </option>
+                        <option value="250">
+                            Business Fire Safety Advisor, Level: 3 (Standard)
+                        </option>
+                        <option value="54">
+                            Butcher, Level: 2 (Standard)
+                        </option>
+                        <option value="305">
+                            Cabin Crew, Level: 3 (Standard)
+                        </option>
+                        <option value="584-21-1">
+                            Care Leadership and Management: General Adult Social Care, Level: 5
+                        </option>
+                        <option value="584-21-2">
+                            Care Leadership and Management: Specialist Adult Social Care, Level: 5
+                        </option>
+                        <option value="239">
+                            Carpentry and Joinery, Level: 2 (Standard)
+                        </option>
+                        <option value="582-3-4">
+                            Catering and Professional Chefs: Chefs in the Licensed Hospitality Industry, Level: 2
+                        </option>
+                        <option value="582-3-3">
+                            Catering and Professional Chefs: Craft Cuisine, Level: 2
+                        </option>
+                        <option value="582-2-3">
+                            Catering and Professional Chefs: Craft Cuisine, Level: 3
+                        </option>
+                        <option value="582-3-1">
+                            Catering and Professional Chefs: Food Production and Cooking, Level: 2
+                        </option>
+                        <option value="582-2-2">
+                            Catering and Professional Chefs: Patisserie and Confectionery, Level: 3
+                        </option>
+                        <option value="582-3-2">
+                            Catering and Professional Chefs: Professional Cookery, Level: 2
+                        </option>
+                        <option value="582-2-1">
+                            Catering and Professional Chefs: Professional Cookery, Level: 3
+                        </option>
+                        <option value="41">
+                            Chartered legal executive, Level: 6 (Standard)
+                        </option>
+                        <option value="55">
+                            Chartered manager degree apprenticeship, Level: 6 (Standard)
+                        </option>
+                        <option value="50">
+                            Chartered surveyor, Level: 6 (Standard)
+                        </option>
+                        <option value="169">
+                            Chef De Partie, Level: 3 (Standard)
+                        </option>
+                        <option value="445-3-1">
+                            Children and Young People's Workforce, Level: 2
+                        </option>
+                        <option value="445-2-2">
+                            Children and Young People's Workforce: Children and Young People's Social Care, Level: 3
+                        </option>
+                        <option value="445-2-1">
+                            Children and Young People's Workforce: Early Years Educator, Level: 3
+                        </option>
+                        <option value="445-2-3">
+                            Children and Young People's Workforce: Residential Childcare, Level: 3
+                        </option>
+                        <option value="308">
+                            Children,Young People and Families Manager, Level: 5 (Standard)
+                        </option>
+                        <option value="309">
+                            Children,Young People and Families Practitioner, Level: 4 (Standard)
+                        </option>
+                        <option value="200">
+                            Civil Engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="277">
+                            Civil Engineering Site Management (Degree), Level: 6 (Standard)
+                        </option>
+                        <option value="199">
+                            Civil Engineering Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="498-3-1">
+                            Cleaning and Environmental Support Services: Cleaning and Support Services, Level: 2
+                        </option>
+                        <option value="498-2-1">
+                            Cleaning and Environmental Support Services: Cleaning Supervision, Level: 3
+                        </option>
+                        <option value="498-3-2">
+                            Cleaning and Environmental Support Services: Local Environmental Services, Level: 2
+                        </option>
+                        <option value="498-3-3">
+                            Cleaning and Environmental Support Services: Pest Management, Level: 2
+                        </option>
+                        <option value="307">
+                            Clinical Trials Specialist (degree), Level: 6 (Standard)
+                        </option>
+                        <option value="561-3-1">
+                            Coaching: Coaching Swimming, Level: 2
+                        </option>
+                        <option value="561-3-2">
+                            Coaching: Coaching Tennis, Level: 2
+                        </option>
+                        <option value="561-2-1">
+                            Coaching: Coaching Tennis, Level: 3
+                        </option>
+                        <option value="222">
+                            Commercial Procurement and Supply, Level: 4 (Standard)
+                        </option>
+                        <option value="234">
+                            Commercial Thermal Insulation Operative, Level: 2 (Standard)
+                        </option>
+                        <option value="93">
+                            Commis chef, Level: 2 (Standard)
+                        </option>
+                        <option value="215">
+                            Community Activator Coach, Level: 2 (Standard)
+                        </option>
+                        <option value="492-3-1">
+                            Community Arts: Community Arts Administration, Level: 2
+                        </option>
+                        <option value="492-2-1">
+                            Community Arts: Community Arts Management, Level: 3
+                        </option>
+                        <option value="242">
+                            Community Energy Specialist, Level: 4 (Standard)
+                        </option>
+                        <option value="617-3-1">
+                            Community Safety: Community Fire Safety, Level: 2
+                        </option>
+                        <option value="251">
+                            Community Sport and Health Officer, Level: 3 (Standard)
+                        </option>
+                        <option value="143">
+                            Compliance / risk officer, Level: 3 (Standard)
+                        </option>
+                        <option value="596-3-1">
+                            Composite Engineering, Level: 2
+                        </option>
+                        <option value="596-2-1">
+                            Composite Engineering, Level: 3
+                        </option>
+                        <option value="160">
+                            Composites Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="522-3-1">
+                            Construction Building: Decorative Finishing and Industrial Painting, Level: 2
+                        </option>
+                        <option value="522-2-3">
+                            Construction Building: Decorative Finishing, Level: 3
+                        </option>
+                        <option value="522-3-2">
+                            Construction Building: Maintenance Operations, Level: 2
+                        </option>
+                        <option value="522-3-3">
+                            Construction Building: Trowel Occupations, Level: 2
+                        </option>
+                        <option value="522-2-1">
+                            Construction Building: Trowel Occupations, Level: 3
+                        </option>
+                        <option value="522-3-4">
+                            Construction Building: Wood Occupations, Level: 2
+                        </option>
+                        <option value="522-2-2">
+                            Construction Building: Wood Occupations, Level: 3
+                        </option>
+                        <option value="522-3-5">
+                            Construction Building: Woodmachining, Level: 2
+                        </option>
+                        <option value="520-3-1">
+                            Construction Civil Engineering: Construction Operations, Level: 2
+                        </option>
+                        <option value="520-3-2">
+                            Construction Civil Engineering: Formwork Occupations, Level: 2
+                        </option>
+                        <option value="520-3-3">
+                            Construction Civil Engineering: Highways Maintenance, Level: 2
+                        </option>
+                        <option value="520-3-4">
+                            Construction Civil Engineering: Plant Maintenance, Level: 2
+                        </option>
+                        <option value="520-2-1">
+                            Construction Civil Engineering: Plant Maintenance, Level: 3
+                        </option>
+                        <option value="520-3-5">
+                            Construction Civil Engineering: Plant Operations, Level: 2
+                        </option>
+                        <option value="520-3-7">
+                            Construction Civil Engineering: Specialist Concrete Occupations, Level: 2
+                        </option>
+                        <option value="520-3-10">
+                            Construction Civil Engineering: Steelfixing Occupations Major Projects, Level: 2
+                        </option>
+                        <option value="520-3-9">
+                            Construction Civil Engineering: Steelfixing, Level: 2
+                        </option>
+                        <option value="520-3-6">
+                            Construction Civil Engineering: Tunnelling Operations, Level: 2
+                        </option>
+                        <option value="612-20-1">
+                            Construction Management: Construction and Building Services Management and Supervision (Sustainability), Level: 4
+                        </option>
+                        <option value="612-22-1">
+                            Construction Management: Construction Site Management, Level: 6
+                        </option>
+                        <option value="612-20-2">
+                            Construction Management: Construction Site Supervision, Level: 4
+                        </option>
+                        <option value="612-21-3">
+                            Construction Management: Foundation Degree in Architecture, Level: 5
+                        </option>
+                        <option value="612-21-4">
+                            Construction Management: Foundation Degree in Built Environment, Level: 5
+                        </option>
+                        <option value="612-21-5">
+                            Construction Management: Foundation Degree in Civil Engineering, Level: 5
+                        </option>
+                        <option value="612-21-1">
+                            Construction Management: Foundation Degree Professional Practice in Construction Operations Management, Level: 5
+                        </option>
+                        <option value="612-22-2">
+                            Construction Management: Management Quantity Surveying and Commercial Management, Level: 6
+                        </option>
+                        <option value="612-21-2">
+                            Construction Management: Sustainability, Level: 5
+                        </option>
+                        <option value="259">
+                            Construction Site Engineering Technician, Level: 4 (Standard)
+                        </option>
+                        <option value="519-3-1">
+                            Construction Specialist: Accessing and Rigging, Level: 2
+                        </option>
+                        <option value="519-3-2">
+                            Construction Specialist: Applied Waterproof Membranes, Level: 2
+                        </option>
+                        <option value="519-3-3">
+                            Construction Specialist: Cladding Occupations, Level: 2
+                        </option>
+                        <option value="519-3-5">
+                            Construction Specialist: Fitted Interiors, Level: 2
+                        </option>
+                        <option value="519-3-6">
+                            Construction Specialist: Floorcovering, Level: 2
+                        </option>
+                        <option value="519-2-5">
+                            Construction Specialist: Heritage Skills, Level: 3
+                        </option>
+                        <option value="519-3-12">
+                            Construction Specialist: Insulation and Building Treatments, Level: 2
+                        </option>
+                        <option value="519-3-7">
+                            Construction Specialist: Interior Systems, Level: 2
+                        </option>
+                        <option value="519-3-8">
+                            Construction Specialist: Mastic Asphalting, Level: 2
+                        </option>
+                        <option value="519-2-6">
+                            Construction Specialist: Mastic Asphalting, Level: 3
+                        </option>
+                        <option value="519-3-9">
+                            Construction Specialist: Plastering, Level: 2
+                        </option>
+                        <option value="519-2-1">
+                            Construction Specialist: Plastering, Level: 3
+                        </option>
+                        <option value="519-3-10">
+                            Construction Specialist: Roofing Occupations, Level: 2
+                        </option>
+                        <option value="519-2-2">
+                            Construction Specialist: Roofing Occupations, Level: 3
+                        </option>
+                        <option value="519-3-11">
+                            Construction Specialist: Stonemasonry, Level: 2
+                        </option>
+                        <option value="519-2-3">
+                            Construction Specialist: Stonemasonry, Level: 3
+                        </option>
+                        <option value="519-3-13">
+                            Construction Specialist: Thermal Insulation, Level: 2
+                        </option>
+                        <option value="519-2-7">
+                            Construction Specialist: Thermal Insulation, Level: 3
+                        </option>
+                        <option value="519-3-4">
+                            Construction Specialist: Wall and Floor Tiling, Level: 2
+                        </option>
+                        <option value="519-2-4">
+                            Construction Specialist: Wall and Floor Tiling, Level: 3
+                        </option>
+                        <option value="171">
+                            Construction Steel Fixer, Level: 2 (Standard)
+                        </option>
+                        <option value="521-2-6">
+                            Construction Technical and Professional: Building Control, Level: 3
+                        </option>
+                        <option value="521-2-1">
+                            Construction Technical and Professional: Built Environment and Design, Level: 3
+                        </option>
+                        <option value="521-2-4">
+                            Construction Technical and Professional: Civil Engineering for Technicians, Level: 3
+                        </option>
+                        <option value="521-2-2">
+                            Construction Technical and Professional: Construction Contracting Operations, Level: 3
+                        </option>
+                        <option value="521-2-7">
+                            Construction Technical and Professional: Geomatics Data Analysis, Level: 3
+                        </option>
+                        <option value="521-2-5">
+                            Construction Technical and Professional: Occupational Work Supervision, Level: 3
+                        </option>
+                        <option value="521-2-8">
+                            Construction Technical and Professional: Town Planning Technical Support, Level: 3
+                        </option>
+                        <option value="587-3-1">
+                            Consumer Electrical and Electronic Products: Delivering and Installing, Level: 2
+                        </option>
+                        <option value="587-2-1">
+                            Consumer Electrical and Electronic Products: Repairing Component Faults, Level: 3
+                        </option>
+                        <option value="587-3-2">
+                            Consumer Electrical and Electronic Products: Repairing Module Faults, Level: 2
+                        </option>
+                        <option value="489-3-1">
+                            Contact Centre Operations, Level: 2
+                        </option>
+                        <option value="489-2-1">
+                            Contact Centre Operations, Level: 3
+                        </option>
+                        <option value="9">
+                            Control / technical support engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="39">
+                            Conveyancing technician, Level: 4 (Standard)
+                        </option>
+                        <option value="406-3-1">
+                            Court, Tribunal and Prosecution Operations: Court and Tribunal Administration, Level: 2
+                        </option>
+                        <option value="406-2-1">
+                            Court, Tribunal and Prosecution Operations: Court and Tribunal Administration, Level: 3
+                        </option>
+                        <option value="449-2-1">
+                            Creative and Digital Media, Level: 3
+                        </option>
+                        <option value="449-20-1">
+                            Creative and Digital Media: Interactive Design and Development, Level: 4
+                        </option>
+                        <option value="229">
+                            Creative Venue Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="77">
+                            Credit controller / collector, Level: 2 (Standard)
+                        </option>
+                        <option value="495-3-2">
+                            Cultural and Heritage Venue Operations, Level: 2
+                        </option>
+                        <option value="495-2-2">
+                            Cultural and Heritage Venue Operations, Level: 3
+                        </option>
+                        <option value="495-3-1">
+                            Cultural and Heritage Venue Operations: Cultural Heritage, Level: 2
+                        </option>
+                        <option value="495-2-1">
+                            Cultural and Heritage Venue Operations: Cultural Heritage, Level: 3
+                        </option>
+                        <option value="410-3-1">
+                            Custodial Care, Level: 2
+                        </option>
+                        <option value="410-2-1">
+                            Custodial Care, Level: 3
+                        </option>
+                        <option value="269">
+                            Custody and Detention Officer, Level: 3 (Standard)
+                        </option>
+                        <option value="122">
+                            Customer service practitioner, Level: 2 (Standard)
+                        </option>
+                        <option value="278">
+                            Customer Service Specialist, Level: 3 (Standard)
+                        </option>
+                        <option value="488-3-1">
+                            Customer Service, Level: 2
+                        </option>
+                        <option value="488-2-1">
+                            Customer Service, Level: 3
+                        </option>
+                        <option value="79">
+                            Cyber intrusion analyst, Level: 4 (Standard)
+                        </option>
+                        <option value="98">
+                            Cyber security technologist, Level: 4 (Standard)
+                        </option>
+                        <option value="80">
+                            Data analyst, Level: 4 (Standard)
+                        </option>
+                        <option value="19">
+                            Dental laboratory assistant, Level: 3 (Standard)
+                        </option>
+                        <option value="61">
+                            Dental nurse, Level: 3 (Standard)
+                        </option>
+                        <option value="20">
+                            Dental practice manager, Level: 4 (Standard)
+                        </option>
+                        <option value="18">
+                            Dental technician, Level: 5 (Standard)
+                        </option>
+                        <option value="497-2-1">
+                            Design, Level: 3
+                        </option>
+                        <option value="497-3-1">
+                            Design: Design Support, Level: 2
+                        </option>
+                        <option value="25">
+                            Digital and technology solutions professional, Level: 6 (Standard)
+                        </option>
+                        <option value="195">
+                            Digital Engineering Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="636-2-1">
+                            Digital Learning Design, Level: 3
+                        </option>
+                        <option value="636-20-1">
+                            Digital Learning Design, Level: 4
+                        </option>
+                        <option value="293">
+                            Digital Marketer (degree), Level: 6 (Standard)
+                        </option>
+                        <option value="78">
+                            Digital marketer, Level: 3 (Standard)
+                        </option>
+                        <option value="516-3-1">
+                            Domestic Heating, Level: 2
+                        </option>
+                        <option value="516-2-2">
+                            Domestic Heating: Gas-Fired Warm Air Appliances, Level: 3
+                        </option>
+                        <option value="516-2-3">
+                            Domestic Heating: Gas-Fired Water and Central Heating Appliances, Level: 3
+                        </option>
+                        <option value="516-2-1">
+                            Domestic Heating: Oil-Fired, Solid Fuel or Environmental Options, Level: 3
+                        </option>
+                        <option value="441-3-4">
+                            Driving Goods Vehicles: Articulated/Drawbar Driver, Level: 2
+                        </option>
+                        <option value="441-2-3">
+                            Driving Goods Vehicles: Articulated/Drawbar Driver, Level: 3
+                        </option>
+                        <option value="441-3-1">
+                            Driving Goods Vehicles: Motorcycle/Cycle Courier, Level: 2
+                        </option>
+                        <option value="441-3-3">
+                            Driving Goods Vehicles: Rigid Vehicle Driver, Level: 2
+                        </option>
+                        <option value="441-2-2">
+                            Driving Goods Vehicles: Rigid Vehicle Driver, Level: 3
+                        </option>
+                        <option value="441-2-6">
+                            Driving Goods Vehicles: Transporting Freight by Road (Articulated/Drawbar), Level: 3
+                        </option>
+                        <option value="441-2-5">
+                            Driving Goods Vehicles: Transporting Freight by Road (Rigid), Level: 3
+                        </option>
+                        <option value="441-2-4">
+                            Driving Goods Vehicles: Transporting Freight by Road (Van), Level: 3
+                        </option>
+                        <option value="441-3-2">
+                            Driving Goods Vehicles: Van Driver, Level: 2
+                        </option>
+                        <option value="441-2-1">
+                            Driving Goods Vehicles: Van Driver, Level: 3
+                        </option>
+                        <option value="26">
+                            Dual fuel smart meter installer, Level: 2 (Standard)
+                        </option>
+                        <option value="10">
+                            Electrical / electronic technical support engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="216">
+                            Electrical Power Networks Engineer, Level: 4 (Standard)
+                        </option>
+                        <option value="127">
+                            Electrical power protection and plant commissioning engineer, Level: 4 (Standard)
+                        </option>
+                        <option value="212">
+                            Electrical, Electronic Product Service and Installation Engineer, Level: 3 (Standard)
+                        </option>
+                        <option value="513-2-1">
+                            Electrotechnical: Electrical Installation, Level: 3
+                        </option>
+                        <option value="107">
+                            Embedded electronic systems design and development engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="409-2-1">
+                            Emergency Fire Service Operations: Emergency Fire Services Operations, Level: 3
+                        </option>
+                        <option value="262">
+                            Emergency Service Contact Handling, Level: 3 (Standard)
+                        </option>
+                        <option value="536-2-1">
+                            Employment Related Services, Level: 3
+                        </option>
+                        <option value="202">
+                            Engineering Construction Pipefitter, Level: 3 (Standard)
+                        </option>
+                        <option value="517-2-16">
+                            Engineering Construction: Construction and Completions Control, Level: 3
+                        </option>
+                        <option value="517-2-13">
+                            Engineering Construction: Design and Draughting, Level: 3
+                        </option>
+                        <option value="517-2-8">
+                            Engineering Construction: Electrical Installation, Level: 3
+                        </option>
+                        <option value="517-2-11">
+                            Engineering Construction: Electrical Maintenance, Level: 3
+                        </option>
+                        <option value="517-2-10">
+                            Engineering Construction: Instrument and Control, Level: 3
+                        </option>
+                        <option value="517-2-15">
+                            Engineering Construction: Instrument Pipefitting, Level: 3
+                        </option>
+                        <option value="517-2-2">
+                            Engineering Construction: Mechanical Fitting, Level: 3
+                        </option>
+                        <option value="517-2-12">
+                            Engineering Construction: Mechanical Maintenance, Level: 3
+                        </option>
+                        <option value="517-2-9">
+                            Engineering Construction: Non Destructive Testing, Level: 3
+                        </option>
+                        <option value="517-2-1">
+                            Engineering Construction: Pipefitting, Level: 3
+                        </option>
+                        <option value="517-2-5">
+                            Engineering Construction: Plating, Level: 3
+                        </option>
+                        <option value="517-2-14">
+                            Engineering Construction: Project Control, Level: 3
+                        </option>
+                        <option value="517-2-7">
+                            Engineering Construction: Rigging (Moving Loads), Level: 3
+                        </option>
+                        <option value="517-2-6">
+                            Engineering Construction: Steel Erecting, Level: 3
+                        </option>
+                        <option value="517-2-3">
+                            Engineering Construction: Welding (Pipework), Level: 3
+                        </option>
+                        <option value="517-2-4">
+                            Engineering Construction: Welding (Plate), Level: 3
+                        </option>
+                        <option value="92">
+                            Engineering design and draughtsperson, Level: 3 (Standard)
+                        </option>
+                        <option value="539-3-1">
+                            Engineering Manufacture: Aerospace, Level: 2
+                        </option>
+                        <option value="539-2-1">
+                            Engineering Manufacture: Aerospace, Level: 3
+                        </option>
+                        <option value="539-2-12">
+                            Engineering Manufacture: Automotive, Level: 3
+                        </option>
+                        <option value="539-2-9">
+                            Engineering Manufacture: Electrical and Electronic Engineering, Level: 3
+                        </option>
+                        <option value="539-2-14">
+                            Engineering Manufacture: Engineering Leadership, Level: 3
+                        </option>
+                        <option value="539-3-4">
+                            Engineering Manufacture: Engineering Maintenance and Installation, Level: 2
+                        </option>
+                        <option value="539-2-5">
+                            Engineering Manufacture: Engineering Maintenance, Level: 3
+                        </option>
+                        <option value="539-3-7">
+                            Engineering Manufacture: Engineering Technical Support, Level: 2
+                        </option>
+                        <option value="539-2-8">
+                            Engineering Manufacture: Engineering Technical Support, Level: 3
+                        </option>
+                        <option value="539-2-11">
+                            Engineering Manufacture: Engineering Toolmaking, Level: 3
+                        </option>
+                        <option value="539-2-13">
+                            Engineering Manufacture: Engineering Woodworking, Pattern and Modelmaking, Level: 3
+                        </option>
+                        <option value="539-3-5">
+                            Engineering Manufacture: Fabrication and Welding, Level: 2
+                        </option>
+                        <option value="539-2-6">
+                            Engineering Manufacture: Fabrication and Welding, Level: 3
+                        </option>
+                        <option value="539-2-10">
+                            Engineering Manufacture: Installation and Commissioning, Level: 3
+                        </option>
+                        <option value="539-2-2">
+                            Engineering Manufacture: Marine (Ship Building, Maintenance and Repair), Level: 3
+                        </option>
+                        <option value="539-3-2">
+                            Engineering Manufacture: Marine (Ship, Yacht, Boatbuilding, Maintenance and Repair), Level: 2
+                        </option>
+                        <option value="539-2-4">
+                            Engineering Manufacture: Marine (Yacht and Boat Building, Maintenance and Repair), Level: 3
+                        </option>
+                        <option value="539-3-6">
+                            Engineering Manufacture: Materials Processing and Finishing, Level: 2
+                        </option>
+                        <option value="539-2-7">
+                            Engineering Manufacture: Materials Processing and Finishing, Level: 3
+                        </option>
+                        <option value="539-3-3">
+                            Engineering Manufacture: Mechanical Manufacturing Engineering, Level: 2
+                        </option>
+                        <option value="539-2-3">
+                            Engineering Manufacture: Mechanical Manufacturing Engineering, Level: 3
+                        </option>
+                        <option value="167">
+                            Engineering Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="524-3-1">
+                            Environmental Conservation, Level: 2
+                        </option>
+                        <option value="524-2-1">
+                            Environmental Conservation, Level: 3
+                        </option>
+                        <option value="524-3-2">
+                            Environmental Conservation: Dry Stone Walling, Level: 2
+                        </option>
+                        <option value="524-2-2">
+                            Environmental Conservation: Dry Stone Walling, Level: 3
+                        </option>
+                        <option value="263">
+                            Equine Groom, Level: 2 (Standard)
+                        </option>
+                        <option value="511-2-3">
+                            Equine: Harness Horse Care and Management, Level: 3
+                        </option>
+                        <option value="511-3-3">
+                            Equine: Harness Horse Care, Level: 2
+                        </option>
+                        <option value="511-2-1">
+                            Equine: Horse Care and Management, Level: 3
+                        </option>
+                        <option value="511-3-1">
+                            Equine: Horse Care, Level: 2
+                        </option>
+                        <option value="511-2-2">
+                            Equine: Racehorse Care and Management, Level: 3
+                        </option>
+                        <option value="511-3-2">
+                            Equine: Racehorse Care, Level: 2
+                        </option>
+                        <option value="159">
+                            Event Assistant, Level: 3 (Standard)
+                        </option>
+                        <option value="462-3-1">
+                            Exercise and Fitness, Level: 2
+                        </option>
+                        <option value="462-2-1">
+                            Exercise and Fitness: Personal Training, Level: 3
+                        </option>
+                        <option value="162">
+                            Facilities Management Supervisor, Level: 3 (Standard)
+                        </option>
+                        <option value="501-2-1">
+                            Facilities Management, Level: 3
+                        </option>
+                        <option value="501-21-2">
+                            Facilities Management: Building Services, Level: 5
+                        </option>
+                        <option value="501-3-1">
+                            Facilities Management: Facilities Services, Level: 2
+                        </option>
+                        <option value="501-20-1">
+                            Facilities Management: Generic, Level: 4
+                        </option>
+                        <option value="501-21-1">
+                            Facilities Management: Generic, Level: 5
+                        </option>
+                        <option value="266">
+                            Facilities Manager, Level: 4 (Standard)
+                        </option>
+                        <option value="526-2-1">
+                            Farriery, Level: 3
+                        </option>
+                        <option value="423-3-2">
+                            Fashion and Textiles: Apparel, Level: 2
+                        </option>
+                        <option value="423-2-2">
+                            Fashion and Textiles: Apparel, Level: 3
+                        </option>
+                        <option value="423-3-4">
+                            Fashion and Textiles: Footwear, Level: 2
+                        </option>
+                        <option value="423-2-4">
+                            Fashion and Textiles: Footwear, Level: 3
+                        </option>
+                        <option value="423-3-3">
+                            Fashion and Textiles: Leather goods, Level: 2
+                        </option>
+                        <option value="423-2-3">
+                            Fashion and Textiles: Leather goods, Level: 3
+                        </option>
+                        <option value="423-3-9">
+                            Fashion and Textiles: Leather Production, Level: 2
+                        </option>
+                        <option value="423-2-7">
+                            Fashion and Textiles: Leather Production, Level: 3
+                        </option>
+                        <option value="423-3-5">
+                            Fashion and Textiles: Saddlery, Level: 2
+                        </option>
+                        <option value="423-2-6">
+                            Fashion and Textiles: Tailoring, Level: 3
+                        </option>
+                        <option value="423-3-1">
+                            Fashion and Textiles: Textiles, Level: 2
+                        </option>
+                        <option value="423-2-1">
+                            Fashion and Textiles: Textiles, Level: 3
+                        </option>
+                        <option value="530-3-1">
+                            Fencing, Level: 2
+                        </option>
+                        <option value="530-2-1">
+                            Fencing: Fencing Supervision, Level: 3
+                        </option>
+                        <option value="153">
+                            Financial Adviser, Level: 4 (Standard)
+                        </option>
+                        <option value="8">
+                            Financial services administrator, Level: 3 (Standard)
+                        </option>
+                        <option value="28">
+                            Financial services customer adviser, Level: 2 (Standard)
+                        </option>
+                        <option value="213">
+                            Financial Services Professional, Level: 6 (Standard)
+                        </option>
+                        <option value="126">
+                            Fire emergency and security systems technician, Level: 3 (Standard)
+                        </option>
+                        <option value="172">
+                            Fishmonger, Level: 2 (Standard)
+                        </option>
+                        <option value="523-3-1">
+                            Floristry, Level: 2
+                        </option>
+                        <option value="523-2-1">
+                            Floristry, Level: 3
+                        </option>
+                        <option value="245">
+                            Food and Drink Advanced Engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="129">
+                            Food and drink advanced process operator, Level: 3 (Standard)
+                        </option>
+                        <option value="16">
+                            Food and drink maintenance engineer, Level: 3 (Standard)
+                        </option>
+                        <option value="130">
+                            Food and drink process operator, Level: 2 (Standard)
+                        </option>
+                        <option value="403-2-6">
+                            Food and Drink, Level: 3
+                        </option>
+                        <option value="403-3-2">
+                            Food and Drink: Baking Industry Skills, Level: 2
+                        </option>
+                        <option value="403-2-2">
+                            Food and Drink: Baking Industry Skills, Level: 3
+                        </option>
+                        <option value="403-3-7">
+                            Food and Drink: Brewing Industry Skills, Level: 2
+                        </option>
+                        <option value="403-3-6">
+                            Food and Drink: Fish and Shellfish Industry Skills, Level: 2
+                        </option>
+                        <option value="403-2-7">
+                            Food and Drink: Fish and Shellfish Industry Skills, Level: 3
+                        </option>
+                        <option value="403-2-3">
+                            Food and Drink: Food Industry Skills and Technical Management, Level: 3
+                        </option>
+                        <option value="403-3-4">
+                            Food and Drink: Food Industry Skills, Level: 2
+                        </option>
+                        <option value="403-2-4">
+                            Food and Drink: Food Manufacturing Excellence, Level: 3
+                        </option>
+                        <option value="184">
+                            Food Industry Technical Professional, Level: 6 (Standard)
+                        </option>
+                        <option value="131">
+                            Food technologist, Level: 3 (Standard)
+                        </option>
+                        <option value="289">
+                            Footwear Manufacturer, Level: 2 (Standard)
+                        </option>
+                        <option value="182">
+                            Forest Operative, Level: 2 (Standard)
+                        </option>
+                        <option value="578-3-1">
+                            Funeral Operations and Services, Level: 2
+                        </option>
+                        <option value="578-2-1">
+                            Funeral Operations and Services, Level: 3
+                        </option>
+                        <option value="137">
+                            Furniture manufacturer, Level: 2 (Standard)
+                        </option>
+                        <option value="551-3-2">
+                            Furniture, Furnishings and Interiors Manufacturing: Finishing Furniture, Level: 2
+                        </option>
+                        <option value="551-2-2">
+                            Furniture, Furnishings and Interiors Manufacturing: Finishing Furniture, Level: 3
+                        </option>
+                        <option value="551-3-4">
+                            Furniture, Furnishings and Interiors Manufacturing: Fitted Furniture and Interiors, Level: 2
+                        </option>
+                        <option value="551-2-4">
+                            Furniture, Furnishings and Interiors Manufacturing: Fitted Furniture and Interiors, Level: 3
+                        </option>
+                        <option value="551-3-8">
+                            Furniture, Furnishings and Interiors Manufacturing: Furniture and Wood Processing - CNC Machining, Level: 2
+                        </option>
+                        <option value="551-3-7">
+                            Furniture, Furnishings and Interiors Manufacturing: Furniture and Wood Processing, Level: 2
+                        </option>
+                        <option value="551-2-5">
+                            Furniture, Furnishings and Interiors Manufacturing: Furniture Design, Level: 3
+                        </option>
+                        <option value="551-3-1">
+                            Furniture, Furnishings and Interiors Manufacturing: Furniture Making, Level: 2
+                        </option>
+                        <option value="551-2-1">
+                            Furniture, Furnishings and Interiors Manufacturing: Furniture Making, Level: 3
+                        </option>
+                        <option value="551-3-3">
+                            Furniture, Furnishings and Interiors Manufacturing: Restoring Furniture, Level: 2
+                        </option>
+                        <option value="551-2-3">
+                            Furniture, Furnishings and Interiors Manufacturing: Restoring Furniture, Level: 3
+                        </option>
+                        <option value="551-3-9">
+                            Furniture, Furnishings and Interiors Manufacturing: Solid Surfaces, Level: 2
+                        </option>
+                        <option value="551-2-7">
+                            Furniture, Furnishings and Interiors Manufacturing: Supervision in the Furniture, Furnishings and Interiors Industry, Level: 3
+                        </option>
+                        <option value="551-3-5">
+                            Furniture, Furnishings and Interiors Manufacturing: Upholstery and Soft Furnishings, Level: 2
+                        </option>
+                        <option value="551-2-6">
+                            Furniture, Furnishings and Interiors Manufacturing: Upholstery and Soft Furnishings, Level: 3
+                        </option>
+                        <option value="551-3-6">
+                            Furniture, Furnishings and Interiors Manufacturing: Wood Machining, Level: 2
+                        </option>
+                        <option value="551-2-8">
+                            Furniture, Furnishings and Interiors Manufacturing: Wood Machining, Level: 3
+                        </option>
+                        <option value="438-3-1">
+                            Game and Wildlife Management, Level: 2
+                        </option>
+                        <option value="438-2-1">
+                            Game and Wildlife Management, Level: 3
+                        </option>
+                        <option value="74">
+                            Gas engineering, Level: 3 (Standard)
+                        </option>
+                        <option value="57">
+                            Gas network craftsperson, Level: 3 (Standard)
+                        </option>
+                        <option value="58">
+                            Gas network team leader, Level: 2 (Standard)
+                        </option>
+                        <option value="254">
+                            Geospatial Mapping and Science Degree, Level: 6 (Standard)
+                        </option>
+                        <option value="244">
+                            Geospatial Survey Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="502-2-1">
+                            Glass Industry: Automotive Glazing, Level: 3
+                        </option>
+                        <option value="502-3-1">
+                            Glass Industry: Curtain Wall Installation, Level: 2
+                        </option>
+                        <option value="502-3-2">
+                            Glass Industry: Domestic Fascia, Soffit and Bargeboard Installation, Level: 2
+                        </option>
+                        <option value="502-3-6">
+                            Glass Industry: Fabrication of Glass Supporting Structures, Level: 2
+                        </option>
+                        <option value="502-2-2">
+                            Glass Industry: Fabrication of Glass Supporting Structures, Level: 3
+                        </option>
+                        <option value="502-3-5">
+                            Glass Industry: Fenestration Installation, Level: 2
+                        </option>
+                        <option value="502-2-4">
+                            Glass Industry: Fenestration Installation, Level: 3
+                        </option>
+                        <option value="502-2-5">
+                            Glass Industry: Fenestration Surveyor, Level: 3
+                        </option>
+                        <option value="502-3-7">
+                            Glass Industry: Flat Glass Manufacture, Level: 2
+                        </option>
+                        <option value="502-2-8">
+                            Glass Industry: Glass Manufacturing, Level: 3
+                        </option>
+                        <option value="502-3-3">
+                            Glass Industry: Glass Processing, Level: 2
+                        </option>
+                        <option value="502-2-6">
+                            Glass Industry: Glass Processor, Level: 3
+                        </option>
+                        <option value="502-3-13">
+                            Glass Industry: Glass Related Distribution and Warehousing, Level: 2
+                        </option>
+                        <option value="502-2-7">
+                            Glass Industry: Glass Related Distribution and Warehousing, Level: 3
+                        </option>
+                        <option value="502-3-9">
+                            Glass Industry: Glazing, Level: 2
+                        </option>
+                        <option value="502-2-3">
+                            Glass Industry: Glazing, Level: 3
+                        </option>
+                        <option value="502-3-11">
+                            Glass Industry: Photovoltaics Installation, Level: 2
+                        </option>
+                        <option value="21">
+                            Golf greenkeeper, Level: 2 (Standard)
+                        </option>
+                        <option value="157">
+                            Hair Professional, Level: 2 (Standard)
+                        </option>
+                        <option value="508-3-1">
+                            Hairdressing, Level: 2
+                        </option>
+                        <option value="508-2-1">
+                            Hairdressing, Level: 3
+                        </option>
+                        <option value="478-2-1">
+                            Health Allied Health Profession Support, Level: 3
+                        </option>
+                        <option value="444-3-1">
+                            Health and Social Care: Adult social care, Level: 2
+                        </option>
+                        <option value="444-2-1">
+                            Health and Social Care: Adult social care, Level: 3
+                        </option>
+                        <option value="444-3-2">
+                            Health and Social Care: Health, Level: 2
+                        </option>
+                        <option value="444-2-2">
+                            Health and Social Care: Health, Level: 3
+                        </option>
+                        <option value="602-21-1">
+                            Health Assistant Practitioner, Level: 5
+                        </option>
+                        <option value="473-3-1">
+                            Health Clinical Healthcare Support, Level: 2
+                        </option>
+                        <option value="473-2-1">
+                            Health Clinical Healthcare Support, Level: 3
+                        </option>
+                        <option value="479-2-1">
+                            Health Dental Nursing, Level: 3
+                        </option>
+                        <option value="476-3-1">
+                            Health Emergency Care, Level: 2
+                        </option>
+                        <option value="474-3-1">
+                            Health Healthcare Support Services, Level: 2
+                        </option>
+                        <option value="474-2-1">
+                            Health Healthcare Support Services, Level: 3
+                        </option>
+                        <option value="475-2-1">
+                            Health Maternity and Paediatric Support, Level: 3
+                        </option>
+                        <option value="471-3-1">
+                            Health Optical Retail, Level: 2
+                        </option>
+                        <option value="471-2-1">
+                            Health Optical Retail, Level: 3
+                        </option>
+                        <option value="477-2-1">
+                            Health Perioperative Support, Level: 3
+                        </option>
+                        <option value="480-3-1">
+                            Health Pharmacy Services, Level: 2
+                        </option>
+                        <option value="480-2-1">
+                            Health Pharmacy Services, Level: 3
+                        </option>
+                        <option value="102">
+                            Healthcare assistant practitioner, Level: 5 (Standard)
+                        </option>
+                        <option value="99">
+                            Healthcare science assistant, Level: 2 (Standard)
+                        </option>
+                        <option value="150">
+                            Healthcare science associate, Level: 4 (Standard)
+                        </option>
+                        <option value="168">
+                            Healthcare Science Practitioner, Level: 6 (Standard)
+                        </option>
+                        <option value="103">
+                            Healthcare support worker, Level: 2 (Standard)
+                        </option>
+                        <option value="515-3-1">
+                            Heating and Ventilating: Ductwork Systems, Level: 2
+                        </option>
+                        <option value="515-2-1">
+                            Heating and Ventilating: Ductwork Systems, Level: 3
+                        </option>
+                        <option value="515-3-2">
+                            Heating and Ventilating: Pipework Systems, Level: 2
+                        </option>
+                        <option value="515-2-2">
+                            Heating and Ventilating: Pipework Systems, Level: 3
+                        </option>
+                        <option value="515-3-3">
+                            Heating and Ventilating: Servicing and Maintaining H and V Systems, Level: 2
+                        </option>
+                        <option value="515-2-3">
+                            Heating and Ventilating: Servicing and Maintaining H and V Systems, Level: 3
+                        </option>
+                        <option value="135">
+                            Heavy vehicle service and maintenance technician, Level: 3 (Standard)
+                        </option>
+                        <option value="220">
+                            High Speed Rail and Infrastructure Technician, Level: 4 (Standard)
+                        </option>
+                        <option value="125">
+                            Highway electrical maintenance and installation operative, Level: 2 (Standard)
+                        </option>
+                        <option value="124">
+                            Highways electrician / service operative, Level: 3 (Standard)
+                        </option>
+                        <option value="108">
+                            HM Forces serviceperson (public services), Level: 2 (Standard)
+                        </option>
+                        <option value="537-3-1">
+                            HM Forces, Level: 2
+                        </option>
+                        <option value="181">
+                            Horticulture and Landscape Operative, Level: 2 (Standard)
+                        </option>
+                        <option value="527-3-1">
+                            Horticulture, Level: 2
+                        </option>
+                        <option value="527-2-1">
+                            Horticulture, Level: 3
+                        </option>
+                        <option value="580-20-1">
+                            Hospitality Management, Level: 4
+                        </option>
+                        <option value="223">
+                            Hospitality Manager, Level: 4 (Standard)
+                        </option>
+                        <option value="138">
+                            Hospitality supervisor, Level: 3 (Standard)
+                        </option>
+                        <option value="96">
+                            Hospitality team member, Level: 2 (Standard)
+                        </option>
+                        <option value="583-2-1">
+                            Hospitality: Hospitality Supervision and Leadership, Level: 3
+                        </option>
+                        <option value="64">
+                            Housing / property management assistant, Level: 2 (Standard)
+                        </option>
+                        <option value="65">
+                            Housing / property management, Level: 3 (Standard)
+                        </option>
+                        <option value="499-3-1">
+                            Housing, Level: 2
+                        </option>
+                        <option value="190">
+                            HR Consultant / Partner, Level: 5 (Standard)
+                        </option>
+                        <option value="191">
+                            HR Support, Level: 3 (Standard)
+                        </option>
+                        <option value="574-21-1">
+                            Human Resource Management, Level: 5
+                        </option>
+                        <option value="237">
+                            Improvement Practitioner, Level: 4 (Standard)
+                        </option>
+                        <option value="238">
+                            Improvement Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="504-3-3">
+                            Improving Operational Performance: Business-Improvement Techniques, Level: 2
+                        </option>
+                        <option value="504-3-1">
+                            Improving Operational Performance: Performing Engineering Operations, Level: 2
+                        </option>
+                        <option value="504-3-2">
+                            Improving Operational Performance: Performing Manufacturing Operations, Level: 2
+                        </option>
+                        <option value="233">
+                            Industrial Thermal Insulation Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="82">
+                            Infrastructure technician, Level: 3 (Standard)
+                        </option>
+                        <option value="5">
+                            Installation electrician / maintenance electrician, Level: 3 (Standard)
+                        </option>
+                        <option value="60">
+                            Insurance practitioner, Level: 3 (Standard)
+                        </option>
+                        <option value="63">
+                            Insurance professional, Level: 4 (Standard)
+                        </option>
+                        <option value="637-20-1">
+                            Intelligence Operations, Level: 4
+                        </option>
+                        <option value="295">
+                            Internal Audit Practitioner, Level: 4 (Standard)
+                        </option>
+                        <option value="264">
+                            International Freight Forwarding Specialist, Level: 3 (Standard)
+                        </option>
+                        <option value="413-3-1">
+                            International Trade and Logistics Operations, Level: 2
+                        </option>
+                        <option value="29">
+                            Investment operations administrator, Level: 2 (Standard)
+                        </option>
+                        <option value="30">
+                            Investment operations specialist, Level: 4 (Standard)
+                        </option>
+                        <option value="33">
+                            Investment operations technician, Level: 3 (Standard)
+                        </option>
+                        <option value="165">
+                            IS Business Analyst, Level: 4 (Standard)
+                        </option>
+                        <option value="419-3-1">
+                            IT Application Specialist, Level: 2
+                        </option>
+                        <option value="419-2-1">
+                            IT Application Specialist, Level: 3
+                        </option>
+                        <option value="142">
+                            IT technical salesperson, Level: 3 (Standard)
+                        </option>
+                        <option value="418-3-1">
+                            IT, Software, Web and Telecoms Professionals, Level: 2
+                        </option>
+                        <option value="418-2-1">
+                            IT, Software, Web and Telecoms Professionals, Level: 3
+                        </option>
+                        <option value="418-20-1">
+                            IT, Software, Web and Telecoms Professionals, Level: 4
+                        </option>
+                        <option value="548-3-1">
+                            Jewellery, Silversmithing and Allied Trades: Jewellery Manufacturing, Level: 2
+                        </option>
+                        <option value="548-2-1">
+                            Jewellery, Silversmithing and Allied Trades: Jewellery Manufacturing, Level: 3
+                        </option>
+                        <option value="548-2-3">
+                            Jewellery, Silversmithing and Allied Trades: Precious Metal CAD/CAM, Level: 3
+                        </option>
+                        <option value="548-2-2">
+                            Jewellery, Silversmithing and Allied Trades: Silversmithing, Level: 3
+                        </option>
+                        <option value="84">
+                            Junior 2D artist (visual effects), Level: 4 (Standard)
+                        </option>
+                        <option value="174">
+                            Junior Content Producer, Level: 3 (Standard)
+                        </option>
+                        <option value="68">
+                            Junior energy manager, Level: 3 (Standard)
+                        </option>
+                        <option value="22">
+                            Junior journalist, Level: 3 (Standard)
+                        </option>
+                        <option value="83">
+                            Junior management consultant, Level: 4 (Standard)
+                        </option>
+                        <option value="506-3-1">
+                            Laboratory and Science Technicians: Education Science, Level: 2
+                        </option>
+                        <option value="506-2-1">
+                            Laboratory and Science Technicians: Education Science, Level: 3
+                        </option>
+                        <option value="506-3-2">
+                            Laboratory and Science Technicians: Industrial Science, Level: 2
+                        </option>
+                        <option value="506-2-2">
+                            Laboratory and Science Technicians: Industrial Science, Level: 3
+                        </option>
+                        <option value="44">
+                            Laboratory scientist - level 5, Level: 5 (Standard)
+                        </option>
+                        <option value="221">
+                            Laboratory Scientist - level 6, Level: 6 (Standard)
+                        </option>
+                        <option value="14">
+                            Laboratory technician, Level: 3 (Standard)
+                        </option>
+                        <option value="525-3-1">
+                            Land-based Engineering, Level: 2
+                        </option>
+                        <option value="525-2-1">
+                            Land-based Engineering, Level: 3
+                        </option>
+                        <option value="69">
+                            Land-based service engineer, Level: 2 (Standard)
+                        </option>
+                        <option value="70">
+                            Land-based service engineering technician, Level: 3 (Standard)
+                        </option>
+                        <option value="110">
+                            Large goods vehicle (LGV) driver, Level: 2 (Standard)
+                        </option>
+                        <option value="118">
+                            Lead adult care worker, Level: 3 (Standard)
+                        </option>
+                        <option value="541-2-1">
+                            Learning and Development, Level: 3
+                        </option>
+                        <option value="565-2-2">
+                            Legal Services: Civil Litigation, Level: 3
+                        </option>
+                        <option value="565-20-1">
+                            Legal Services: Commercial Litigation, Level: 4
+                        </option>
+                        <option value="565-20-2">
+                            Legal Services: Debt Recovery and Insolvency, Level: 4
+                        </option>
+                        <option value="565-2-3">
+                            Legal Services: Employment Practice, Level: 3
+                        </option>
+                        <option value="565-2-4">
+                            Legal Services: Family Practice, Level: 3
+                        </option>
+                        <option value="565-2-7">
+                            Legal Services: Paralegal Practice, Level: 3
+                        </option>
+                        <option value="565-20-3">
+                            Legal Services: Personal Injury, Level: 4
+                        </option>
+                        <option value="565-2-6">
+                            Legal Services: Private Client Practice, Level: 3
+                        </option>
+                        <option value="565-2-5">
+                            Legal Services: Property, Level: 3
+                        </option>
+                        <option value="224">
+                            Leisure and Entertainment Maintenance Engineering Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="228">
+                            Leisure Duty Manager, Level: 3 (Standard)
+                        </option>
+                        <option value="463-2-1">
+                            Leisure Management, Level: 3
+                        </option>
+                        <option value="466-2-1">
+                            Leisure Operations and Leisure Management: Leisure Management, Level: 3
+                        </option>
+                        <option value="466-3-1">
+                            Leisure Operations and Leisure Management: Leisure Operations, Level: 2
+                        </option>
+                        <option value="450-3-1">
+                            Libraries, Archives, Records and Information Management Services, Level: 2
+                        </option>
+                        <option value="450-2-1">
+                            Libraries, Archives, Records and Information Management Services, Level: 3
+                        </option>
+                        <option value="40">
+                            Licensed conveyancer, Level: 6 (Standard)
+                        </option>
+                        <option value="404-3-1">
+                            Licensed Hospitality, Level: 2
+                        </option>
+                        <option value="404-2-1">
+                            Licensed Hospitality: Licensed Hospitality Management, Level: 3
+                        </option>
+                        <option value="563-20-1">
+                            Life Science and Chemical Science Professionals: Chemical Science Technician, Level: 4
+                        </option>
+                        <option value="563-21-1">
+                            Life Science and Chemical Science Professionals: Chemical Science Technologist, Level: 5
+                        </option>
+                        <option value="563-21-6">
+                            Life Science and Chemical Science Professionals: Food Science Technologist, Level: 5
+                        </option>
+                        <option value="563-20-3">
+                            Life Science and Chemical Science Professionals: Healthcare Science Technician, Level: 4
+                        </option>
+                        <option value="563-21-3">
+                            Life Science and Chemical Science Professionals: Healthcare Science Technologist, Level: 5
+                        </option>
+                        <option value="563-20-2">
+                            Life Science and Chemical Science Professionals: Life Science Technician, Level: 4
+                        </option>
+                        <option value="563-21-2">
+                            Life Science and Chemical Science Professionals: Life Science Technologist, Level: 5
+                        </option>
+                        <option value="563-20-4">
+                            Life Science and Chemical Science Professionals: Process Development Technician, Level: 4
+                        </option>
+                        <option value="219">
+                            Lifting Technician, Level: 2 (Standard)
+                        </option>
+                        <option value="71">
+                            Live event rigger, Level: 3 (Standard)
+                        </option>
+                        <option value="491-3-1">
+                            Live Events and Promotion, Level: 2
+                        </option>
+                        <option value="491-2-1">
+                            Live Events and Promotion, Level: 3
+                        </option>
+                        <option value="442-2-1">
+                            Logistics Operations: Logistics Operations Team Leader/Section Supervisor, Level: 3
+                        </option>
+                        <option value="442-3-1">
+                            Logistics Operations: Logistics Operative, Level: 2
+                        </option>
+                        <option value="442-3-2">
+                            Logistics Operations: Logistics Support Operative, Level: 2
+                        </option>
+                        <option value="146">
+                            Maintenance and operations engineering technician, Level: 3 (Standard)
+                        </option>
+                        <option value="487-2-1">
+                            Management, Level: 3
+                        </option>
+                        <option value="487-20-1">
+                            Management, Level: 4
+                        </option>
+                        <option value="487-21-1">
+                            Management: Leadership and Management, Level: 5
+                        </option>
+                        <option value="487-3-2">
+                            Management: Team Leading (Construction), Level: 2
+                        </option>
+                        <option value="487-3-1">
+                            Management: Team Leading, Level: 2
+                        </option>
+                        <option value="11">
+                            Manufacturing engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="550-20-1">
+                            Manufacturing Engineering: Aerospace, Level: 4
+                        </option>
+                        <option value="550-20-7">
+                            Manufacturing Engineering: Automotive, Level: 4
+                        </option>
+                        <option value="550-20-6">
+                            Manufacturing Engineering: Electrical/Electronics continuation of Pathway 5, Level: 4
+                        </option>
+                        <option value="550-20-5">
+                            Manufacturing Engineering: Electrical/Electronics, Level: 4
+                        </option>
+                        <option value="550-20-8">
+                            Manufacturing Engineering: Maintenance, Level: 4
+                        </option>
+                        <option value="550-20-11">
+                            Manufacturing Engineering: Marine, Level: 4
+                        </option>
+                        <option value="550-20-4">
+                            Manufacturing Engineering: Mechanical continuation of Pathway 3, Level: 4
+                        </option>
+                        <option value="550-20-3">
+                            Manufacturing Engineering: Mechanical, Level: 4
+                        </option>
+                        <option value="550-20-2">
+                            Manufacturing Engineering: Nuclear Related Technology, Level: 4
+                        </option>
+                        <option value="550-20-13">
+                            Manufacturing Engineering: Rail Engineering, Level: 4
+                        </option>
+                        <option value="550-20-12">
+                            Manufacturing Engineering: Space Engineering, Level: 4
+                        </option>
+                        <option value="550-20-9">
+                            Manufacturing Engineering: Wind Generation, Level: 4
+                        </option>
+                        <option value="226">
+                            Marine Engineer, Level: 3 (Standard)
+                        </option>
+                        <option value="292">
+                            Marine Pilot, Level: 5 (Standard)
+                        </option>
+                        <option value="279">
+                            Maritime Caterer, Level: 2 (Standard)
+                        </option>
+                        <option value="560-3-4">
+                            Maritime Occupations: Able Seafarer/tug rating - engine room, Level: 2
+                        </option>
+                        <option value="560-3-7">
+                            Maritime Occupations: Marinas and Boatyards, Level: 2
+                        </option>
+                        <option value="560-2-1">
+                            Maritime Occupations: Merchant Navy (Deck), Level: 3
+                        </option>
+                        <option value="560-2-2">
+                            Maritime Occupations: Merchant Navy (Engineering), Level: 3
+                        </option>
+                        <option value="560-2-4">
+                            Maritime Occupations: Officer of the watch on merchant vessels of less than 3,000 gross tonnage - near coastal, Level: 3
+                        </option>
+                        <option value="560-2-3">
+                            Maritime Occupations: Officer of the watch on merchant vessels of less than 500 gross tonnage - near coastal, Level: 3
+                        </option>
+                        <option value="560-3-5">
+                            Maritime Occupations: Port Operations, Level: 2
+                        </option>
+                        <option value="560-3-1">
+                            Maritime Occupations: Rivers, inland waterways and limited distances to sea, Level: 2
+                        </option>
+                        <option value="560-3-2">
+                            Maritime Occupations: Sea Fishing, Level: 2
+                        </option>
+                        <option value="560-3-6">
+                            Maritime Occupations: Workboat Operation, Level: 2
+                        </option>
+                        <option value="486-3-1">
+                            Marketing, Level: 2
+                        </option>
+                        <option value="486-2-1">
+                            Marketing, Level: 3
+                        </option>
+                        <option value="187">
+                            Metrology Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="175">
+                            Mineral Processing Mobile and Static Plant Operator, Level: 2 (Standard)
+                        </option>
+                        <option value="593-21-1">
+                            Mineral Products Technology: Technical and Management, Level: 5
+                        </option>
+                        <option value="593-20-1">
+                            Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology Industry, Level: 4
+                        </option>
+                        <option value="62">
+                            Mortgage adviser, Level: 3 (Standard)
+                        </option>
+                        <option value="210">
+                            Motor Finance Specialist, Level: 3 (Standard)
+                        </option>
+                        <option value="59">
+                            Motor vehicle service and maintenance technician (light vehicle), Level: 3 (Standard)
+                        </option>
+                        <option value="509-3-1">
+                            Nail Services, Level: 2
+                        </option>
+                        <option value="509-2-1">
+                            Nail Services, Level: 3
+                        </option>
+                        <option value="1">
+                            Network engineer, Level: 4 (Standard)
+                        </option>
+                        <option value="246">
+                            Network Operations, Level: 2 (Standard)
+                        </option>
+                        <option value="132">
+                            Non-destructive testing (NDT) operator, Level: 2 (Standard)
+                        </option>
+                        <option value="207">
+                            Non-Destructive Testing Engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="67">
+                            Non-destructive testing engineering technician, Level: 3 (Standard)
+                        </option>
+                        <option value="46">
+                            Nuclear health physics monitor, Level: 2 (Standard)
+                        </option>
+                        <option value="227">
+                            Nuclear Operative, Level: 2 (Standard)
+                        </option>
+                        <option value="47">
+                            Nuclear scientist and nuclear engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="163">
+                            Nuclear Technician, Level: 5 (Standard)
+                        </option>
+                        <option value="35">
+                            Nuclear welding inspection technician, Level: 4 (Standard)
+                        </option>
+                        <option value="569-3-1">
+                            Nursing Assistants in a Veterinary Environment, Level: 2
+                        </option>
+                        <option value="208">
+                            Nursing Associate, Level: 5 (Standard)
+                        </option>
+                        <option value="306">
+                            Operating Department Practitioner (degree), Level: 6 (Standard)
+                        </option>
+                        <option value="241">
+                            Operational Firefighter, Level: 3 (Standard)
+                        </option>
+                        <option value="104">
+                            Operations / departmental manager, Level: 5 (Standard)
+                        </option>
+                        <option value="562-2-1">
+                            Operations and Quality Improvement: Business-Improvement Techniques, Level: 3
+                        </option>
+                        <option value="247">
+                            Optical Assistant, Level: 2 (Standard)
+                        </option>
+                        <option value="197">
+                            Organ Builder, Level: 3 (Standard)
+                        </option>
+                        <option value="464-2-1">
+                            Outdoor Programmes, Level: 3
+                        </option>
+                        <option value="75">
+                            Outside broadcasting engineer, Level: 7 (Standard)
+                        </option>
+                        <option value="302">
+                            Packaging Professional (degree), Level: 6 (Standard)
+                        </option>
+                        <option value="290">
+                            Painter and Decorator, Level: 2 (Standard)
+                        </option>
+                        <option value="106">
+                            Papermaker, Level: 3 (Standard)
+                        </option>
+                        <option value="42">
+                            Paralegal, Level: 3 (Standard)
+                        </option>
+                        <option value="48">
+                            Paraplanner, Level: 4 (Standard)
+                        </option>
+                        <option value="430-3-1">
+                            Passenger Carrying Vehicle Driving (Bus and Coach): Bus and Coach, Level: 2
+                        </option>
+                        <option value="189">
+                            Passenger Transport Driver - bus, coach and rail, Level: 2 (Standard)
+                        </option>
+                        <option value="206">
+                            Passenger transport onboard and station team member, Level: 2 (Standard)
+                        </option>
+                        <option value="214">
+                            Passenger Transport Operations Manager, Level: 4 (Standard)
+                        </option>
+                        <option value="286">
+                            Payroll Administrator, Level: 3 (Standard)
+                        </option>
+                        <option value="268">
+                            Pest Control Technician, Level: 2 (Standard)
+                        </option>
+                        <option value="448-2-1">
+                            Photo Imaging, Level: 3
+                        </option>
+                        <option value="288">
+                            Plasterer, Level: 3 (Standard)
+                        </option>
+                        <option value="456-3-1">
+                            Playwork, Level: 2
+                        </option>
+                        <option value="456-2-1">
+                            Playwork, Level: 3
+                        </option>
+                        <option value="225">
+                            Plumbing and Domestic Heating Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="512-2-2">
+                            Plumbing and Heating: Domestic Plumbing and Heating Gas-Fired Warm Air Appliance, Level: 3
+                        </option>
+                        <option value="512-2-3">
+                            Plumbing and Heating: Domestic Plumbing and Heating Gas-Fired Water and Central Heating Appliances, Level: 3
+                        </option>
+                        <option value="512-2-1">
+                            Plumbing and Heating: Domestic Plumbing and Heating Oil-Fired, Solid Fuel or Environmental options, Level: 3
+                        </option>
+                        <option value="512-3-1">
+                            Plumbing and Heating: Plumbing, Level: 2
+                        </option>
+                        <option value="281">
+                            Podiatrist (Degree), Level: 6 (Standard)
+                        </option>
+                        <option value="282">
+                            Police Community Support Officer, Level: 4 (Standard)
+                        </option>
+                        <option value="256">
+                            Police Constable, Level: 6 (Standard)
+                        </option>
+                        <option value="407-2-1">
+                            Policing: Defence Policing, Level: 3
+                        </option>
+                        <option value="231">
+                            Policy Officer, Level: 4 (Standard)
+                        </option>
+                        <option value="265">
+                            Port Marine Operations Officer, Level: 4 (Standard)
+                        </option>
+                        <option value="166">
+                            Postgraduate Engineer, Level: 7 (Standard)
+                        </option>
+                        <option value="284">
+                            Poultry Worker, Level: 2 (Standard)
+                        </option>
+                        <option value="161">
+                            Power Engineer, Level: 7 (Standard)
+                        </option>
+                        <option value="6">
+                            Power network craftsperson, Level: 3 (Standard)
+                        </option>
+                        <option value="542-2-5">
+                            Print and Printed Packaging: Carton Manufacture, Level: 3
+                        </option>
+                        <option value="542-2-1">
+                            Print and Printed Packaging: Digital Pre-Press, Level: 3
+                        </option>
+                        <option value="542-3-2">
+                            Print and Printed Packaging: Machine Printing, Level: 2
+                        </option>
+                        <option value="542-2-2">
+                            Print and Printed Packaging: Machine Printing, Level: 3
+                        </option>
+                        <option value="542-3-1">
+                            Print and Printed Packaging: Pre-Press, Level: 2
+                        </option>
+                        <option value="542-2-4">
+                            Print and Printed Packaging: Print Administration and Management, Level: 3
+                        </option>
+                        <option value="542-3-4">
+                            Print and Printed Packaging: Print Administration, Level: 2
+                        </option>
+                        <option value="542-3-3">
+                            Print and Printed Packaging: Print Finishing, Level: 2
+                        </option>
+                        <option value="542-2-3">
+                            Print and Printed Packaging: Print Finishing, Level: 3
+                        </option>
+                        <option value="542-3-5">
+                            Print and Printed Packaging: Reprographics, Level: 2
+                        </option>
+                        <option value="211">
+                            Probate Technician, Level: 4 (Standard)
+                        </option>
+                        <option value="201">
+                            Process Automation Engineer, Level: 7 (Standard)
+                        </option>
+                        <option value="425-2-3">
+                            Process Manufacturing: Downstream Operations, Level: 3
+                        </option>
+                        <option value="425-3-2">
+                            Process Manufacturing: Process Engineering Maintenance, Level: 2
+                        </option>
+                        <option value="425-2-2">
+                            Process Manufacturing: Process Engineering Maintenance, Level: 3
+                        </option>
+                        <option value="425-3-1">
+                            Process Manufacturing: Process Operations, Level: 2
+                        </option>
+                        <option value="425-2-1">
+                            Process Manufacturing: Process Operator/Technician, Level: 3
+                        </option>
+                        <option value="12">
+                            Product design and development engineer, Level: 6 (Standard)
+                        </option>
+                        <option value="117">
+                            Professional accounting taxation technician, Level: 4 (Standard)
+                        </option>
+                        <option value="575-20-1">
+                            Professional Services: Audit, Level: 4
+                        </option>
+                        <option value="575-20-4">
+                            Professional Services: Management Accounting, Level: 4
+                        </option>
+                        <option value="575-20-3">
+                            Professional Services: Management Consulting, Level: 4
+                        </option>
+                        <option value="575-20-2">
+                            Professional Services: Tax, Level: 4
+                        </option>
+                        <option value="186">
+                            Project Controls Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="573-20-1">
+                            Project Management, Level: 4
+                        </option>
+                        <option value="291">
+                            Project Manager (degree), Level: 6 (Standard)
+                        </option>
+                        <option value="23">
+                            Property maintenance operative, Level: 2 (Standard)
+                        </option>
+                        <option value="500-3-2">
+                            Property Services: Residential Letting and Management, Level: 2
+                        </option>
+                        <option value="500-2-2">
+                            Property Services: Residential Letting and Management, Level: 3
+                        </option>
+                        <option value="500-3-1">
+                            Property Services: Sale of Residential Property, Level: 2
+                        </option>
+                        <option value="500-2-1">
+                            Property Services: Sale of Residential Property, Level: 3
+                        </option>
+                        <option value="455-3-5">
+                            Providing Financial Services: Administration for Mortgage and/or Financial Planning Intermediaries, Level: 2
+                        </option>
+                        <option value="455-2-5">
+                            Providing Financial Services: Administration for Mortgage and/or Financial Planning Intermediaries, Level: 3
+                        </option>
+                        <option value="455-3-2">
+                            Providing Financial Services: Banking, Level: 2
+                        </option>
+                        <option value="455-2-2">
+                            Providing Financial Services: Banking, Level: 3
+                        </option>
+                        <option value="455-3-7">
+                            Providing Financial Services: Customer Payments for Financial Products and Services, Level: 2
+                        </option>
+                        <option value="455-2-9">
+                            Providing Financial Services: Customer Payments for Financial Products and Services, Level: 3
+                        </option>
+                        <option value="455-3-8">
+                            Providing Financial Services: Debt Collections, Level: 2
+                        </option>
+                        <option value="455-2-8">
+                            Providing Financial Services: Debt Collections, Level: 3
+                        </option>
+                        <option value="455-3-4">
+                            Providing Financial Services: Financing and Credit, Level: 2
+                        </option>
+                        <option value="455-2-4">
+                            Providing Financial Services: Financing and Credit, Level: 3
+                        </option>
+                        <option value="455-3-1">
+                            Providing Financial Services: General Insurance, Level: 2
+                        </option>
+                        <option value="455-2-1">
+                            Providing Financial Services: General Insurance, Level: 3
+                        </option>
+                        <option value="455-3-6">
+                            Providing Financial Services: Investment Operations, Level: 2
+                        </option>
+                        <option value="455-2-6">
+                            Providing Financial Services: Investment Operations, Level: 3
+                        </option>
+                        <option value="455-3-3">
+                            Providing Financial Services: Life, Pensions and Investments, Level: 2
+                        </option>
+                        <option value="455-2-3">
+                            Providing Financial Services: Life, Pensions and Investments, Level: 3
+                        </option>
+                        <option value="455-2-7">
+                            Providing Financial Services: Pensions Administration, Level: 3
+                        </option>
+                        <option value="440-3-1">
+                            Providing Security Services, Level: 2
+                        </option>
+                        <option value="257">
+                            Public Relations Assistant, Level: 4 (Standard)
+                        </option>
+                        <option value="572-20-1">
+                            Public Relations, Level: 4
+                        </option>
+                        <option value="36">
+                            Public service operational delivery officer, Level: 3 (Standard)
+                        </option>
+                        <option value="280">
+                            Publishing Assistant, Level: 3 (Standard)
+                        </option>
+                        <option value="301">
+                            Rail and Rail Systems Principal Engineer (degree), Level: 7 (Standard)
+                        </option>
+                        <option value="88">
+                            Rail engineering advanced technician, Level: 4 (Standard)
+                        </option>
+                        <option value="90">
+                            Rail engineering operative, Level: 2 (Standard)
+                        </option>
+                        <option value="89">
+                            Rail engineering technician, Level: 3 (Standard)
+                        </option>
+                        <option value="545-3-2">
+                            Rail Infrastructure Engineering: Electrification Maintenance, Level: 2
+                        </option>
+                        <option value="545-2-4">
+                            Rail Infrastructure Engineering: Electrification, Level: 3
+                        </option>
+                        <option value="545-2-1">
+                            Rail Infrastructure Engineering: Signalling, Level: 3
+                        </option>
+                        <option value="545-2-3">
+                            Rail Infrastructure Engineering: Telecoms, Level: 3
+                        </option>
+                        <option value="545-3-1">
+                            Rail Infrastructure Engineering: Track Maintenance, Level: 2
+                        </option>
+                        <option value="545-2-2">
+                            Rail Infrastructure Engineering: Track, Level: 3
+                        </option>
+                        <option value="188">
+                            Rail Infrastructure Operator, Level: 2 (Standard)
+                        </option>
+                        <option value="429-3-5">
+                            Rail Services: Control Room Operations, Level: 2
+                        </option>
+                        <option value="429-3-2">
+                            Rail Services: Driving, Level: 2
+                        </option>
+                        <option value="429-3-1">
+                            Rail Services: Passenger Services, Level: 2
+                        </option>
+                        <option value="429-2-1">
+                            Rail Services: Rail Supervision, Level: 3
+                        </option>
+                        <option value="429-3-4">
+                            Rail Services: Shunting, Level: 2
+                        </option>
+                        <option value="429-3-3">
+                            Rail Services: Signal Operations, Level: 2
+                        </option>
+                        <option value="24">
+                            Railway engineering design technician, Level: 3 (Standard)
+                        </option>
+                        <option value="217">
+                            Recruitment Consultant, Level: 3 (Standard)
+                        </option>
+                        <option value="218">
+                            Recruitment Resourcer, Level: 2 (Standard)
+                        </option>
+                        <option value="594-2-1">
+                            Recruitment, Level: 3
+                        </option>
+                        <option value="594-20-1">
+                            Recruitment, Level: 4
+                        </option>
+                        <option value="594-3-1">
+                            Recruitment: Recruitment Resourcing, Level: 2
+                        </option>
+                        <option value="49">
+                            Refrigeration air conditioning and heat pump engineering technician, Level: 3 (Standard)
+                        </option>
+                        <option value="514-2-4">
+                            Refrigeration and Air Conditioning: Air Conditioning Service and Maintenance, Level: 3
+                        </option>
+                        <option value="514-3-2">
+                            Refrigeration and Air Conditioning: Air Conditioning, Level: 2
+                        </option>
+                        <option value="514-2-3">
+                            Refrigeration and Air Conditioning: Air Conditioning, Level: 3
+                        </option>
+                        <option value="514-2-2">
+                            Refrigeration and Air Conditioning: Refrigeration Service and Maintenance, Level: 3
+                        </option>
+                        <option value="514-3-1">
+                            Refrigeration and Air Conditioning: Refrigeration, Level: 2
+                        </option>
+                        <option value="514-2-1">
+                            Refrigeration and Air Conditioning: Refrigeration, Level: 3
+                        </option>
+                        <option value="170">
+                            Registered Nurse, Level: 6 (Standard)
+                        </option>
+                        <option value="253">
+                            Regulatory Compliance Officer, Level: 4 (Standard)
+                        </option>
+                        <option value="243">
+                            Rehabilitation Worker (Visual Impairment), Level: 5 (Standard)
+                        </option>
+                        <option value="7">
+                            Relationship manager (banking), Level: 6 (Standard)
+                        </option>
+                        <option value="147">
+                            Retail manager, Level: 4 (Standard)
+                        </option>
+                        <option value="140">
+                            Retail team leader, Level: 3 (Standard)
+                        </option>
+                        <option value="443-3-1">
+                            Retail, Level: 2
+                        </option>
+                        <option value="443-2-3">
+                            Retail: Management, Level: 3
+                        </option>
+                        <option value="443-2-4">
+                            Retail: Multi-channel retail, Level: 3
+                        </option>
+                        <option value="443-2-1">
+                            Retail: Sales Professional, Level: 3
+                        </option>
+                        <option value="443-3-2">
+                            Retail: Specialist, Level: 2
+                        </option>
+                        <option value="443-2-2">
+                            Retail: Visual Merchandising, Level: 3
+                        </option>
+                        <option value="101">
+                            Retailer, Level: 2 (Standard)
+                        </option>
+                        <option value="260">
+                            Safety Health and Environment Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="485-3-1">
+                            Sales and Telesales, Level: 2
+                        </option>
+                        <option value="485-2-1">
+                            Sales and Telesales, Level: 3
+                        </option>
+                        <option value="273">
+                            Scaffolder, Level: 2 (Standard)
+                        </option>
+                        <option value="232">
+                            School Business Professional, Level: 4 (Standard)
+                        </option>
+                        <option value="45">
+                            Science industry maintenance technician, Level: 3 (Standard)
+                        </option>
+                        <option value="248">
+                            Science Industry Process/Plant Engineer (Degree), Level: 6 (Standard)
+                        </option>
+                        <option value="249">
+                            Science Manufacturing Process Operative, Level: 2 (Standard)
+                        </option>
+                        <option value="15">
+                            Science manufacturing technician, Level: 3 (Standard)
+                        </option>
+                        <option value="421-3-1">
+                            Security Systems, Level: 2
+                        </option>
+                        <option value="421-2-1">
+                            Security Systems, Level: 3
+                        </option>
+                        <option value="139">
+                            Senior chef production cooking, Level: 3 (Standard)
+                        </option>
+                        <option value="144">
+                            Senior compliance / risk specialist, Level: 6 (Standard)
+                        </option>
+                        <option value="31">
+                            Senior financial services customer adviser, Level: 3 (Standard)
+                        </option>
+                        <option value="151">
+                            Senior healthcare support worker, Level: 3 (Standard)
+                        </option>
+                        <option value="66">
+                            Senior housing / property management, Level: 4 (Standard)
+                        </option>
+                        <option value="205">
+                            Senior Insurance Professional, Level: 6 (Standard)
+                        </option>
+                        <option value="270">
+                            Senior Investment / Commercial Banking Professional, Level: 7 (Standard)
+                        </option>
+                        <option value="236">
+                            Senior Leader Master's Degree Apprenticeship, Level: 7 (Standard)
+                        </option>
+                        <option value="258">
+                            Senior/Head of Facilities Management, Level: 6 (Standard)
+                        </option>
+                        <option value="416-3-1">
+                            Signmaking: Signmaker/Installer, Level: 2
+                        </option>
+                        <option value="416-2-1">
+                            Signmaking: Signmaker/Technician, Level: 3
+                        </option>
+                        <option value="579-2-2">
+                            Social Media and Digital Marketing: Digital Marketing, Level: 3
+                        </option>
+                        <option value="579-20-1">
+                            Social Media and Digital Marketing: Digital Marketing, Level: 4
+                        </option>
+                        <option value="579-2-1">
+                            Social Media and Digital Marketing: Social Media, Level: 3
+                        </option>
+                        <option value="2">
+                            Software developer, Level: 4 (Standard)
+                        </option>
+                        <option value="154">
+                            Software Development Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="91">
+                            Software tester, Level: 4 (Standard)
+                        </option>
+                        <option value="43">
+                            Solicitor, Level: 7 (Standard)
+                        </option>
+                        <option value="158">
+                            Spectacle Maker, Level: 3 (Standard)
+                        </option>
+                        <option value="458-3-1">
+                            Spectator Safety, Level: 2
+                        </option>
+                        <option value="458-2-1">
+                            Spectator Safety: Advanced Spectator Safety, Level: 3
+                        </option>
+                        <option value="465-2-1">
+                            Sporting Excellence: Sporting Excellence Pathway One, Level: 3
+                        </option>
+                        <option value="465-2-2">
+                            Sporting Excellence: Sporting Excellence Pathway Two, Level: 3
+                        </option>
+                        <option value="467-2-1">
+                            Sports development: Sports Development, Level: 3
+                        </option>
+                        <option value="145">
+                            Sports turf operative, Level: 2 (Standard)
+                        </option>
+                        <option value="566-2-1">
+                            Supply Chain Management, Level: 3
+                        </option>
+                        <option value="566-21-2">
+                            Supply Chain Management: International Supply Chain Manager, Level: 5
+                        </option>
+                        <option value="566-3-1">
+                            Supply Chain Management: Supply Chain Operations, Level: 2
+                        </option>
+                        <option value="566-21-1">
+                            Supply Chain Management: Supply Chain Specialist, Level: 5
+                        </option>
+                        <option value="109">
+                            Supply chain operator, Level: 2 (Standard)
+                        </option>
+                        <option value="209">
+                            Supply Chain Practitioner, Level: 3 (Standard)
+                        </option>
+                        <option value="111">
+                            Supply chain warehouse operative, Level: 2 (Standard)
+                        </option>
+                        <option value="613-2-1">
+                            Supporting Teaching and Learning in Physical Education and School Sport, Level: 3
+                        </option>
+                        <option value="420-3-1">
+                            Supporting Teaching and Learning in Schools, Level: 2
+                        </option>
+                        <option value="420-2-1">
+                            Supporting Teaching and Learning in Schools, Level: 3
+                        </option>
+                        <option value="51">
+                            Surveying technician, Level: 3 (Standard)
+                        </option>
+                        <option value="532-2-1">
+                            Surveying, Level: 3
+                        </option>
+                        <option value="116">
+                            Survival equipment fitter, Level: 3 (Standard)
+                        </option>
+                        <option value="505-3-1">
+                            Sustainable Resource Management, Level: 2
+                        </option>
+                        <option value="505-2-1">
+                            Sustainable Resource Management, Level: 3
+                        </option>
+                        <option value="618-20-1">
+                            Sustainable Resource Operations and Management, Level: 4
+                        </option>
+                        <option value="52">
+                            Systems engineering masters level, Level: 7 (Standard)
+                        </option>
+                        <option value="203">
+                            Teacher, Level: 6 (Standard)
+                        </option>
+                        <option value="297">
+                            Teaching Assistant, Level: 3 (Standard)
+                        </option>
+                        <option value="105">
+                            Team leader / supervisor, Level: 3 (Standard)
+                        </option>
+                        <option value="494-3-1">
+                            Technical Theatre, Lighting, Sound and Stage: Lighting, Level: 2
+                        </option>
+                        <option value="494-2-1">
+                            Technical Theatre, Lighting, Sound and Stage: Lighting, Level: 3
+                        </option>
+                        <option value="494-3-2">
+                            Technical Theatre, Lighting, Sound and Stage: Sound, Level: 2
+                        </option>
+                        <option value="494-2-2">
+                            Technical Theatre, Lighting, Sound and Stage: Sound, Level: 3
+                        </option>
+                        <option value="494-3-3">
+                            Technical Theatre, Lighting, Sound and Stage: Stage, Level: 2
+                        </option>
+                        <option value="494-2-3">
+                            Technical Theatre, Lighting, Sound and Stage: Stage, Level: 3
+                        </option>
+                        <option value="296">
+                            Textile Care Operative, Level: 2 (Standard)
+                        </option>
+                        <option value="267">
+                            Textile Manufacturing Operative, Level: 2 (Standard)
+                        </option>
+                        <option value="446-2-1">
+                            The Gas Industry: Gas Fired Wet Central Heating, Level: 3
+                        </option>
+                        <option value="446-2-2">
+                            The Gas Industry: Gas Heating and Energy Efficiency, Level: 3
+                        </option>
+                        <option value="446-3-1">
+                            The Gas Industry: Network Construction Operations (Gas), Level: 2
+                        </option>
+                        <option value="446-2-3">
+                            The Gas Industry: Network Construction Operations (Gas), Level: 3
+                        </option>
+                        <option value="427-3-1">
+                            The Power Sector: Power Transmission and Distribution, Level: 2
+                        </option>
+                        <option value="535-3-2">
+                            The Water Industry: Sewerage Operations and Maintenance, Level: 2
+                        </option>
+                        <option value="535-20-1">
+                            The Water Industry: Utilities Network Planning and Management, Level: 4
+                        </option>
+                        <option value="535-3-1">
+                            The Water Industry: Water Industry, Level: 2
+                        </option>
+                        <option value="535-2-1">
+                            The Water Industry: Water Industry, Level: 3
+                        </option>
+                        <option value="616-3-1">
+                            Trade Business Services, Level: 2
+                        </option>
+                        <option value="261">
+                            Trade Supplier, Level: 2 (Standard)
+                        </option>
+                        <option value="412-3-1">
+                            Traffic Office: Traffic Office Clerk, Level: 2
+                        </option>
+                        <option value="412-2-1">
+                            Traffic Office: Traffic Office Manager, Level: 3
+                        </option>
+                        <option value="285">
+                            Train Driver, Level: 3 (Standard)
+                        </option>
+                        <option value="100">
+                            Transport planning technician, Level: 3 (Standard)
+                        </option>
+                        <option value="120">
+                            Travel consultant, Level: 3 (Standard)
+                        </option>
+                        <option value="408-3-1">
+                            Travel Services: Leisure and Business, Level: 2
+                        </option>
+                        <option value="408-3-2">
+                            Travel Services: Tour Operators - Head Office, Level: 2
+                        </option>
+                        <option value="531-3-1">
+                            Trees and Timber, Level: 2
+                        </option>
+                        <option value="531-2-1">
+                            Trees and Timber, Level: 3
+                        </option>
+                        <option value="230">
+                            Tunnelling Operative, Level: 2 (Standard)
+                        </option>
+                        <option value="155">
+                            Unified Communications Technician, Level: 3 (Standard)
+                        </option>
+                        <option value="81">
+                            Unified communications trouble shooter, Level: 4 (Standard)
+                        </option>
+                        <option value="53">
+                            Utilities engineering technician, Level: 3 (Standard)
+                        </option>
+                        <option value="434-3-5">
+                            Vehicle Body and Paint: Automotive Glazing, Level: 2
+                        </option>
+                        <option value="434-3-2">
+                            Vehicle Body and Paint: Body Building, Level: 2
+                        </option>
+                        <option value="434-2-2">
+                            Vehicle Body and Paint: Body Building, Level: 3
+                        </option>
+                        <option value="434-3-4">
+                            Vehicle Body and Paint: Body Refinishing, Level: 2
+                        </option>
+                        <option value="434-2-4">
+                            Vehicle Body and Paint: Body Refinishing, Level: 3
+                        </option>
+                        <option value="434-3-3">
+                            Vehicle Body and Paint: Body Repair, Level: 2
+                        </option>
+                        <option value="434-2-3">
+                            Vehicle Body and Paint: Body Repair, Level: 3
+                        </option>
+                        <option value="434-3-1">
+                            Vehicle Body and Paint: Mechanical, Electrical and Trim, Level: 2
+                        </option>
+                        <option value="434-2-1">
+                            Vehicle Body and Paint: Mechanical, Electrical and Trim, Level: 3
+                        </option>
+                        <option value="434-2-5">
+                            Vehicle Body and Paint: Vehicle Damage Assessment, Level: 3
+                        </option>
+                        <option value="434-3-6">
+                            Vehicle Body and Paint: Windscreen Repair, Level: 2
+                        </option>
+                        <option value="437-3-1">
+                            Vehicle Fitting: Fast Fit, Level: 2
+                        </option>
+                        <option value="437-2-1">
+                            Vehicle Fitting: Fast Fit, Level: 3
+                        </option>
+                        <option value="437-3-2">
+                            Vehicle Fitting: Specialist Tyre Fitting, Level: 2
+                        </option>
+                        <option value="436-3-4">
+                            Vehicle Maintenance and Repair: Auto Electrics/Mobile Electrics, Level: 2
+                        </option>
+                        <option value="436-2-4">
+                            Vehicle Maintenance and Repair: Auto Electrics/Mobile Electrics, Level: 3
+                        </option>
+                        <option value="436-3-7">
+                            Vehicle Maintenance and Repair: Caravan and Motorhome, Level: 2
+                        </option>
+                        <option value="436-2-6">
+                            Vehicle Maintenance and Repair: Caravan and Motorhome, Level: 3
+                        </option>
+                        <option value="436-3-5">
+                            Vehicle Maintenance and Repair: Heavy Vehicle Trailer, Level: 2
+                        </option>
+                        <option value="436-3-2">
+                            Vehicle Maintenance and Repair: Heavy Vehicle, Level: 2
+                        </option>
+                        <option value="436-2-2">
+                            Vehicle Maintenance and Repair: Heavy Vehicle, Level: 3
+                        </option>
+                        <option value="436-3-6">
+                            Vehicle Maintenance and Repair: Lift Truck, Level: 2
+                        </option>
+                        <option value="436-2-5">
+                            Vehicle Maintenance and Repair: Lift Truck, Level: 3
+                        </option>
+                        <option value="436-3-1">
+                            Vehicle Maintenance and Repair: Light Vehicle, Level: 2
+                        </option>
+                        <option value="436-2-1">
+                            Vehicle Maintenance and Repair: Light Vehicle, Level: 3
+                        </option>
+                        <option value="436-3-3">
+                            Vehicle Maintenance and Repair: Motorcycle, Level: 2
+                        </option>
+                        <option value="436-2-3">
+                            Vehicle Maintenance and Repair: Motorcycle, Level: 3
+                        </option>
+                        <option value="433-3-1">
+                            Vehicle Parts, Level: 2
+                        </option>
+                        <option value="433-2-1">
+                            Vehicle Parts, Level: 3
+                        </option>
+                        <option value="634-3-1">
+                            Vehicle Restoration, Level: 2
+                        </option>
+                        <option value="634-2-1">
+                            Vehicle Restoration, Level: 3
+                        </option>
+                        <option value="435-3-1">
+                            Vehicle Sales, Level: 2
+                        </option>
+                        <option value="435-2-1">
+                            Vehicle Sales, Level: 3
+                        </option>
+                        <option value="529-2-2">
+                            Veterinary Nursing: Equine, Level: 3
+                        </option>
+                        <option value="529-2-1">
+                            Veterinary Nursing: Small Animal, Level: 3
+                        </option>
+                        <option value="414-2-1">
+                            Warehousing and Storage: Senior Warehouse Person/Team Leader, Level: 3
+                        </option>
+                        <option value="414-3-1">
+                            Warehousing and Storage: Warehouse Operative, Level: 2
+                        </option>
+                        <option value="235">
+                            Watchmaker, Level: 3 (Standard)
+                        </option>
+                        <option value="27">
+                            Water process technician, Level: 3 (Standard)
+                        </option>
+                        <option value="94">
+                            Welding - level 2, Level: 2 (Standard)
+                        </option>
+                        <option value="95">
+                            Welding - level 3, Level: 3 (Standard)
+                        </option>
+                        <option value="32">
+                            Workplace pensions (administrator or consultant), Level: 3 (Standard)
+                        </option>
+                        <option value="447-3-1">
+                            Youth Work, Level: 2
+                        </option>
+                        <option value="447-2-1">
+                            Youth Work, Level: 3
+                        </option>
+    
+                </select>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="start-hint" role="group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Planned training start date
+                    </legend>
+                    <span id="start-hint" class="govuk-hint">
+                        For example, 09 2018
+                    </span>
+                    <div class="govuk-date-input" id="start">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label--s govuk-date-input__label" for="start-month" >
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2 undefined" id="start-month" name="start-month" type="number"
+                                    pattern="[0-9]*" value="01">
+                            </div>
+                        </div>
+
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group govuk-form-group--year">
+                                <label class="govuk-label--s govuk-date-input__label" for="start-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4 undefined" id="start-year" name="start-year" type="number"
+                                    pattern="[0-9]*" value="2018">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="finish-hint" role="group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Planned training finish date
+                    </legend>
+                    <span id="finish-hint" class="govuk-hint">
+                        For example, 02 2019
+                    </span>
+                    <div class="govuk-date-input" id="finish">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label--s govuk-date-input__label" for="finish-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2 undefined" id="finish-month" name="finish-month" type="number"
+                                    pattern="[0-9]*" value="01">
+                            </div>
+                        </div>
+
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group govuk-form-group--year">
+                                <label class="govuk-label--s govuk-date-input__label" for="finish-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4 undefined" id="finish-year" name="finish-year" type="number"
+                                    pattern="[0-9]*" value="2020">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+
+            <div class="govuk-form-group">
+                <label class="govuk-label--s" for="price">
+                    Total agreed apprenticeship price (excluding VAT)
+                </label>
+                <span id="price-hint" class="govuk-hint">
+                    Enter the price, including any end-point assessment costs, in whole pounds. For example, for £1,500 enter 1500
+                </span>
+                <input class="govuk-input" id="price" name="price" type="text" aria-describedby="price-hint" placeholder="£" value="9,000" />
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+
+            <div class="govuk-form-group">
+                <label class="govuk-label--s" for="reference">
+                    Reference (optional)
+                </label>
+                <span id="reference-hint" class="govuk-hint">
+                    Add a reference, such as employee number or location - this won't be seen by the training provider
+                </span>
+                <input class="govuk-input" id="reference" name="reference" type="text" aria-describedby="reference-hint" />
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+                                <div class="govuk-inset-text">
+                        <h2 class="govuk-heading-s">End-point assessments</h2>
+                          <p>If you have chosen an apprenticeship standard, we'll ask the employer to confirm the <a href="#">apprentice assessment organisation</a> for this apprentice. We'll do this before the end of the apprenticeship.</p>
+                            <p>
+                            Apprenticeship frameworks have different assessment arrangements and don't need end-point assessments.
+                            </p>
+                    </div>
+
+            <button type="submit" class="govuk-button">Save</button>
+            <a  class="govuk-button clear-button" href="cohortView" >Cancel and return</a>
+             <a  class="govuk-button delete-button" href="deleteApprentice" style="float:right" >Delete</a>
+  
+
+        </form>
+    </div>
+</div>
+</div>
+</main>
+</div>
+
+{% endblock %}

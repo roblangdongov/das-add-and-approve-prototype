@@ -1,0 +1,85 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %}{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+{% endblock %} {% block content %}
+
+
+<a href="/accounts/{{employer.id}}/apprentices/cohorts" class="govuk-back-link">Back to your cohorts</a>
+
+<h1 class="govuk-heading-xl">Review your cohort</h1>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <div class="block-panel block-panel-blue">
+            <h2 class="govuk-heading-xl">{{cohort.apprentices.length}}</h2>
+            <p class="govuk-body">Apprentices</p>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="block-panel block-panel-purple">
+            <h2 class="govuk-heading-xl">0</h2>
+            <p class="govuk-body">Incomplete records</p>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="block-panel block-panel-pink">
+            <h2 class="govuk-heading-xl">£4,311</h2>
+            <p class="govuk-body">Total cost</p>
+        </div>
+    </div>
+</div>
+
+<table class="govuk-table">
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__cell" scope="row">Training provider:</th>
+            <td class="govuk-table__cell">{{ cohort.training_provider.name }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__cell" scope="row">Status:</th>
+            <td class="govuk-table__cell">{% if cohort.draft %} New request {% else %} With provider for approval {% endif %}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__cell" scope="row">Message:</th>
+            <td class="govuk-table__cell">{{ cohort.message }}</td>
+        </tr>
+    </tbody>
+</table>
+{% if cohort.draft %} 
+<a href="{{cohort.reference}}/finished" class="govuk-button">Add Save and continue</a>
+
+<a href="{{cohort.reference}}/add-apprentice" class="govuk-button btn-secondary">Add an apprentice</a>
+
+<hr class="govuk-section-break govuk-section-break--visible" />
+{% endif %}
+
+<table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header" scope="col">Name</th>
+        <th class="govuk-table__header" scope="col">Unique learner number</th>
+        <th class="govuk-table__header" scope="col">Date of birth</th>
+        <th class="govuk-table__header" scope="col">Training dates</th>
+        <th class="govuk-table__header" scope="col">Cost</th>
+        <th class="govuk-table__header" scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">      
+      {% for item in cohort.apprentices %}
+      <tr class="govuk-table__row">                
+        <td class="govuk-table__cell">{{ item.name }}</td>
+        <td class="govuk-table__cell">{{ item.unique_learner_number }}</td>
+        <td class="govuk-table__cell">{{ item.dob | date("D MMM YYYY") }}</td>
+        <td class="govuk-table__cell">{{ item.training_start_date | date("MMM YYYY") }} to {{ item.training_end_date | date("MMM YYYY") }}</td>
+        <td class="govuk-table__cell">£{{ item.total_cost_of_training }}</td>
+        <td class="govuk-table__cell">
+            <a href="#">Edit</a>
+        </td>
+      </tr>
+      {% else %}
+      <tr class="govuk-table__row">
+        <td colspan="6" class="govuk-table__cell" scope="row">No apprentices</td>        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

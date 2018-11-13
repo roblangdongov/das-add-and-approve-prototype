@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/homeNav.html" %}
+
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "./cyberdyne"
+}) }}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl" style="" id="company-Name">Change what Cyberdyne Training Ltd can do </h1>
+                <p class="govuk-body-l">Cyberdyne Training Ltd can do the following on behalf of ; DROP TABLE "COMPANIES";-- LTD.</p>
+ 
+               
+
+<form action="active-user-rob" method="get" class="form">
+
+                          <table class="govuk-table">
+                          <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                              <th class="govuk-table__header" scope="col"style="padding-top:0">What they can do</th>
+                              <!--th scope="col" style="padding-top:0">Email address</th-->
+                              <th class="govuk-table__header" scope="col" class="" style="padding-top:0; "></th>
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="govuk-table__row">
+                              <!--quick hack, will fix -->
+                              <td class="govuk-table__cell " >Create cohorts</td>
+                                <td class="govuk-table__cell ">   
+                                    <div class="govuk-form-group" style="margin-bottom:0">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                            <!--h2 class="govuk-fieldset__heading">
+                                          
+                                        </h2-->
+                                        </legend>
+                                   <div class="govuk-radios govuk-radios--inline">
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="things-1" name="things-1" type="radio" value="yes" checked>
+                                    <label class="govuk-label govuk-radios__label" for="things-1">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="things-2" name="things-1" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="things-2">
+                                      No
+                                    </label>
+                                  </div>
+                                </div>
+                            </td>
+                            </tr>
+                                                        <tr class="govuk-table__row">
+                              <!--quick hack, will fix -->
+                              <td class="govuk-table__cell ">Reserve funding</td>
+                                <td class="govuk-table__cell ">   
+                                    <div class="govuk-form-group" style="margin-bottom:0">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                            <!--h2 class="govuk-fieldset__heading">
+                                          
+                                        </h2-->
+                                        </legend>
+                                   <div class="govuk-radios govuk-radios--inline">
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="things-3" name="things-3" type="radio" value="yes" checked>
+                                    <label class="govuk-label govuk-radios__label" for="things-3">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="things-4" name="things-3" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="things-4">
+                                      No
+                                    </label>
+                                  </div>
+                                </div>
+                            </td>
+                            </tr>
+                                                                           <tr class="govuk-table__row">
+                              <!--quick hack, will fix -->
+                              <td class="govuk-table__cell ">Add and edit apprentice vacancy ads</td>
+                                <td class="govuk-table__cell ">   
+                                    <div class="govuk-form-group" style="margin-bottom:0">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                            <!--h2 class="govuk-fieldset__heading">
+                                          
+                                        </h2-->
+                                        </legend>
+                                   <div class="govuk-radios govuk-radios--inline">
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="things-5" name="things-5" type="radio" value="yes" checked>
+                                    <label class="govuk-label govuk-radios__label" for="things-5">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="things-6" name="things-5" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="things-6">
+                                      No
+                                    </label>
+                                  </div>
+                                </div>
+                            </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                              <!--quick hack, will fix -->
+                              <td class="govuk-table__cell " style="max-width:200px">Notify successful and unsuccessful candidates  </td>
+                                <td class="govuk-table__cell ">   
+                                    <div class="govuk-form-group" style="margin-bottom:0">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                            <!--h2 class="govuk-fieldset__heading">
+                                          
+                                        </h2-->
+                                        </legend>
+                                   <div class="govuk-radios govuk-radios--inline">
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="things-7" name="things-7" type="radio" value="yes" checked>
+                                    <label class="govuk-label govuk-radios__label" for="things-7">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="things-7" name="things-8" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="things-8">
+                                      No
+                                    </label>
+                                  </div>
+                                </div>
+                            </td>
+                            </tr>
+                           <tr class="govuk-table__row">
+                              <!--quick hack, will fix -->
+                              <td class="govuk-table__cell ">Create candidate shortlists  </td>
+                                <td class="govuk-table__cell ">   
+                                    <div class="govuk-form-group" style="margin-bottom:0">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                            <!--h2 class="govuk-fieldset__heading">
+                                          
+                                        </h2-->
+                                        </legend>
+                                   <div class="govuk-radios govuk-radios--inline">
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes" >
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-1">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no" checked>
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                      No
+                                    </label>
+                                  </div>
+                                </div>
+                            </td>
+                            </tr>
+
+
+                          </tbody>
+                      </table>
+        </fieldset>
+ 
+    <button class="govuk-button">Update permissions</button>  <a  class="govuk-button clear-button" href="./cyberdyne" >Cancel and return</a>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

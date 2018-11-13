@@ -1,0 +1,64 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %}{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}    {% include "includes/version1/financeNav.html" %}
+{% endblock %} {% block content %}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../../../../../accounts">Your Accounts</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../../../../{{ employer.id }}">{{ employer.name }}</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../../../finance">Finance</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../../transfers">Transfers</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ connectionRequest.receivingEmployer }}</li>
+    </ol>
+</div>
+
+<h1 class="govuk-heading-xl">
+    {{ connectionRequest.receivingEmployer }}
+</h1>
+
+<table class="govuk-table">        
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Status</th>
+            <td class="govuk-table__cell">{{ connectionRequest.status }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Sending employer</th>
+            <td class="govuk-table__cell">{{ connectionRequest.employer }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Sent by</th>
+            <td class="govuk-table__cell">Me</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Sent on</th>
+            <td class="govuk-table__cell">{{ connectionRequest.sentOn }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Receiving Employer</th>
+            <td class="govuk-table__cell">{{ connectionRequest.receivingEmployer }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Receiver account ID</th>
+            <td class="govuk-table__cell">{{ connectionRequest.receiverAccountId }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Approved by</th>
+            <td class="govuk-table__cell">{{ connectionRequest.approvedBy }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Approved on</th>
+            <td class="govuk-table__cell">{{ connectionRequest.approvedOn }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}
+   {% include "includes/version1/settingsNav.html" %}
+{% endblock %}
+{% block content %}
+
+<!--div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="../../accounts">Your Accounts</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="../{{ employer.id }}">{{ employer.name }}</a>
+      </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Apprentices</li>
+    </ol>
+</div-->
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+<!-- <div class="govuk-grid-row">
+ -->    <h1 class="govuk-heading-xl rj-headings-border">
+  Settings
+</h1>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div style="">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half ">
+                    <h3 class="govuk-heading-m" style="margin-top:0 "><a href="./settings/accounts">Your accounts</a></h3>
+                    <p class="rj-home-spacer">Choose between your accounts.</p>
+                </div>
+                <div class="govuk-grid-column-one-half">
+                    <h3 class="govuk-heading-m rj-top-border-mobile" style="margin-top:0;"><a href="apprentices/manage">Rename account</a></h3>
+                    <p>Change your account name</p>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                    <h3 class="govuk-heading-m rj-top-border" style="margin-top:0;padding-top:35px  "><a href="apprentices/cohorts">Change your password</a></h3>
+                    <p>Update your password.</p>
+                </div>
+                <div class="govuk-grid-column-one-half ">
+                    <h3 class="govuk-heading-m rj-top-border" style="margin-top:0; padding-top:35px"><a href="apprentices/paymentOrder">Change your email address</a></h3>
+                    <p class="rj-home-spacer">Change your email address</p>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                    <h3 class="govuk-heading-m rj-top-border" style="margin-top:0;padding-top:35px  "><a href="./settings/notifications">Notification settings</a></h3>
+                    <p>Update your notification settings</p>
+                </div>
+                <div class="govuk-grid-column-one-half ">
+                    <h3 class="govuk-heading-m rj-top-border" style="margin-top:0; padding-top:35px"><a href="apprentices/paymentOrder"></a></h3>
+                    <p class="rj-home-spacer"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        
+
+
+</main>
+</div>
+</div>
+
+
+
+{% endblock %}

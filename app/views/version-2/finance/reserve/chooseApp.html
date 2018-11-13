@@ -1,0 +1,61 @@
+{% extends "layout.html" %} 
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}    {% include "includes/version1/financeNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "./" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row"">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="get" action="reserveNumberOfApps">
+            <h1 class="govuk-heading-xl">Saved apprenticeship</h1>
+           <!--  <p class="govuk-body-l">Do you want to use a saved apprenticeship?</p> -->
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h1 class="govuk-fieldset__heading">
+                       Choose the apprenticeships you want to reserve funding for
+                      </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="app-1" name="funding" type="radio" value="Aeronautical engineer, Level 2">
+                        <label class="govuk-label govuk-radios__label" for="app-1" >
+                          Aeronautical engineer, <span class="reserveLevel">Level 2</span> 
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="app-2" name="funding" type="radio" value="Mechanical engineer, Level 3" >
+                        <label class="govuk-label govuk-radios__label" for="app-2"  >
+                           Mechanical engineer, <span class="reserveLevel">Level 3</span> 
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="app-3" name="funding" type="radio" value="Software engineer, Level 4">
+                        <label class="govuk-label govuk-radios__label" for="app-3"  >
+                            Software engineer, <span class="reserveLevel">Level 4</span>
+                        </label>
+                      </div>
+                      <div class="govuk-radios__divider"><p style="padding-left:10px; margin-bottom:10px">or</p></div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="app-4" name="funding" type="radio" value="Financial Services Administrator, Level 3">
+                        <label class="govuk-label govuk-radios__label" for="app-4">
+                          Find another apprenticship
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+            <button type="submit" class="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

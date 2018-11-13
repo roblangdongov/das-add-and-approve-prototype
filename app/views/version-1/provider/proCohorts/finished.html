@@ -1,0 +1,46 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+ {% include "includes/version1/provider/providerNav.html" %}
+  {% include "includes/version1/provider/cohortsNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "cohortView" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Choose an option
+        </h1>
+
+        <form method="get" action="providerFinishedApprentice">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-approve" name="appCohortFinishedOption" type="radio" value="approve" checked>
+                            <label class="govuk-label govuk-radios__label" for="option-approve">Approve and send to employer for approval</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-send" name="appCohortFinishedOption" type="radio" value="send">
+                            <label class="govuk-label govuk-radios__label" for="option-send">Send to employer to review or add details</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-save" name="appCohortFinishedOption" type="radio" value="save" checked>
+                            <label class="govuk-label govuk-radios__label" for="option-save">Save but don’t send to employer</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

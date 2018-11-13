@@ -1,0 +1,44 @@
+{% extends "layout.html" %} 
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+
+        {% if view == 'provider' %} Cohorts with training providers {% elif view == 'draft' %} Drafts {% endif %}
+
+    </h1>
+    <h1 class="govuk-heading-xl">Your accounts</h1>
+    <p>Select an account or add a new one.</p>
+
+
+<table class="govuk-table">        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Account name</th>
+            <th class="govuk-table__header" scope="col">What you can do</th>
+
+            <th class="govuk-table__header" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+           
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" style="min-width:300px">Assurance Aerospace Engineering  <br /> <span style="color:#6f777b; font-size:16px">Account ID: XJBMNV </span></td>
+                <td class="govuk-table__cell">Accept agreements, view information and manage PAYE schemes, organisations, apprentices and team members</td>
+                <td class="govuk-table__cell" style="padding-right:30px">
+                    <a href="../home">Open</a>
+                </td>
+              </tr>  
+                
+        </tbody>
+      </table>
+      <form method="get" action="../manage-apprenticeships/searchOrg">
+             <button type="submit" class="govuk-button">Add new account</button>
+        </form>
+  </main>
+</div>
+
+
+{% endblock %}

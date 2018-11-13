@@ -1,0 +1,37 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "finished" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl">
+           Message for your training provider
+        </h1>
+
+        <h2 class="govuk-heading-m">Let <strong>NCG</strong> know what you'd like them to do next.</h2>
+        
+        <form method="get" class="form" action="complete">            
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="message">
+                    Message (optional)
+                </label>                
+                <textarea class="govuk-textarea" id="message" name="message" rows="5" value="{{ data["message"] }}"></textarea>
+            </div>
+            <button class="govuk-button">Send</button>
+    
+          </form>          
+    </div>
+</div>
+</main>
+</div>
+
+
+{% endblock %}

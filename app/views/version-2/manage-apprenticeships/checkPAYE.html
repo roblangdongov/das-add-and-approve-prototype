@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "govtgateway"
+}) }}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <!--span class="govuk-caption-xl">Check details</span-->
+                <h1 class="govuk-heading-xl" style="">Check details</h1>
+
+                 <div class="">
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-table__header" scope="col" style="padding-top:0">
+                                </th>
+                            <!--th scope="col" style="padding-top:0">Email address</th-->
+                            <th class="govuk-table__header" scope="col" style="padding-top:0; ">  </th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="govuk-table__row">
+                            <!--quick hack, will fix -->
+                            <td class="govuk-table__header ">Organisation</td>
+                            <td class="govuk-table__cell ">Name: <span style="font-weight:700"> ;Drop Table "Companies";--LTD </span> <br />Address: <span style="font-weight:700"> No 2 Lochrin Square, 96 Fountainbridge, Edinburgh, EH3 9QA </span><br />Companies House number: <span style="font-weight:700"> 10542519</span> </td>
+                            <!--td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td-->
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <!--quick hack, will fix -->
+                            <td class="govuk-table__header ">PAYE scheme</td>
+                            <td class="govuk-table__cell ">001/AP00001</td>
+                            <!--td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td-->
+                        </tr>
+                        <!--tr class="govuk-table__row">
+                              <td class="govuk-table__cell">Cyberdyne Inc</td>
+                              <td class="govuk-table__cell ">Agreement not signed</td>
+                                <td class="govuk-table__cell ""><a href="#">Sign agreement</a></td>
+                               <td class="govuk-table__cell ">Sign agreement to receive an agreement ID</td>
+                        </tr-->
+                    </tbody>
+                </table>
+            </div>
+                <div style="margin-bottom:30px"></div>
+                <!--p>Is this the correct PAYE scheme?</p-->
+                <!--h2 class="govuk-heading-m" style="" id="company-Name">Is this correct?</h2-->
+                <div>
+                    <form style="display:inline-block;" action="../home">
+                        <button type="submit" class="govuk-button">These details are correct</button>
+                    </form>
+                    <a class="govuk-button clear-button" href="../manage-apprenticeships/allowtaxdetails">Change details</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

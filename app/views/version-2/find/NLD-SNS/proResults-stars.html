@@ -1,0 +1,499 @@
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+
+<style>
+.govuk-option-select .options-container label {width:100%;}
+</style>
+
+<script>
+
+//THERE'S ANOTHER SCRIPT AT THE BOTTOM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>IT changes the name of the apprenticeship at the top of the page
+
+// This adds/removes apprenticeships
+    $(".shortlist").click(function (e) {
+        e.preventDefault();
+        console.log("shortlist button clicked: " + proCount);
+        //proCount++;
+
+        if ($("i", this).hasClass("fa-star-o")) {
+            console.log("isnt shortlisted");
+            proCount++;
+            appCount++;
+            console.log(proCount);
+            Cookies.set("proCount", proCount);
+            Cookies.set("appCount", appCount);
+            $("i", this).removeClass("fa-star-o").addClass("fa-star");
+            $("span", this).text("Remove training provider");
+            $("#bannerCountProvider span").text(Number(proCount));
+            $("#bannerCount span").text(Number(appCount));
+
+        } else {
+            console.log("is shortlisted");
+            $("i", this).removeClass("fa-star").addClass("fa-star-o");
+            $("span", this).text("Save training provider");
+            proCount--;
+            appCount--;
+            Cookies.set("proCount", proCount);
+            Cookies.set("appCount", appCount);
+            console.log(proCount);
+            $("#bannerCountProvider span").text(Number(proCount));
+            $("#bannerCount span").text(Number(appCount));
+        }
+
+        //.toggleClass(".fa-star-o").toggleClass(".fa-star");
+
+    })
+
+</script>
+    <link target="_blank=" href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link target="_blank=" href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+    <link target="_blank=" href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+    <link target="_blank=" href="/public/ty/assets/stylesheets/_proResults.css" rel="stylesheet" />
+
+
+    <main id="content" role="main">
+<div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+       <a class="link-back" onclick="goBack()">Back</a>
+    </ol>
+  </div>
+        <!-- the back button is in the shortlist toolbar at the moment. -->
+
+
+        <!--div class="grid-row breadcrumb" style="margin-top:25px">
+            <div class="column-two-thirds"><a href="#" class="link-back">Back to start</a>
+            </div>
+            <div class="column-third">
+                <div class="account-info" id="bannerSignedIn">
+                    <a href="dashboard" title="Shortlist"><i class="fa fa-list-alt"></i>Shortlisted training and providers
+
+ (<span>0</span>)</a>
+                </div>
+            </div>
+        </div-->
+
+
+        <div id="statusUpdate" class="hidden">
+            <i class="fa fa-check fa-2x"></i>
+            <h2 class="heading-medium">Training provider added to shortlist</h2>
+            <div class="close hidden"><i class="fa fa-times"></i></div>
+        </div>
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+
+                <h1 class="heading-xlarge">
+        Search results</h1>
+
+
+                <p>There are <span class="resultCount bold-small">123</span> training providers for the apprenticeship: 
+                    <span id ="financialServicesAdmin" class="bold-small appName">Financial Services Administrator, level 3.</span>
+                     <span id ="chefDePartie" class="bold-small appName rj-dont-display">Chef De Partie, level 3.</span>
+                      <span id ="buildingServices" class="bold-small appName rj-dont-display">Building services design engineer, level 6.</span>
+                </p>
+
+
+
+            </div>
+
+
+        </div>
+         <h2 class="heading-medium " style="">Filter results</h2>
+
+        <div class="grid-row">
+  <div class="column-third ">
+
+    <div class="filter-form filtering ">
+      <div id="finder-frontend" class="">
+
+          <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Training provider options</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state" style="height:170px ">
+                  <div class="js-auto-height-inner">
+                  <div style="margin: 15px 0 20px 10px"> <fieldset>
+                        <div class="multiple-choice">
+                          <input id="check-1" type="checkbox" name="checkbox-group" value="yes" >
+                          <label for="check-1">Day release</label>
+                        </div>
+
+                       <div class="multiple-choice">
+                                  <input id="check-2" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-2">Block release</label>
+                        </div>
+                        <div class="multiple-choice">
+                                  <input id="check-3" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-3">At your location</label>
+                        </div>
+
+                  </fieldset> </div>
+                  </div>
+               </div>
+          </div-->
+
+          <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Local or national providers</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state" style="">
+                  <div class="js-auto-height-inner">
+                  <div style="margin: 15px 0 20px 10px"> <fieldset>
+                        <div class="multiple-choice">
+                          <input id="check-1" type="checkbox" name="checkbox-group" value="yes" >
+                          <label for="check-1" style="padding-top:0">Show only national providers</label>
+                        </div>
+                  </fieldset> 
+                    </div>
+                  </div>
+               </div>
+             </div-->
+
+      <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Employer feedback</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state" style=" ">
+                  <div class="js-auto-height-inner">
+                  <div style="margin: 15px 0 20px 10px"> <fieldset>
+  
+                       <div class="multiple-choice">
+                                  <input id="check-2" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-2"> <div class=""><i class="fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i></div></label>
+                        </div>
+                          <div class="multiple-choice">
+                                  <input id="check-3" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-3"><div class=""><i class="fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star-o"></i></div></label>
+                        </div>
+                         <div class="multiple-choice">
+                                  <input id="check-4" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-4"><div class=""><i class="fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star-o"></i><i class="pd fa fa-star-o"></i></div></label>
+                        </div>
+                        <div class="multiple-choice">
+                                  <input id="check-5" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-5"><div class=""><i class="fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star-o"></i><i class="pd fa fa-star-o"></i><i class="pd fa fa-star-o"></i></div></label>
+                        </div>
+                          <div class="multiple-choice">
+                                  <input id="check-6" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-6"><div class=""><i class="fa fa-star"></i><i class="pd fa fa-star-o"></i><i class="pd fa fa-star-o"></i><i class="pd fa fa-star-o"></i><i class="pd fa fa-star-o"></i></div></label>
+                        </div>
+                  </fieldset> </div>
+                  </div>
+               </div>
+          </div>
+    </div>
+
+
+         <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Ofsted rating</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state" style=" ">
+                  <div class="js-auto-height-inner">
+                  <div style="margin: 15px 0 20px 10px"> <fieldset>
+  
+                       <div class="multiple-choice">
+                                  <input id="check-10" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-10">Outstanding</label>
+                        </div>
+                          <div class="multiple-choice">
+                                  <input id="check-11" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-11">Good</label>
+                        </div>
+                         <div class="multiple-choice">
+                                  <input id="check-12" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-12">Requires improvement</label>
+                        </div>
+                                                 <div class="multiple-choice">
+                                  <input id="check-13" type="checkbox" name="checkbox-group" value="no" >
+                          <label for="check-13">Poor</label>
+                        </div>
+
+                  </fieldset> </div>
+                  </div>
+               </div>
+          </div>
+        </div>
+
+
+
+ </div>
+            <div class="column-two-thirds">
+                <ol id="provider-results">
+                    <li id="305656" class="result animated none" data-distance="5623">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="#" class="proName">GLOS REGIONAL COLLEGE</a></h2>
+                            <dl>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Distance:</div>
+                              <div class="meta-two max-width-250"><span>2 miles</span></div>
+                          </div>
+                         <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Delivery options:</div>
+                              <div class="meta-two max-width-250"><span>At your location, block release, day release</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Ofsted report:</div>
+                              <div class="meta-two max-width-250"><span>Good</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Employer feedback:</div>
+                              <div class="meta-two max-width-250"><i class="fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i></div>
+                          </div>
+                                                     <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" ></div>
+                              <div class="meta-two max-width-250" span style="margin-top:-5px"><span style="font-size:16px">Based on 9 reviews</span></div>
+                          </div>
+                          <!--div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Employer satisfaction:</div>
+                              <div class="meta-two max-width-250"><span>84%</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Learner satisfaction:</div>
+                              <div class="meta-two max-width-250"><span>90%</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Achievement rate:</div>
+                              <div class="meta-two max-width-250"><span>97%</span></div>
+                          </div-->
+                        </dl>
+                        </div>
+                        <!--div class="shortlist"><i class="fa fa-star-o"></i><span>Save training provider</span></div-->
+                    </li>
+
+
+                    <li id="302653" class="result animated none" data-distance="5643">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="#" class="proName">MARAGON</a></h2>
+                             <dl>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Distance:</div>
+                              <div class="meta-two max-width-250"><span>3 miles</span></div>
+                          </div>
+                         <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Delivery options:</div>
+                              <div class="meta-two max-width-250"><span>At your location, block release, day release</span></div>
+                          </div>
+                           <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Ofsted report:</div>
+                              <div class="meta-two max-width-250"><span>Good</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Employer feedback:</div>
+                              <div class="meta-two max-width-250"><i class="fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star-half-full"></i></div>
+                          </div>
+                                                     <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" ></div>
+                              <div class="meta-two max-width-250" span style="margin-top:-5px"><span style="font-size:16px">Based on 15 reviews</span></div>
+                          </div>
+                          <!--div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Employer satisfaction:</div>
+                              <div class="meta-two"><span>100%</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Learner satisfaction:</div>
+                              <div class="meta-two"><span>90%</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Achievement rate:</div>
+                              <div class="meta-two"><span>79%</span></div>
+                          </div-->
+                        </dl>
+                        </div>
+                        <!--div class="shortlist"><i class="fa fa-star-o"></i><span>Save training provider</span></div-->
+                    </li>
+
+
+                    <li id="307203" class="result animated none" data-distance="5646">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="#" class="proName">PASC FOUNDATION SCHOOL</a></h2>
+                                    <dl>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Distance:</div>
+                              <div class="meta-two"><span>3 miles</span></div>
+                          </div>
+                         <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Delivery options:</div>
+                              <div class="meta-two max-width-250"><span>Block release, day release</span></div>
+                          </div>
+                           <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Ofsted report:</div>
+                              <div class="meta-two max-width-250"><span>Inadequate</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Employer feedback:</div>
+                              <div class="meta-two max-width-250"><i class="fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star-half-full"></i></div>
+                          </div>
+                                                     <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" ></div>
+                              <div class="meta-two max-width-250" span style="margin-top:-5px"><span style="font-size:16px">Based on 42 reviews</span></div>
+                          </div>
+
+                          <!--div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Employer satisfaction:</div>
+                              <div class="meta-two"><span>78%</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Learner satisfaction:</div>
+                              <div class="meta-two"><span>90%</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Achievement rate:</div>
+                              <div class="meta-two"><span>94%</span></div>
+                          </div-->
+                        </dl>
+                        </div>
+                        <!--div class="shortlist"><i class="fa fa-star-o"></i><span>Save training provider</span></div-->
+                    </li>
+
+
+                    <li id="306901" class="result animated none" data-distance="5649">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="#" class="proName">THE BIGHAMPTON ACADEMY</a></h2>
+                             <dl>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Distance:</div>
+                              <div class="meta-two"><span>4 miles</span></div>
+                          </div>
+                         <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Delivery options:</div>
+                              <div class="meta-two max-width-250"><span>At your location, block release</span></div>
+                          </div>
+                           <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Ofsted report:</div>
+                              <div class="meta-two max-width-250"><span>Outstanding</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Employer feedback:</div>
+                              <div class="meta-two max-width-250"><i class="fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i></div>
+                          </div>
+                                                     <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" ></div>
+                              <div class="meta-two max-width-250" span style="margin-top:-5px"><span style="font-size:16px">Based on 2 reviews</span></div>
+                          </div>
+                          <!--div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Employer satisfaction:</div>
+                              <div class="meta-two"><span>71%</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Learner satisfaction:</div>
+                              <div class="meta-two"><span>90%</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Achievement rate:</div>
+                              <div class="meta-two"><span>89%</span></div>
+                          </div-->
+                        </dl>
+                        </div>
+                        <!--div class="shortlist"><i class="fa fa-star-o"></i><span>Save training provider</span></div-->
+                    </li>
+
+
+                    <li id="301661" class="result animated none" data-distance="5654">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="#" class="proName">CATS LTD<span class="label">National</span></a></h2>
+                            <dl>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Distance:</div>
+                              <div class="meta-two"><span>8 miles</span></div>
+                          </div>
+                         <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Delivery options:</div>
+                              <div class="meta-two max-width-250"><span>At your location, block release, day release</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Ofsted report:</div>
+                              <div class="meta-two max-width-250"><span>Outstanding</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Employer feedback:</div>
+                              <div class="meta-two max-width-250"><i class="fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star"></i><i class="pd fa fa-star-half-full"></i></div>
+                          </div>
+                                                     <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" ></div>
+                              <div class="meta-two max-width-250" span style="margin-top:-5px"><span style="font-size:16px">Based on 14 reviews</span></div>
+                          </div>
+                          <!--div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Employer satisfaction:</div>
+                              <div class="meta-two"><span>73%</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Learner satisfaction:</div>
+                              <div class="meta-two"><span>90%</span></div>
+                          </div>
+                          <div class="flex-support-meta">
+                              <div class="meta-one min-width-180" style="" >Achievement rate:</div>
+                              <div class="meta-two"><span>77%</span></div>
+                          </div-->
+                        </dl>
+                        </div>
+                        <!--div class="shortlist"><i class="fa fa-star-o"></i><span>Save training provider</span></div-->
+                    </li>
+                </ol>
+                <div id="pagedat">
+                </div>
+                <div class="page-navigation">
+                    <a class="page-navigation__btn previous">
+                        <i class="arrow-button fa fa-angle-left"></i>
+                        <span class="description">Previous <span class="hide-mob">page</span></span>
+                        <span class="counter">Page <span class="prevPage"></span> of <span class="totalPage"></span></span>
+                    </a>
+                    <a style="" class="page-navigation__btn next">
+                        <i class="arrow-button fa fa-angle-right"></i>
+                        <span class="description">Next <span class="hide-mob">page</span></span>
+                        <span class="counter">Page <span class="nextPage"></span> of <span class="totalPage"></span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+<script>
+  var changeStuff = function() {
+     var changeTheThing =JSON.parse(localStorage.getItem('nonLevy.whichApprenticeship'));
+       switch (true) {
+          case  (changeTheThing == 'finServ'):
+            //  $(financialServicesAdmin).addClass("rj-dont-display")
+                    // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+                    // document.getElementById("providerName").textContent = "Provider:" ;
+                    // $(commitmentStatus).addClass("rj-dont-display");
+                    //  $(addDate).addClass("rj-dont-display")
+                break;
+        case  (changeTheThing == 'cooking'):
+                $(financialServicesAdmin).addClass("rj-dont-display")
+                $(chefDePartie).removeClass("rj-dont-display")
+            break;
+
+        case  (changeTheThing == 'building'):
+                  $(financialServicesAdmin).addClass("rj-dont-display")
+                $(buildingServices).removeClass("rj-dont-display")
+            break;
+
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+            break;
+        }
+
+
+  }
+changeStuff();
+</script>
+
+    <script src="/public/ty/assets/javascripts/marked.min.js"></script>
+    <script src="/public/ty/assets/javascripts/underscore-min.js"></script>
+    <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+    <script src="/public/ty/assets/javascripts/footable.all.min.js"></script>
+    <script src="/public/ty/assets/javascripts/tinysort.min.js"></script>
+    <script src="/public/ty/assets/javascripts/jPages.min.js"></script>
+    <script src="/public/ty/assets/javascripts/_app.js"></script>
+    <script src="/public/ty/assets/javascripts/_proResults.js" id="data" xmldata="/public/ty/assets/data/_proSource.xml "></script>
+
+{% endblock %}

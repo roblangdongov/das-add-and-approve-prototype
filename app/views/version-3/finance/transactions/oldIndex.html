@@ -1,0 +1,531 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../../accounts">Your Accounts</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../{{employer.id}}">{{ employer.name }}</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../finance">Finance</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Transactions</li>
+    </ol>
+</div>
+
+<h1 class="govuk-heading-xl">
+    Your Transactions
+    <span class="govuk-caption-xl">A record of payments made to and from your levy balance.</span>
+</h1>
+
+<div class="table-nav-wrapper clearfix">
+    <nav class="table-nav">
+        <h2 class="govuk-heading-m">Skip to month:</h2>
+        <ul class="table-nav-list">
+            <li><a href="#May18">May 18</a></li>
+            <li><a href="#Apr18">April 18</a></li>
+            <li><a href="#Mar18">March 18</a></li>
+            <li><a href="#Feb18">February 18</a></li>
+            <li><a href="#Jan18">January 18</a></li>
+            <li><a href="#Dec17">December 17</a></li>
+            <li><a href="#Nov17">November 17</a></li>
+            <li><a href="#Oct17">October 17</a></li>
+            <li><a href="#Sep17">September 17</a></li>
+            <li><a href="#Aug17">August 17</a></li>
+            <li><a href="#Jul17">July 17</a></li>
+            <li><a href="#Jun17">June 17</a></li>
+            <li><a href="#May17">May 17</a></li>
+        </ul>
+        <h2 class="govuk-heading-m">Skip to year:</h2>
+        <ul class="table-nav-list">
+            <li><a href="#May18">2018</a></li>
+            <li><a href="#Dec17">2017</a></li>
+        </ul>
+    </nav>
+
+    <table class="govuk-table table-content">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col">Date</th>
+                <th class="govuk-table__header" scope="col">Description</th>
+                <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+                <th class="govuk-table__header govuk-table__header--numeric" scope="col">Balance</th>
+                <th class="govuk-table__header" scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row" id="May18">
+                <td class="govuk-table__cell" scope="row">23 May 18</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 May 18</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 May 18</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 May 18</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Apr18">
+                <td class="govuk-table__cell" scope="row">23 April 18</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 April 18</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 April 18</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 April 18</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Mar18">
+                <td class="govuk-table__cell" scope="row">23 March 18</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 March 18</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 March 18</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 March 18</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Feb18">
+                <td class="govuk-table__cell" scope="row">23 February 18</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 February 18</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 February 18</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 February 18</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Jan18">
+                <td class="govuk-table__cell" scope="row">23 January 18</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 January 18</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 January 18</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 January 18</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Dec17">
+                <td class="govuk-table__cell" scope="row">23 December 17</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 December 17</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 December 17</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 December 17</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Nov17">
+                <td class="govuk-table__cell" scope="row">23 November 17</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 November 17</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 November 17</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 November 17</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Oct17">
+                <td class="govuk-table__cell" scope="row">23 October 17</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 October 17</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 October 17</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 October 17</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Sep17">
+                <td class="govuk-table__cell" scope="row">23 September 17</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 September 17</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 September 17</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 September 17</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Aug17">
+                <td class="govuk-table__cell" scope="row">23 August 17</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 August 17</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 August 17</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 August 17</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Jul17">
+                <td class="govuk-table__cell" scope="row">23 July 17</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 July 17</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 July 17</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 July 17</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="Jun17">
+                <td class="govuk-table__cell" scope="row">23 June 17</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 June 17</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 June 17</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 June 17</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row" id="May17">
+                <td class="govuk-table__cell" scope="row">23 May 17</td>
+                <td class="govuk-table__cell" scope="row">Levy</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£235,062.12</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,735,847.65</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 May 17</td>
+                <td class="govuk-table__cell" scope="row">B2 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£5,333.28</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,500,785.53</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 May 17</td>
+                <td class="govuk-table__cell" scope="row">A1 Provider Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£533.34</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,118.81</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" scope="row">05 May 17</td>
+                <td class="govuk-table__cell" scope="row">Levy Transfer - Nice Supplier Ltd</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">-£2,123.23</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£2,506,652.15</td>
+                <td class="govuk-table__cell" scope="row">
+                    <a href="#">Details</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

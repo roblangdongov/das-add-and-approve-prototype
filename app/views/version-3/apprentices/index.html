@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}
+   {% include "includes/version1/apprenticesNav.html" %}
+{% endblock %}
+{% block content %}
+
+<!--div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="../../accounts">Your Accounts</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="../{{ employer.id }}">{{ employer.name }}</a>
+      </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Apprentices</li>
+    </ol>
+</div-->
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+<!-- <div class="govuk-grid-row">
+ -->    <h1 class="govuk-heading-xl rj-headings-border">
+  Apprentices
+</h1>
+<div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <div style="">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half ">
+                            <h3 class="govuk-heading-m" style="margin-top:0 "><a href="apprentices/add">Add an apprentice</a></h3>
+                            <p class="rj-home-spacer">Add apprentices to a new cohort or ask your training provider to add them.</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                            <h3 class="govuk-heading-m rj-top-border-mobile" style="margin-top:0;"><a href="apprentices/manage">Manage your apprentices</a></h3>
+                            <p>View approved apprentices, update details of existing apprentices or stop and pause payments to training providers.</p>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                            <h3 class="govuk-heading-m rj-top-border" style="margin-top:0;padding-top:35px  "><a href="apprentices/cohorts">Your cohorts</a></h3>
+                            <p>Review, edit, approve and add more apprentices to cohorts you've already started.</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half ">
+                            <h3 class="govuk-heading-m rj-top-border" style="margin-top:0; padding-top:35px"><a href="apprentices/paymentOrder">Set payment order</a></h3>
+                            <p class="rj-home-spacer">View and change the order in which your providers are paid from your available funds.</p>
+                        </div>
+                    </div>
+                </div>
+        
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div style="padding-top:25px; margin-top:45px; border-top: 5px solid #bfc1c3;"></div>
+                     <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half ">
+                            <h3 class="govuk-heading-m" style="margin-top:0 "><a href="apprentices/publicSector">Report public sector apprenticeship target</a></h3>
+                            <p class="rj-home-spacer">Submit data on your progress towards the public sector apprenticeship target.</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+</main>
+</div>
+</div>
+
+
+
+{% endblock %}

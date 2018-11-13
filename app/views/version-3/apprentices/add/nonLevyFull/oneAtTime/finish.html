@@ -1,0 +1,107 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+{% endblock %} {% block content %}
+
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+       {{ data['FirstFirstName'] }}  {{ data['FirstLastName'] }} added
+      </h1>
+    </div>
+    <div style="margin-top:35px"></div>
+
+   
+  <div class="govuk-grid-column-two-thirds">
+<!--     <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"  style="width:290px">    
+Organisation employing apprentice</td>
+          <td class="govuk-table__cell">; DROP TABLE "COMPANIES";-- LTD</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Training provider doing the thing</td>
+          <td class="govuk-table__cell">QA LIMITED</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Apprenticeship training course</td>
+          <td class="govuk-table__cell"> Aeronautical Engineer, <br />Level 2 (standard)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Planned training start date</td>
+          <td class="govuk-table__cell">August 2019 </td>
+        </tr>
+                <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Planned training end date </td>
+          <td class="govuk-table__cell">August 2021 </td>
+        </tr>
+                <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Total agreed apprenticeship price including government funding and your contribution (excluding VAT)</td>
+          <td class="govuk-table__cell">£9,000 </td>
+        </tr>
+                <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Your contribution</td>
+          <td class="govuk-table__cell">£900 </td>
+        </tr>
+                        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Government funding</td>
+          <td class="govuk-table__cell">£8,100 </td>
+        </tr>
+                                <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Name</td>
+          <td class="govuk-table__cell">{{ data["FirstFirstName"] }} {{ data["FirstSecondName"] }} Rob Edwards </td>
+        </tr>
+                  <td class="govuk-table__cell" scope="row">Date of birth</td>
+          <td class="govuk-table__cell">10/05/1999 </td>
+        </tr>
+      </tbody>
+    </table> -->
+ 
+          <h2 class="govuk-heading-m">What happens next?</h2>
+        <p class="govuk-body">
+           Your provider will do the thing.          
+        </p>
+
+<form action="addApprenticeAddSingleApprenticeFinished" method="get" class="form">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <label class="govuk-label  govuk-label--m" for="uk-provider-reference-number">
+                    What's next
+              </label>   
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="confirmation-true" name="confirmTraining" type="radio" value="addAnother" checked="true">
+              <label class="govuk-label govuk-radios__label" for="confirmation-true">
+                Add another apprentice
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="confirmation-false" name="confirmTraining" type="radio" value="apprenticeships">
+              <label class="govuk-label govuk-radios__label" for="confirmation-false">
+                View apprenticeships
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="confirmation-false" name="confirmTraining" type="radio" value="homepage">
+              <label class="govuk-label govuk-radios__label" for="confirmation-false">
+                Return to homepage
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button">Continue</button>
+    </form>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

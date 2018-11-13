@@ -1,0 +1,57 @@
+{% extends "layout.html" %} {% block beforeContent %} {% include "includes/version1/mainNav.html" %} 
+
+{% include "includes/version1/financeNav.html" %} 
+{% from "back-link/macro.njk" import govukBackLink %} 
+
+{{ govukBackLink({ text: "Back", href: "./" }) }} {% endblock %} {% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+               <h1 class="govuk-heading-xl ">Reserve funding</h1>
+           </div>
+            <div class="govuk-grid-column-two-thirds">
+                <p>This service is designed to give you reassurance that Government funding for training will be available when you need it. </p>
+                <h2 class="govuk-heading-m">Before you start</p>
+   
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>you'll need to know what apprenticehip training you wish to reserve funding for.</li>
+                    <li>you can reserve a maximum of £24,000 of funding at one time. You currently have £8,100 reserved funding and can reserve £15,900 more. 
+<!--                     <li>find training providers who offer the apprenticeship training you choose</li>
+                    <li>find a named training provider you want to use</li> -->
+                </ul>
+                <div style="margin-top:35px"></div>
+            <a href="./reserve/chooseEntity"  class="govuk-button govuk-button--start">Start</a>
+                          <!--   <h2 class="govuk-heading-m " >Help</h2>
+                <p> You can contact the National Apprenticeship Service for advice or help using the service.</p>
+                    <h2 class="govuk-heading-s " style="margin-bottom:0">National Apprenticeship Service</h2>
+                <p> Telephone: 0800 015 0600 <a href="#"> Find out about call charges</a></p> -->
+            </div>
+            <div class="govuk-grid-column-one-third">
+
+                                 <div class="" style="padding-left:0; width:100%;  border: 4px solid #6f777b; " >
+                         <div style="background-color:#fff; min-height:120px" >
+                            <h2 class="govuk-heading-s" style="color: #000; margin: 15px 0 0px 15px; font-size:19px">Funds reserved</h2>
+                                <h2 id="numberOfApprentices" class="govuk-heading-l" style="  margin: 5px 0 5px 15px"><span style="">£</span>8,100</h2>  
+                        
+                              <p style="margin:0"><a href="./changeReserve" style="font-size:16px; margin: 0px 0 0 15px">View details</a></p>   
+                        </div>
+                    </div>
+
+                    <div class="" style="padding-left:0; width:100%;  border: 4px solid #6f777b; margin-top:25px" >
+                         <div style="background-color:#fff; min-height:120px" >
+                            <h2 class="govuk-heading-s" style="color: #000; margin: 15px 0 0px 15px; font-size:19px">Available to reserve</h2>
+                                <h2 id="numberOfApprentices" class="govuk-heading-l" style="  margin: 5px 0 0px 15px"><span style="">£</span>15,900</h2>  
+                                <p style="margin:0 0 0 15px; font-size:16px">This is the amount you have left to reserve.</p>
+
+                                    
+                        </div>
+                    </div>
+
+   
+            </div>
+
+        </div>
+    </main>
+    {% endblock %}

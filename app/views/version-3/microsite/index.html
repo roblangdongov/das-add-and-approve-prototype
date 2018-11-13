@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+ {% include "includes/version3/microNav.html" %}
+  {% include "includes/version3/microHomeNav.html" %}
+
+{% endblock %}
+{% block content %}
+
+<style>
+
+#navigation-primary, #kill-me, .govuk-header__logo,  .govuk-header__link--service-name  {
+  display:none ;
+}
+
+.govuk-header__content {
+  height:45px;
+  border-bottom:0;
+}
+
+.govuk-header__container {
+   border-bottom:none;
+}
+
+</style>
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+  <div class="govuk-grid-row">
+    <div class="" >
+      <h1 class="govuk-heading-xl">
+        Fire it up
+      </h1>
+      <p style="width:66%; margin-bottom: 0">Hear from leaders and apprentices up and down the country how apprenticeships have helped them re-energise their business and career.</p>
+
+
+
+      <div class="xavier" style="margin-top:25px">
+<div style="position:absolute; margin:20px 0 0 0px; width:35%; height:75px; background-color:#000"><h2 class="govuk-heading-m" style="margin:10px 0 0 20px; color:#fff">Xavier Edwards, CEO of Lloyds Bank </h2>
+        <h2 class="govuk-heading-s" style="margin:0 0 5px 20px; margin-bottom:10px; color:#fff">Apprenticeship 1982-1985</h2>
+      </div>
+
+<!--      <img src="/public/images/xavier.webp" width="100%" height="auto">
+ -->   
+          <img class="play-btn" src="https://www.getingofar.gov.uk/img/icons/xplay-btn.png.pagespeed.ic.WsDW9VyeOZ.webp" alt="Play">
+      </div>
+
+        <p style="margin:20px 0 0 0">Xavier is passionate about how apprentices help Lloyds bank energised and content here would be about why he is passionate and how is energises their business. Emotional and rational reasons for taking on an apprentice and for being an apprentice. Need to think a lot about who does this piece as it needs to resonate with smaller employers - people like me.</p>
+
+              <div class="slides" style="height:250px; padding:25px">
+
+      <h2 class="govuk-heading-l" style="color:#fff;">Real stories</h2>
+      <p style="width:66%">Hear real stories of how apprenticeships fired up careers and businesses around the country.</p>
+          <form action="./microsite/stories"><div class="actions">
+      <button type="submit" class="govuk-button" style="margin-bottom:15px">View</button>
+      </div></form>
+      </div>
+
+
+      <div class="slides" style="height:250px; padding:25px">
+
+      <h2 class="govuk-heading-l" style="color:#fff;">Find out about apprenticeships</h2>
+      <p style="width:66%">Find out more about what an apprenticeship is and how they are structured. Also, which different levels of apprenticeships are available to suit your business.</p>
+          <form action="./microsite/guide"><div class="actions">
+      <button type="submit" class="govuk-button" style="margin-bottom:15px">Get started</button>
+      </div></form>
+      </div>
+
+              
+  
+
+      
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+

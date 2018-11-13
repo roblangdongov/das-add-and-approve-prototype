@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+ {% include "includes/version1/provider/providerNav.html" %}
+  {% include "includes/version1/provider/homeNav.html" %}
+{% endblock %}
+{% block content %}
+<script>
+/*
+// putting this here so i don't forget it.
+
+  //store details entered into the form in local storage
+var creategovuk-button = document.getElementById('createAccountgovuk-button');
+EventUtil.addHandler(creategovuk-button, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+*/
+</script>
+
+
+
+
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <section id="allContentHome" class="">
+            <div class="govuk-grid-row">
+                <h1 class="govuk-heading-xl rj-headings-border" style="" id="company-Name">QA Ltd
+      <span class="govuk-caption-l">UKPRN: 10003375</span></h1>
+                <!--script>document.getElementById('company-Name').innerText = JSON.parse(localStorage.getItem('company-name-header'));</script-->
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <div style="max-width:90%">
+                            <div class="govuk-grid-row">
+                                <div class="govuk-grid-column-one-half ">
+                                    <h3 class="govuk-heading-m" style="margin-top:0 "><a href="proCohorts">Your cohorts</a></h3>
+                                    <p class="rj-home-spacer">Review, edit, approve and add apprentices to new cohorts.</p>
+                                </div>
+                                <div class="govuk-grid-column-one-half">
+                                    <h3 class="govuk-heading-m rj-top-border-mobile" style="margin-top:0;"><a href="./manage">Manage your apprentices</a></h3>
+                                    <p>View and update approved apprentice records.</p>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-row">
+                                <div class="govuk-grid-column-one-half" style="border-bottom: 1px solid #bfc1c3;">
+                                    <h3 class="govuk-heading-m rj-top-border" style="margin-top:0;padding-top:35px;   "><a href="orgsAndAgree">Organisations and agreements</a></h3>
+                                    <p>Find and view organisations and their agreement IDs.</p>
+                                </div>
+                                <div class="govuk-grid-column-one-half ">
+                                    <h3 class="govuk-heading-m rj-top-border" style="margin-top:0; padding-top:35px"><a href=""></a></h3>
+                                    <p class="rj-home-spacer"></p>
+                                </div>
+                            </div>
+                    <h2 class="govuk-heading-m" style="margin-top:55px">Instructions for the apprentices' employer</h2>
+                    <p>Employers need to register to <a href="#">manage their apprenticeship funds.</a></p>
+                    <p>Once they've registered they need to:</p>
+                    <ol class="govuk-list govuk-list--number" style="font-size:16px">
+                          <li>Add the PAYE schemes that the apprentices will be paid through.</li>
+                          <li>Added the employer organisations that will contract with the training provider.</li>
+                          <li>Sign agreements for their organisations so that they can spend levy funds.</li>
+                          <li>Add apprentices to their account so they can authorise payments to you.</li>
+                    </ol>
+                        </div>
+                        <a href="notifications">Notifications</a>
+                    </div>
+                    <div class="govuk-grid-column-one-third">
+                        <section>
+                            <nav style="height:47px">
+                                <ul class="js-tabs" role="tablist">
+                                    <li role="tab" id="tab-tasks" aria-controls="pane-tasks"><a href="#pane-tasks" class="selected">Tasks</a></li>
+                                </ul>
+                            </nav>
+                            <div class="panes">
+                                <div class="js-tab-pane" id="pane-tasks" role="tabpanel" aria-hidden="false" style="display: block;">
+                                    <p>You do not have any tasks</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>
+    
+{% endblock %}

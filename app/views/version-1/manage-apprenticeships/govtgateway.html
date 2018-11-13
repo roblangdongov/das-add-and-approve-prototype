@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="checkPAYE" method="get" class="form">
+
+     <h1 class="govuk-heading-xl">
+          Sign in
+        </h1>
+
+        <p>
+          Enter your Government Gateway credentials to sign in. You received these when you created your HMRC online account.
+        </p>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+          </legend>
+          <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-width-three-quarters bold-label" for="email">
+                  User ID
+              </label>
+              <!--span id="email-hint" class="govuk-hint">
+              We’ll only use this to send you a receipt
+            </span-->
+              <input class="govuk-input govuk-!-width-three-quarters" id="email" name="email" type="text" aria-describedby="">
+          </div>
+          <div class="govuk-form-group">
+              <label class="govuk-label bold-label govuk-!-width-three-quarters" for="password">
+                 Password
+              </label>
+              <!--span id="email-hint" class="govuk-hint">
+              We’ll only use this to send you a receipt
+            </span-->
+              <input class="govuk-input govuk-!-width-three-quarters" id="password" name="password" type="text" aria-describedby="">
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button">Sign in</button>
+
+      </form>
+      <p style="padding-top:20px">
+</p>
+ </div>
+  </div>
+  <script>
+
+//store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+    });
+</script>
+{% endblock %}

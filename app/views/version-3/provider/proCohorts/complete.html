@@ -1,0 +1,49 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block beforeContent %}
+ {% include "includes/version1/provider/providerNav.html" %}
+  {% include "includes/version1/provider/cohortsNav.html" %}
+{% endblock %}{% block content %}
+
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+Cohort sent for review
+
+      </h1>
+    </div>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Cohort reference</th>
+          <td class="govuk-table__cell">HDJ2123F</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Sent to</th>
+          <td class="govuk-table__cell">DROP TABLE "COMPANIES";-- LTD</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">On behalf of</th>
+          <td class="govuk-table__cell">QA Training</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Message</th>
+          <td class="govuk-table__cell">{{ data["provider-message"] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+          <h2 class="govuk-heading-m">What happens next?</h2>
+        <p class="govuk-body">
+            The updated cohort will appear in the employer’s account for them to review.
+
+          
+        </p>
+        <p><a href="./">Return to your cohorts</a></p>
+</div>
+</main>
+</div>
+
+{% endblock %}

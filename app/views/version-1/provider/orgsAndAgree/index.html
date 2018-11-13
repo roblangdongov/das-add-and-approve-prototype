@@ -1,0 +1,46 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+ {% include "includes/version1/provider/providerNav.html" %}
+  {% include "includes/version1/provider/agreementNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "./home" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+
+        {% if view == 'provider' %} Cohorts with training providers {% elif view == 'draft' %} Drafts {% endif %}
+
+    </h1>
+    <h1 class="govuk-heading-xl"> Organisations and agreements</h1>
+    <p>Listed below is every organisation you work with on the apprenticeship service and their agreement ID.</p>
+    <p>You need to add this agreement ID to the individualised learner record (ILR) data. This allows us to provide users with better error messages whenever a data mismatch occurs.</p>
+
+
+<table class="govuk-table">        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Organisation</th>
+            <th class="govuk-table__header" scope="col">Cohort ID   </th>
+            <th class="govuk-table__header" scope="col">Agreement ID</th>
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+           
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ item.training_provider.name }} ; DROP TABLE "COMPANIES";-- LTD    </td>
+                <td class="govuk-table__cell">{{ item.reference }}VXDRB8</td>
+                <td class="govuk-table__cell">90210</td>
+
+              </tr>  
+                
+        </tbody>
+      </table>
+  </main>
+</div>
+
+
+{% endblock %}

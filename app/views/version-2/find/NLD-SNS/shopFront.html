@@ -1,0 +1,344 @@
+{% extends "layout.html" %} {% block page_title %} Apprenticeships {% endblock %} {% block content %}
+<script src="/public/javascripts/accordion.js"></script>
+<script>
+function whereNow() {
+    // var status = $('input[name=radio-group]:checked').val();
+    switch (true) {
+        //  case  (status == 'provider-1'):
+        //          window.location.href='./levy-list';
+        //         break;
+        // case  (status == 'provider-2'):
+        //      window.location.href='./non-levy-list';
+        //     break
+        // case  (status == 'provider-3'):
+        //      window.location.href='./explain-levy';
+        //     break
+        default: window.location.href = 'proResults';
+        // console.log('gyahhhhhhhh, bork bork bork')
+        break;
+    }
+}
+</script>
+<script>
+// uncomment this to turn on the accordions
+
+if (
+    'addEventListener' in document &&
+    document.querySelectorAll
+) {
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var accordions = document.querySelectorAll('.accordion')
+
+        for (var i = accordions.length - 1; i >= 0; i--) {
+            new Accordion(accordions[i])
+        };
+
+    })
+
+}
+
+
+$(".shortlist").click(function(e) {
+    e.preventDefault();
+
+    console.log("shortlist button clicked: " + proCount);
+    //proCount++;
+
+    if ($("i", this).hasClass("fa-star-o")) {
+        console.log("isnt shortlisted");
+        proCount++;
+        appCount++;
+        console.log(proCount);
+        Cookies.set("proCount", proCount);
+        Cookies.set("appCount", appCount);
+        $("i", this).removeClass("fa-star-o").addClass("fa-star");
+        $("span", this).text("Remove this training provider");
+        $("#bannerCountProvider span").text(Number(proCount));
+        $("#bannerCount span").text(Number(appCount));
+
+    } else {
+        console.log("is shortlisted");
+        $("i", this).removeClass("fa-star").addClass("fa-star-o");
+        $("span", this).text("Save this training provider");
+        proCount--;
+        appCount--;
+        Cookies.set("proCount", proCount);
+        Cookies.set("appCount", appCount);
+        console.log(proCount);
+        $("#bannerCountProvider span").text(Number(proCount));
+        $("#bannerCount span").text(Number(appCount));
+    }
+
+})
+</script>
+<script>
+$(document).ready(function() {
+    var changeStuff = function() {
+        var changeTheThing = JSON.parse(localStorage.getItem('nonLevy.whichApprenticeship'));
+        switch (true) {
+            case (changeTheThing == 'finServ'):
+
+                break;
+            case (changeTheThing == 'cooking'):
+                $(financialServicesAdmin).addClass("rj-dont-display")
+                $(chefDePartie).removeClass("rj-dont-display")
+
+                break;
+
+            case (changeTheThing == 'building'):
+                $(financialServicesAdmin).addClass("rj-dont-display")
+                $(buildingServices).removeClass("rj-dont-display")
+
+
+                break;
+
+            default:
+                console.log('gyahhhhhhhh, bork bork bork')
+                break;
+        }
+    }
+    changeStuff();
+});
+</script>
+<!--[if gt IE 8]><!-->
+<link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+<link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+<link href="/public/ty/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+<link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+<link href="/public/ty/assets/stylesheets/_proDetails.css" rel="stylesheet" />
+<!--<![endif]-->
+<script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+<main id="content" role="main">
+    <section id="v1">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+             
+                    <h1 class="heading-xlarge">
+                            CYBERDYNE INC</h1>
+
+                <div class="grid-row attachment-full-width" style="margin-top:15px">
+                    <div class="column-third">
+                        <h2 class="heading-small">UKPRN:</h2></div>
+                    <div class="column-two-thirds">
+                        <p style="">10001353</p>
+                    </div>
+                </div>
+                    <h2 class="heading-small">About this provider</h2>
+                    <p class="">Cyberdyne Inc is a Further Education College in the heart of Mid Essex.</p>
+                    <p>We currently offer a wide range of Apprenticeships in many different subject areas. These are predominantly at levels 2 and 3 and we have also just started two Higher Apprenticeships at level 4/5.</p>
+                    <p>We are constantly looking at ways of developing our provision to suit local employment and skills needs. Therefore if you can't find what you are looking for then please contact us for further discussions as we are happy to assist you and your business.</p>
+                    <p>We look forward to working with you!</p>
+     
+
+                <!--div id="financialServicesAdmin" class="">
+                    <h2 class="heading-medium" style="margin-bottom:0;">
+                                <span class="appName">Financial Services Administrator</span>
+                            </h2>
+                    <div style="margin-bottom: 20px;">
+                        <div class="flex-support-meta">
+                            <div class="meta-one " style="">Level 3 (equivalent to A levels at grades A to E)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Training options</h2>
+                    </div>
+                    <div class="column-two-thirds">
+                        <ul class="list list-bullet" style="margin-bottom: 0px;">
+                            <li>day release</li>
+                            <li>block release</li>
+                            <li>employer on-site training</li>
+                        </ul>
+                        <details>
+                            <summary><span class="summary">Explain training options</span></summary>
+                            <div class="panel panel-border-narrow">
+                                <p>
+                                    <span class="bold-small">Day release:</span> eg one day a week at the training provider's location.
+                                </p>
+                                <p>
+                                    <span class="bold-small">Block release:</span> eg 3 to 4 weeks at the training provider's location.
+                                </p>
+                                <div>
+                                    <span class="bold-small">At your location:</span> the training provider comes to your workplace.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <div class="grid-row attachment-full-width" style="margin-top:15px">
+                    <div class="column-third">
+                        <h2 class="heading-small">Training location</h2></div>
+                    <div class="column-two-thirds">
+                        <address style="text-transform:lowercase">Rhodes Art Complex Rhodes Museum &amp; Commonwealth Centre South Road
+                        </address>
+                    </div>
+                </div-->
+                <div style="margin-top:55px"></div>
+                <h2 class="heading-medium" style="margin-bottom:0">Feedback from employers</h2>
+                <p style="font-size:16px; margin-top:0">Based on 12 reviews from employers</p>
+                <div class="flex-support-meta">
+                    <div class=" " style="margin-right:25px">
+                        <h3 class="heading-small" style="margin:0px 0 0 0; font-weight:400; ">March 2018 to now
+</h3>
+                        <div class="feedback-block ofsted feedback-outstanding" style="height:60px; width:250px">
+                            <p style="padding:9px 0 0 10px;font-weight:700; font-size: 24px; ">Good<br /> </p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h3 class="heading-small" style="margin:0px 0 0 0;font-weight:400; ">October 2017 to February 2018</h3>
+                        <div class="feedback-block ofsted feedback-average" style="height:60px; width:250px">
+                            <p style="padding:9px 0 0 10px;font-weight:700; font-size: 24px">OK</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="accordion">
+
+                    <div class="accordion-section">
+                        <div class="accordion-section-header">
+                            <h2 class="heading-medium">Feedback details</h2>
+
+                        </div>
+                        <div class="accordion-section-body">
+                            <h3 class="heading-small" style="margin-bottom:15px; font-weight:400; ">Based on 12 reviews over the last 6 months</h3>
+
+
+                <div class="flex-support-meta">
+                     <div class=" " style="margin-right:25px">
+                                    <h3 class="heading-small" style="margin:0px 0 0 0; font-weight:400; ">Collaboration</h3>
+                    <div class="feedback-block ofsted feedback-good">
+                    <p style="padding:3px 0 0 10px;font-weight:700">Postive</p>
+                    </div>
+                    <!--p style="margin-bottom:0">About <span style="font-weight:700">40%</span> of providers are average</p-->
+                </div>
+                <div class="">
+                    <h3 class="heading-small" style="margin:0px 0 0 0;font-weight:400; ">Time spent training</h3>
+                    <div class="feedback-block ofsted feedback-outstanding">
+                        <p style="padding:3px 0 0 10px;font-weight:700">Very positive</p>
+                    </div>
+                    <!--p style="margin-bottom:0">About <span style="font-weight:700">10%</span> of providers are well above average</p-->
+                </div>
+            </div>
+            <div class="flex-support-meta">
+                <div class=" " style="margin-right:25px">
+                    <h3 class="heading-small" style="margin:30px 0 0 0; font-weight:400; ">Training types</h3>
+                    <div class="feedback-block ofsted feedback-good">
+                        <p style="padding:3px 0 0 10px;font-weight:700">Positive</p>
+                    </div>
+                    <!--p style="margin-bottom:0">About <span style="font-weight:700">40%</span> of providers are average</p-->
+                </div>
+                <div class="">
+                    <h3 class="heading-small" style="margin:30px 0 0 0;font-weight:400; ">Communication</h3>
+                    <div class="feedback-block ofsted feedback-good">
+                        <p style="padding:3px 0 0 10px;font-weight:700">Positive</p>
+                    </div>
+                    <!--p style="margin-bottom:0">About <span style="font-weight:700">10%</span> of providers are well below average</p-->
+                </div>
+        </div>
+<div class="flex-support-meta" style="margin-bottom:35px">
+</div>
+</div>
+</div>
+<div class="accordion-section">
+    <div class="accordion-section-header">
+        <h2 class="heading-medium">Ofsted report</h2>
+    </div>
+    <div class="accordion-section-body">
+        <h3 class="heading-small" style="margin-bottom:15px; ">Inspection date:  2 October 2018</h3>
+        <h3 class="heading-small" style="margin:0px 0 0 0; font-weight:400; ">Overall</h3>
+        <div class="feedback-block ofsted feedback-good" style="height:60px; width:250px">
+            <p style="padding:10px 0 0 10px;font-weight:700; font-size: 24px">Good</p>
+        </div>
+        <a href="#">View the full report</a>
+        <div style="padding-top:20px"></div>
+    </div>
+</div>
+</div>
+
+         <table class="table-19-font">
+                  <thead>
+                       <h2 class="heading-medium">7 Apprenticeships offered</h2>
+                    <tr>
+                      <th >Apprenticeship</th>
+                      <th style="width:100px" >Type</th>
+                      <th style="width:30px">Level</th>
+                      <th style="width:90px"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="rjTableName">Accounting</td>
+                       <td class="rjTableName">Framework</td>
+                      <td class="" style="">2</td>
+                      <td class="looks-like-a-link-underline ">Details</td>
+                    </tr>
+                     <tr>
+                      <td class="rjTableName">Accounting</td>
+                      <td class="rjTableName">Framework</td>
+                      <td class="">3</td>
+                      <td class="looks-like-a-link-underline ">Details</td>
+                    </tr>
+                                         <tr>
+                      <td class="rjTableName">Adult social care</td>
+                      <td class="rjTableName">Framework</td>
+                      <td class="">3</td>
+                      <td class="looks-like-a-link-underline ">Details</td>
+                    </tr>
+                                         <tr>
+                      <td class="rjTableName">Business and Administration</td>
+                      <td class="rjTableName">Framework</td>
+                      <td class="">2</td>
+                      <td class="looks-like-a-link-underline ">Details</td>
+                    </tr>
+                                         <tr>
+                      <td class="rjTableName">Business and Administration</td>
+                      <td class="rjTableName">Framework</td>
+                      <td class="">3</td>
+                      <td class="looks-like-a-link-underline ">Details</td>
+                    </tr>
+                                         <tr>
+                      <td class="rjTableName">Business and Professional Administration</td>
+                      <td class="rjTableName">Framework</td>
+                      <td class="">3</td>
+                      <td class="looks-like-a-link-underline ">Details</td>
+                    </tr>
+                                         <tr>
+                      <td class="rjTableName">Children and Young People's Workforce</td>
+                      <td class="rjTableName">Framework</td>
+                      <td class="">3</td>
+                      <td class="looks-like-a-link-underline ">Details</td>
+                    </tr>
+                  </tbody>
+        </table>
+</div>
+<div class="column-third">
+    <aside class="related-container related">
+        <div class="panel--contact">
+            <h2 class="heading-medium">Contact details</h2>
+            <dl>
+                <dt class="apprenticeshipContactTitle">Website:</dt>
+                <dd>
+                    <a href="http://www.cranfield.ac.uk/business/develop-your-people/masterships/masterships-courses" rel="external" target="_blank" class="course-link apprenticeshipContact">
+Cyberdyne Inc website</a>
+                </dd>
+                <dt class="phone-title" style="margin-top:15px">Phone number:</dt>
+                <dd id="phone" class="phone">01234 754930</dd>
+            </dl>
+        </div>
+        <hr />
+            <h3 class="heading-small">Content disclaimer</h3>
+            <p style="font-size:14px">Education and Skills Funding Agency cannot guarantee the accuracy of course information on this site and makes no representations about the quality of any courses which appear on the site. Education and Skills Funding Agency is not liable for any losses suffered as a result of any party relying on the course information provided.</p>
+    </aside>
+
+</div>
+    </section>
+</main>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/public/ty/assets/javascripts/marked.min.js"></script>
+<script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+<script src="/public/ty/assets/javascripts/_app.js"></script>
+<script id="data" xmldata="/public/ty/assets/data/proSource.xml" src="/public/ty/assets/javascripts/_proDetails.js"></script>
+{% endblock %}

@@ -1,0 +1,467 @@
+ {% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<!--script>
+
+$(document).on('click', 'input[type="radio"]', function (e) {
+  if ($(e.target).attr('id') === 'radio-3' || $(e.target).attr('id') === 'radio-4' || $(e.target).attr('id') === 'radio-5') 
+  { $('#other-organisation-options').removeClass('js-hidden') ; } 
+       else {$('#other-organisation-options').addClass('js-hidden');};
+});
+
+</script-->
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+
+<script>
+ $(".shortlist.app").click(function (e) {
+        e.preventDefault();
+        console.log("shortlist button clicked: " + appCount);
+
+
+        if ($("i", this).hasClass("fa-star-o")) {
+            console.log("isnt shortlisted");
+            appCount = appCount + 1;
+            console.log(appCount);
+            Cookies.set("appCount", appCount);
+            $("i", this).removeClass("fa-star-o").addClass("fa-star");
+            $("span", this).text("Remove");
+            $("#bannerCount span").text(Number(appCount));
+            $("#bannerCountProvider span").text(Number(proCount));
+
+        } else {
+            console.log("is shortlisted");
+            $("i", this).removeClass("fa-star").addClass("fa-star-o");
+            $("span", this).text("Save");
+            appCount--;
+            Cookies.set("appCount", appCount);
+            console.log(appCount);
+            $("#bannerCount span").text(Number(appCount));
+            $("#bannerCountProvider span").text(Number(proCount));
+        }
+    })
+</script>
+<script>
+ var fundingStatus =JSON.parse(localStorage.getItem('nonLevy.fundingSet'));
+console.log(fundingStatus)
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (fundingStatus=='yes') {
+   // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   // document.getElementById("providerName").textContent = "Provider:" ;
+    $(dtLevyPayer).removeClass("rj-dont-display")
+    $(ddLevyPayer).removeClass("rj-dont-display")
+    $(dtCoInvestPayer).addClass("rj-dont-display")
+    $(ddCoInvestPayer).addClass("rj-dont-display")
+
+   // $(commitmentStatus).addClass("rj-dont-display");
+   //  $(addDate).addClass("rj-dont-display")
+    }
+else {};
+
+if (fundingStatus=='nope' || fundingStatus=='wakanai' ) {
+  //  $(eligibilityCoinvestment).removeClass("rj-dont-display")
+    }
+else { };
+
+//if (fundingStatus=='transferFunding') {
+  // $(eligibilityTransfer).removeClass("rj-dont-display")
+    //}
+//else { };
+  }
+changeStuff();
+});
+</script>
+
+    <link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/animate.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_appResults.css" rel="stylesheet" />
+    <script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+
+
+    <main id="content" role="main">
+
+<!-- the back button is in the shortlist toolbar at the moment. -->
+ {% include "includes/shortlist-toolbar.html" %}
+
+
+        <div id="search" class="grid-row">
+
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge">Search results</h1>
+                    <form action="" >
+                      <fieldset>
+                          <div class="form-group">
+
+                              <label class="form-label-bold " for="password">Showing 120 search results for:</label>
+                              <input class="form-control " id=" " type="text"  style="width:75%; margin-right:10px; height:41px" value="construction"><input class="button" id="calculate" type="submit" value="Search">
+                          </div>
+                        </fieldset>
+
+                    </form>
+                      <H3 class="heading-medium">Filter results </H3>
+                </div>
+
+                <!--p>Results labelled <span class="bold-small label">New</span> are apprenticeship standards developed by employer groups.</p-->
+
+                <!--<details>
+                    <summary>
+                        What is a 'new' apprenticeship?
+                    </summary>
+                    <p>Apprenticeships labelled <span class="bold-small label">new</span> are developed by employers for employers.</p>
+                </details>-->
+            </div>
+        </div>
+
+<div id="results" class="grid-row ">
+  <div class="column-third ">
+    <div class="filter-form filtering ">
+      <div id="finder-frontend" class="">
+        <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Apprenticeship level</div>
+              <div class="js-selected-counter"></div></button>
+                <div style="max-height:300px" class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                       <label for="Live">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Level 2 (8)
+                        </label>
+                       <label for="not-started">
+                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Level 3 (2)
+                        </label>
+                        <label for="Paused">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Level 4 (10)
+                        </label>
+                         <label for="Stopped">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Level 5 (8)
+                        </label>
+                        <label for="Finished">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                         Level 6 (5)
+                        </label>
+                                                <label for="Finished">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                         Level 7 (9)
+                        </label>
+                                                <label for="Finished">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                         Level 8 (0)
+                        </label>
+                  </div>
+               </div>
+          </div>
+                                        <details>
+                                            <summary>
+                                                <span class="summary">Help with levels</span>
+                                            </summary>
+                                            <div class="panel panel-border-wide">
+                                                <p>Apprenticeships are graded by levels based on the apprentice’s existing qualifications and skills.</p>
+                                                <a rel="external" href="https://www.gov.uk/what-different-qualification-levels-mean/compare-different-qualification-levels" target="_blank">More about levels</a>
+                                            </div>
+                                        </details>
+                                    </div>
+                </div>
+            </div>
+
+
+            <div class="column-two-thirds">
+                <ol id="framework-results">
+                    <li class="result visible result-12 animated none" id="0801" data-type="standard">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="/{% include "includes/sprint-link.html" %}/NLD-SNS/app-details_construction">Building services design engineer</a> </h2>
+                            <dl><dt style="min-width:135px" class="">Level:</dt>
+                                <dd class="level"><span>6 (equivalent to bachelor's degree)</span></dd>
+                                <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd  class=""><span>12 to 18 months</span></dd>
+
+                               <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£3,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£300</span></dd>
+
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div>
+                    </li>
+                    <li class="result visible result-13 animated none" id="0822" data-type="standard">
+                        <div class="column details">
+                            <!--h2 class="heading-medium"><a href="appDetails_s_a.html?trainingId=0822">Investment Operations Administrator</a> <span class="label">New</span></h2-->
+                             <h2 class="heading-medium results-header"><a href="appDetails_s_a.html">Building Services Engineering Craftsperson</a> </h2>
+                            <dl><dt style="min-width:135px" class="min_length">Level:</dt>
+                                <dd class="level"><span>3 (equivalent to A levels at grades A to E)</span></dd><dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>12 to 18 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£7,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£700</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div>
+
+                    </li>
+                    <li class="result visible result-14 animated none" id="0825" data-type="standard">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="appDetails_s_a.html?trainingId=0825">Building Services Engineering Installer
+</a> </h2>
+                            <dl><dt style="min-width:135px" class="min_length">Level:</dt>
+                                <dd class="level"><span>2 (equivalent to GCSEs at grades A* to C)</span></dd>
+                                <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£3,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£300</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div>
+                    </li>
+                    <li class="result visible result-1 animated none" id="0049" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="appDetails_f.html?trainingId=0049">Property maintenance operative</a></h2>
+                            <dl><dt style="min-width:135px">Level</dt>
+                                <dd class="level"><span>2 (equivalent to GCSEs at grades A* to C)</span></dd>
+                                <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£4,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£400</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div>
+                    </li>
+                    <li class="result visible result-2 animated none" id="0050" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="appDetails_f.html?trainingId=0050">Housing / property management assistant</a></h2>
+                            <dl><dt style="min-width:135px">Level</dt>
+                                <dd class="level"><span>2 (equivalent to GCSEs at grades A* to C)</span></dd>
+                                <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£3,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£300</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div>
+                    </li>
+                    <li class="result visible result-3 animated none" id="0051" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="appDetails_f.html?trainingId=0051">Housing/property management</a></h2>
+                            <dl><dt style="min-width:135px">Level</dt>
+                                <dd class="level"><span>3 (equivalent to A levels at grades A to E)</span></dd>
+                                <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£3,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£300</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div>
+                    </li>
+                    <li class="result visible result-4 animated jp-hidden" id="0052" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="appDetails_f.html?trainingId=0052">Building Services Engineering Service and Maintenance Engineer</a></h2>
+                            <dl><dt style="min-width:135px">Level</dt>
+                                <dd class="level"><span>3 (equivalent to A levels at grades A to E)</span></dd>
+                                <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£9,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£300</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div>
+                    </li>
+                    <li class="result visible result-5 animated jp-hidden" id="0053" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="appDetails_f.html?trainingId=0053">Building Services Engineering Ventilation Hygiene Technician</a></h2>
+                            <dl><dt style="min-width:135px">Level</dt>
+                                <dd class="level"><span>3 (equivalent to A levels at grades A to E)</span></dd>
+                                <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£9,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£300</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div>
+                    </li>
+                    <li class="result visible result-6 animated jp-hidden" id="0054" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="appDetails_f.html?trainingId=0054">Chartered surveyor</a></h2>
+                            <dl><dt style="min-width:135px">Level</dt>
+                                <dd class="level"><span>6 (equivalent to bachelor's degree)</span></dd>
+                                <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£9,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£900</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save</span></div>
+                    </li>
+                    <li class="result visible result-7 animated jp-hidden" id="0055" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="appDetails_f.html?trainingId=0055">Civil engineer degree apprenticeship</a></h2>
+                            <dl><dt style="min-width:135px">Level</dt>
+                                <dd class="level"><span>6 (equivalent to bachelor's degree)</span></dd>
+                                <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£9,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£900</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save </span></div>
+                    </li>
+                    <li class="result visible result-8 animated jp-hidden" id="0057" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="appDetails_f.html?trainingId=0057">Construction Steel Fixer</a></h2>
+                            <dl><dt style="min-width:135px">Level</dt>
+                                <dd class="level"><span>2 (equivalent to GCSEs at grades A* to C)</span></dd>
+                                <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£9,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£300</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save </span></div>
+                    </li>
+                    <li class="result visible result-9 animated jp-hidden" id="0058" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-medium results-header"><a href="appDetails_f.html?trainingId=0058">Dual fuel smart meter installer</a></h2>
+                            <dl><dt style="min-width:135px">Level</dt>
+                                <dd class="level"><span>2 (equivalent to GCSEs at grades A* to C)</span></dd>
+                                 <dt style="min-width:135px" class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                              <dt id ="dtLevyPayer" style="min-width:135px;" class="min_length; rj-dont-display">Maximum cost:</dt>
+                                <dd  id ="ddLevyPayer" class="rj-dont-display"><span>£3,000</span></dd>
+
+                            <dt id ="dtCoInvestPayer" style="min-width:135px" class="min_length">Your cost:</dt>
+                            <dd  id ="ddCoInvestPayer" class=""><span>£300</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Save </span></div>
+                    </li>
+                  
+                </ol>
+                <div id="pagedat">
+
+                </div>
+                <div class="page-navigation">
+                    <a class="page-navigation__btn previous"> </a>
+
+
+
+                    <a style="" class="page-navigation__btn next">
+                        <i class="arrow-button fa fa-angle-right"></i>
+                        <span class="description">Next <span class="hide-mob">page</span></span>
+                        <span class="counter">Page <!--span class="nextPage"></span-->1 of 2<!--span class="totalPage"></span--></span>
+                    </a>
+
+                </div>
+
+                <div class="form-group" id="resultCount">
+                    <label for="results-per-page" class="heading-small inline">Display results</label>
+                    <select id="results-per-page" name="resultsPerPage">
+                        <option selected="selected" value="5">5 per page</option>
+                        <option value="10">10 per page</option>
+                        <option value="25">25 per page</option>
+                        <option value="50">50 per page</option>
+                    </select>
+                </div>
+            </div>
+            <div class="dialog" id="dialog-1" aria-hidden="true">
+
+                <div class="dialog-holder" aria-labelledby="title-1" aria-describedby="content-1" role="alertdialog">
+
+                    <div class="dialog-content" id="content-1" role="document" tabindex="0">
+
+                        <h1 class="dialog-heading" id="title-1">Remove shortlisted apprenticeship</h1>
+
+                        <form class="form">
+
+                            <p>Do you want to remove the apprenticeship:</p>
+                            <p class="bold-small">Investment Operations Administrator?</p>
+                            <p>Doing this will also remove these shortlisted training providers:</p>
+                            <ul class="list list-bullet">
+                                <li>BEAMINSTER SCHOOL </li>
+                                <li>THE BISHOP OF WINCHESTER ACADEMY </li>
+                                <li>COOMBE DEAN SCHOOL ACADEMY TRUST </li>
+                            </ul>
+
+                            <div class="dialog-actions">
+                                <button class="button" type="submit">Remove all</button>
+                                <a class="dialog-cancel" href="#">Cancel</a>
+                            </div>
+
+                            <button class="dialog-close" aria-label="close" type="button">
+                                <span class="icon icon-close">x</span>
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+    </main>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/public/ty/assets/javascripts/d3.min.js"></script>
+    <script src="/public/ty/assets/javascripts/c3.min.js"></script>
+    <script src="/public/ty/assets/javascripts/marked.min.js"></script>
+    <script src="/public/ty/assets/javascripts/underscore-min.js"></script>
+    <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+    <script src="/public/ty/assets/javascripts/tinysort.min.js"></script>
+    <script src="/public/ty/assets/javascripts/jPages.min.js"></script>
+    <script src="/public/ty/assets/javascripts/_app.js"></script>
+    <script src="/public/ty/assets/javascripts/_appResults.js" id="data" xmlData="/public/ty/assets/data/appList.xml"></script>
+
+
+
+    <script>
+        $("#appShortlistRemove").click(function (e) {
+            $("#dialog-1").attr("aria-hidden", "false")
+                //            e.preventDefault();
+                //location.replace("appShortlistRemove.html");
+
+        })
+    </script>
+
+
+{% endblock %}

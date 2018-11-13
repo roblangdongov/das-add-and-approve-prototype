@@ -1,0 +1,85 @@
+{% extends "layout.html" %} {% block beforeContent %} {% include "includes/version1/mainNav.html" %}    {% include "includes/version1/financeNav.html" %} {% from "back-link/macro.njk" import govukBackLink %} {{ govukBackLink({ text: "Back", href: "./" }) }} {% endblock %} {% block content %}
+
+<!--div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../../accounts">Your Accounts</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../../{{ employer.id }}">{{ employer.name }}</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="../finance">Finance</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Transfers</li>
+    </ol>
+</div-->
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+<h1 class="govuk-heading-xl">
+    Transfers
+</h1>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel-small govuk-panel--purple" style=" padding:0; min-height:170px">
+           <h2 class="govuk-panel__title" style="text-align:left; margin:15px 0 20px 10px">
+                £1,020,000
+            </h2>
+            <div class="govuk-panel__body">
+                <p style="text-align:left; color:#fff;margin:65px 0 0 15px; font-weight:700; font-size:24px; ">Remaining transfer allowance</p>
+            </div>
+        </div>
+
+        <p style="margin-top:65px"><a href="#">Estimate</a> the number of apprentices you can fund with your transfer allowance.</p>
+        <p>Employers who pay the apprenticeship levy can connect with other employers and transfer up to 10% of their previous
+            year's annual funds.</p>
+        <p>Before starting a connection, both the sending and receiving employers need to read and understand the
+            <a href="#">rules for sending and receiving transfers</a>.</p>
+        <p>Only the sending employer can start a connection.</p>
+        <a href="transfers/connections/requests" class="govuk-button">
+            Connect to a receiving employer
+        </a>
+
+    </div>
+</div>
+<div class="govuk-grid-row" style="margin-top:35px">
+    <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m">Connection Requests</h3>
+           <p>You have no pending or approved requests</p>
+
+           <!-- //////////// ROB - when you get this working, uncomments and use the routes stuff to populate it -->
+        {% if connectionRequests.length == 0 %}
+        <p>You have no pending or approved requests</p>
+        {% else %}
+        <!--table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">Employer</th>
+                    <th class="govuk-table__header" scope="col">Status</th>
+                    <th class="govuk-table__header" scope="col"></th>
+                </tr>
+            </thead>
+
+            <tbody class="govuk-table__body" >
+                {% for item in connectionRequests %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">{{ item.receivingEmployer }}</td>
+                    <td class="govuk-table__cell">{{ item.status }}</td>
+                    <td class="govuk-table__cell">
+                        <a href='transfers/connections/requests/{{ loop.index0 }}'>Details</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table-->
+        {% endif %}
+        <h3 class="govuk-heading-m" style="margin-top:55px">Transfer Requests</h3>
+        <p>You have no pending or approved requests</p>
+    </div>
+</div>
+</div>
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,325 @@
+{% extends "layout.html" %} {% block page_title %} Apprenticeships {% endblock %} {% block content %}
+<script src="/public/javascripts/accordion.js"></script>
+<script>
+function whereNow() {
+    // var status = $('input[name=radio-group]:checked').val();
+    switch (true) {
+        //  case  (status == 'provider-1'):
+        //          window.location.href='./levy-list';
+        //         break;
+        // case  (status == 'provider-2'):
+        //      window.location.href='./non-levy-list';
+        //     break
+        // case  (status == 'provider-3'):
+        //      window.location.href='./explain-levy';
+        //     break
+        default: window.location.href = 'proResults';
+        // console.log('gyahhhhhhhh, bork bork bork')
+        break;
+    }
+}
+</script>
+<script>
+// uncomment this to turn on the accordions
+
+if (
+    'addEventListener' in document &&
+    document.querySelectorAll
+) {
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var accordions = document.querySelectorAll('.accordion')
+
+        for (var i = accordions.length - 1; i >= 0; i--) {
+            new Accordion(accordions[i])
+        };
+
+    })
+
+}
+
+
+$(".shortlist").click(function(e) {
+    e.preventDefault();
+
+    console.log("shortlist button clicked: " + proCount);
+    //proCount++;
+
+    if ($("i", this).hasClass("fa-star-o")) {
+        console.log("isnt shortlisted");
+        proCount++;
+        appCount++;
+        console.log(proCount);
+        Cookies.set("proCount", proCount);
+        Cookies.set("appCount", appCount);
+        $("i", this).removeClass("fa-star-o").addClass("fa-star");
+        $("span", this).text("Remove this training provider");
+        $("#bannerCountProvider span").text(Number(proCount));
+        $("#bannerCount span").text(Number(appCount));
+
+    } else {
+        console.log("is shortlisted");
+        $("i", this).removeClass("fa-star").addClass("fa-star-o");
+        $("span", this).text("Save this training provider");
+        proCount--;
+        appCount--;
+        Cookies.set("proCount", proCount);
+        Cookies.set("appCount", appCount);
+        console.log(proCount);
+        $("#bannerCountProvider span").text(Number(proCount));
+        $("#bannerCount span").text(Number(appCount));
+    }
+
+})
+</script>
+<script>
+$(document).ready(function() {
+    var changeStuff = function() {
+        var changeTheThing = JSON.parse(localStorage.getItem('nonLevy.whichApprenticeship'));
+        switch (true) {
+            case (changeTheThing == 'finServ'):
+
+                break;
+            case (changeTheThing == 'cooking'):
+                $(financialServicesAdmin).addClass("rj-dont-display")
+                $(chefDePartie).removeClass("rj-dont-display")
+
+                break;
+
+            case (changeTheThing == 'building'):
+                $(financialServicesAdmin).addClass("rj-dont-display")
+                $(buildingServices).removeClass("rj-dont-display")
+
+
+                break;
+
+            default:
+                console.log('gyahhhhhhhh, bork bork bork')
+                break;
+        }
+    }
+    changeStuff();
+});
+</script>
+<!--[if gt IE 8]><!-->
+<link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+<link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+<link href="/public/ty/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+<link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+<link href="/public/ty/assets/stylesheets/_proDetails.css" rel="stylesheet" />
+<!--<![endif]-->
+<script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+<main id="content" role="main">
+    <section id="v1">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <div class="">
+                    <h1 class="heading-xlarge">
+                            CYBERDYNE INC</h1>
+                    <p class="proMarketing">Whether you are looking to Glos Regional College as a step forward towards a successful career, retraining, progression to university or to pursue an area of interest, HRC has something for you. We offer a wide range of full and part-time courses, Apprenticeships and professional and leisure courses.</p>
+                </div>
+                <!-- <h2 class="heading-medium">Head office details</h2>-->
+                <div id="financialServicesAdmin" class="">
+                    <h2 class="heading-medium" style="margin-bottom:0;">
+                                <span class="appName">Financial Services Administrator</span>
+                            </h2>
+                    <div style="margin-bottom: 20px;">
+                        <div class="flex-support-meta">
+                            <div class="meta-one " style="">Level 3 (equivalent to A levels at grades A to E)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Training options</h2>
+                    </div>
+                    <div class="column-two-thirds">
+                        <ul class="list list-bullet" style="margin-bottom: 0px;">
+                            <li>day release</li>
+                            <li>block release</li>
+                            <li>employer on-site training</li>
+                        </ul>
+                        <details>
+                            <summary><span class="summary">Explain training options</span></summary>
+                            <div class="panel panel-border-narrow">
+                                <p>
+                                    <span class="bold-small">Day release:</span> eg one day a week at the training provider's location.
+                                </p>
+                                <p>
+                                    <span class="bold-small">Block release:</span> eg 3 to 4 weeks at the training provider's location.
+                                </p>
+                                <div>
+                                    <span class="bold-small">At your location:</span> the training provider comes to your workplace.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <div class="grid-row attachment-full-width" style="margin-top:15px">
+                    <div class="column-third">
+                        <h2 class="heading-small">Training location</h2></div>
+                    <div class="column-two-thirds">
+                        <address style="text-transform:lowercase">Rhodes Art Complex Rhodes Museum &amp; Commonwealth Centre South Road
+                        </address>
+                    </div>
+                </div>
+                <div style="margin-top:55px"></div>
+                <h2 class="heading-medium" style="margin-bottom:0">Feedback from employers</h2>
+                <p style="font-size:16px; margin-top:0">Based on 12 reviews</p>
+                <div class="flex-support-meta">
+                    <div class=" " style="margin-right:25px">
+                        <h3 class="heading-small" style="margin:0px 0 0 0; font-weight:400; ">Last 6 months feedback</h3>
+                        <div class="feedback-block ofsted feedback-outstanding" style="height:60px; width:250px">
+                            <p style="padding:9px 0 0 10px;font-weight:700; font-size: 24px; ">Very positive<br /> </p>
+
+                        </div>
+
+                        <p style="margin-bottom:0">They're in the top <span style="font-weight:700">10%</span></p>
+
+                    </div>
+                    <div class="">
+                        <h3 class="heading-small" style="margin:0px 0 0 0;font-weight:400; ">Change over last month</h3>
+                        <div class="feedback-block ofsted feedback-average" style="height:60px; width:250px">
+                            <p style="padding:9px 0 0 10px;font-weight:700; font-size: 24px">Less positive</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="accordion">
+
+                    <div class="accordion-section">
+                        <div class="accordion-section-header">
+                            <h2 class="heading-medium">Feedback details</h2>
+
+                        </div>
+                        <div class="accordion-section-body">
+                            <h3 class="heading-small" style="margin-bottom:15px; font-weight:400; ">Based on 12 reviews over the last 6 months</h3>
+
+
+                <div class="flex-support-meta">
+                     <div class=" " style="margin-right:25px">
+                                    <h3 class="heading-small" style="margin:0px 0 0 0; font-weight:400; ">Collaboration</h3>
+                    <div class="feedback-block ofsted feedback-good">
+                    <p style="padding:3px 0 0 10px;font-weight:700">Postive</p>
+                    </div>
+                    <!--p style="margin-bottom:0">About <span style="font-weight:700">40%</span> of providers are average</p-->
+                </div>
+                <div class="">
+                    <h3 class="heading-small" style="margin:0px 0 0 0;font-weight:400; ">Time spent training</h3>
+                    <div class="feedback-block ofsted feedback-outstanding">
+                        <p style="padding:3px 0 0 10px;font-weight:700">Very positive</p>
+                    </div>
+                    <!--p style="margin-bottom:0">About <span style="font-weight:700">10%</span> of providers are well above average</p-->
+                </div>
+            </div>
+            <div class="flex-support-meta">
+                <div class=" " style="margin-right:25px">
+                    <h3 class="heading-small" style="margin:30px 0 0 0; font-weight:400; ">Training types</h3>
+                    <div class="feedback-block ofsted feedback-good">
+                        <p style="padding:3px 0 0 10px;font-weight:700">Positive</p>
+                    </div>
+                    <!--p style="margin-bottom:0">About <span style="font-weight:700">40%</span> of providers are average</p-->
+                </div>
+                <div class="">
+                    <h3 class="heading-small" style="margin:30px 0 0 0;font-weight:400; ">Communication</h3>
+                    <div class="feedback-block ofsted feedback-good">
+                        <p style="padding:3px 0 0 10px;font-weight:700">Positive</p>
+                    </div>
+                    <!--p style="margin-bottom:0">About <span style="font-weight:700">10%</span> of providers are well below average</p-->
+                </div>
+            </div>
+            <div class="flex-support-meta" style="margin-bottom:35px">
+
+            </div>
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    
+                                       <div class="accordion-section">
+                        <div class="accordion-section-header">
+                            <h2 class="heading-medium">Ofsted report</h2>
+                        </div>
+                        <div class="accordion-section-body">
+                            <h3 class="heading-small" style="margin-bottom:15px; ">Inspection date:  2 October 2018</h3>
+                            <h3 class="heading-small" style="margin:0px 0 0 0; font-weight:400; ">Overall</h3>
+                            <div class="feedback-block ofsted feedback-good" style="height:60px; width:250px">
+                                <p style="padding:10px 0 0 10px;font-weight:700; font-size: 24px">Good</p>
+                            </div>
+                            <a href="#">View the full report</a>
+                            <div style="padding-top:20px"></div>
+                        </div>
+                    </div>
+
+    <div style="margin-top:35px"></div>
+        <h2 class="heading-medium">About the apprenticeship</h2>
+        <div class="">
+            <p>This course delivers the knowledge element of the apprenticeship as defined in the Post Graduate Engineer Standard and supported by the EPA (End Point Assessment) document. As can be seen above the course modules map to the requirements of the Standard.</p>
+            <p>The skills and behaviour elements of the Standard are to be met by the Employer with reinforcement delivered within the modules.</p>
+            <p>On successful completion of the course, Cranfield University will award a Postgraduate Diploma in Engineering Competence, this will be part of the apprentice's portfolio in support of their achieving recognition of the competence required to complete their Apprenticeship.</p>
+        </div>
+        <h2 class="heading-medium">Provider information</h2>
+        <div class="accordion-section-body">
+            <p>At Hertford, we're passionate about providing education tailored for industry. Every year we develop current and future leaders in technology and management. We can help you strengthen your staff and executive management base at all levels</p>
+            <p>We specialise in:</p>
+            <ul class="list list-bullet">
+                <li>Aerospace</li>
+                <li>Defence and Security</li>
+                <li>Energy and Power</li>
+                <li>Environment and Agrifood</li>
+                <li>Management and Leadership</li>
+                <li>Manufacturing</li>
+                <li>Transport Systems</li>
+                <li>Water</li>
+            </ul>
+        </div>
+        <div class="disclaimer" style=" margin-top:35px">
+            <h4 class="heading-small">Content disclaimer</h4>
+            <p>Skills Funding Agency cannot guarantee the accuracy of course information on this site and makes no representations about the quality of any courses which appear on the site. Skills Funding Agency is not liable for any losses suffered as a result of any party relying on the course information provided.
+            </p>
+        </div>
+        </div>
+            </div>
+
+        <div class="column-third">
+            <aside class="related-container related">
+                <div class="panel--contact">
+                    <h2 class="heading-medium">Contact details</h2>
+                    <dl>
+                        <dt class="apprenticeshipContactTitle">Website:</dt>
+                        <dd>
+                            <a href="http://www.cranfield.ac.uk/business/develop-your-people/masterships/masterships-courses" rel="external" target="_blank" class="course-link apprenticeshipContact">
+Glos Regional College website</a>
+                        </dd>
+                        <dt class="phone-title" style="margin-top:15px">Phone number:</dt>
+                        <dd id="phone" class="phone">01234 754930</dd>
+                        <dt class="email-title" style="margin-top:15px">Email:</dt>
+                        <dd id="email" class="email"><a href="mailto:masterships@glos.ac.uk">masterships@glos.ac.uk</a></dd>
+                        <dt class="training-location-title" style="margin-top:15px">Address:</dt>
+                        <dd id="training-location" class="training-location">
+                            Glos Regional College,
+                            <br />The Bounce,
+                            <br />Ford,
+                            <br />Glos,
+                            <br />GL10 6AE
+                        </dd>
+                    </dl>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/public/ty/assets/javascripts/marked.min.js"></script>
+<script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+<script src="/public/ty/assets/javascripts/_app.js"></script>
+<script id="data" xmldata="/public/ty/assets/data/proSource.xml" src="/public/ty/assets/javascripts/_proDetails.js"></script>
+{% endblock %}

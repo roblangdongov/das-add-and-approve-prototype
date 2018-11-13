@@ -1,0 +1,285 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "confirm-training-provider" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row"">
+                <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="get" action="addSecondApprentice">
+            <h1 class="govuk-heading-xl">Review apprenticeships</h1>
+
+<h2 class="govuk-heading-m" style="margin-top:35px">Apprenticeship</h2>
+                  <dl class="app-check-your-answers app-check-your-answers--short">
+               <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style=" font-weight:400; ;">
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ;">
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#" style="font-weight:400; ;">
+            
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="width:45%; font-weight:400; ;">
+           Apprenticeship training course
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+            Aeronautical Engineer,<br /> Level 2 (standard)
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseEntity" style="font-weight:400; ">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="font-weight:400; ">
+           Planned training start date
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           August 2019
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseApp" style="font-weight:400; ">
+              Change<span class="govuk-visually-hidden"> </span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="font-weight:400; ">
+            Planned training end date
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           August 2021
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="numberOfApps" style="font-weight:400; ">
+              Change<span class="govuk-visually-hidden"> </span>
+            </a>
+          </dd>
+        </div>
+                <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="font-weight:400; ">
+             Total agreed apprenticeship price including government funding and your contribution (excluding VAT)
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           £9,000
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="numberOfApps" style="font-weight:400; ">
+              Change<span class="govuk-visually-hidden"> </span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+<h2 class="govuk-heading-m" style="margin-top:35px">Apprentice 1</h2>
+                  <dl class="app-check-your-answers app-check-your-answers--short">
+               <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style=" font-weight:400; ;">
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ;">
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#" style="font-weight:400; ;">
+            
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="width:45%; font-weight:400; ;">
+           Name
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+            {{ data["FirstFirstName"] }}  {{ data["FirstLastName"] }} 
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseEntity" style="font-weight:400; ">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="font-weight:400; ">
+          Date of birth
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           August 2019
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseApp" style="font-weight:400; ">
+              Change<span class="govuk-visually-hidden"> </span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+<h2 class="govuk-heading-m" style="margin-top:35px">Apprentice 2</h2>
+                  <dl class="app-check-your-answers app-check-your-answers--short">
+               <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style=" font-weight:400; ;">
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ;">
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#" style="font-weight:400; ;">
+            
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="width:45%; font-weight:400; ;">
+           Name
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+            {{ data["SecondFirstName"] }}  {{ data["SecondLastName"] }} 
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseEntity" style="font-weight:400; ">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="font-weight:400; ">
+          Date of birth
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           August 2019
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseApp" style="font-weight:400; ">
+              Change<span class="govuk-visually-hidden"> </span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+            
+
+<!--                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <div class="govuk-form-group">
+                <label class="govuk-label   govuk-label--s" for="price">
+                    Total agreed apprenticeship price (excluding VAT)
+                </label>
+                <span id="price-hint" class="govuk-hint">
+                    Enter the price, including any end-point assessment costs, in whole pounds. For example, for £1,500 enter 1500
+                </span>
+                <input class="govuk-input govuk-input--width-10" id="price" name="price" type="text" aria-describedby="price-hint" placeholder="£" / value="9,000">
+            </div> -->
+
+           <!--  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="start-date-hint" role="group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                            Planned training start date
+                        </h1>
+                    </legend>
+                    <span id="start-date-hint" class="govuk-hint">
+                        For example, 09 2017
+                    </span>
+                    <div class="govuk-date-input" id="start-date">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="start-date-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="start-date-month" name="start-date-month" type="number"
+                                    pattern="[0-9]*" value="8">
+                            </div>
+                        </div>
+
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="start-date-year" name="start-date-year" type="number"
+                                    pattern="[0-9]*" value="2018">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="end-date-hint" role="group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                            Planned training end date
+                        </h1>
+                    </legend>
+                    <span id="end-date-hint" class="govuk-hint">
+                        For example, 09 2017
+                    </span>
+                    <div class="govuk-date-input" id="end-date">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="end-date-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="end-date-month" name="end-date-month" type="number"
+                                    pattern="[0-9]*" value="01">
+                            </div>
+                        </div>
+
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="end-date-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="end-date-year" name="end-date-year" type="number"
+                                    pattern="[0-9]*" value="2020">
+                            </div>
+                        </div> -->
+                    </div>
+                </fieldset>
+            </div>
+
+
+
+<!--             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <div class="govuk-form-group">
+                <label class="govuk-label   govuk-label--s" for="reference">
+                    Reference (optional)
+                </label>
+                <span id="reference-hint" class="govuk-hint">
+                    Add a reference, such as employee number or location - this won't be seen by the training provider
+                </span>
+                <input class="govuk-input" id="reference" name="reference" type="text" aria-describedby="reference-hint" />
+            </div> -->
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+
+            <button type="submit" class="govuk-button">Review </button>
+              <a  class="govuk-button clear-button" href="confirm-training-provider" >Cancel and return</a>
+        </form>
+    </div>
+</div>
+</main>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Add and update apprentice records as a training provider
+        </h1>
+
+        <p class="govuk-body">
+            This service is for training providers registered with the apprenticeship service to work with employers to:
+        </p>
+
+          <ul class="govuk-list govuk-list--bullet">
+                <li>add details of the apprentices they're going to train</li>
+                <li>manage details of the apprentices they're currently training</li>
+            </ul>
+
+        <h2 class="govuk-heading-m">Before you start</h2>
+
+        <p class="">You need to have an account with the government’s Information Management Services system (IdAMS) to use this.</p>
+        <p>If your organisation doesn't already have an IdAMS account, you’ll get your account details when you <a href="">register as an apprenticeship training provider.</a></p>
+        <p>If your organisation does already have an IdAMS account, an account super user from your organisation will need to give you access to the apprenticeship service.</p>
+
+        
+
+            <div style="margin-top:35px"></div>
+            <form action="provider/signIn">
+             <button class="govuk-button govuk-button--start">Start now</button>
+            </form> 
+        </p>        
+    </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

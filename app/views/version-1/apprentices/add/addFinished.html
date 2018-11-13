@@ -1,0 +1,81 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+ 
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back to apprentices", href: "../" }) }} 
+{% endblock %} 
+{% block content %}
+
+
+<script>
+ function whereNow() {
+  var status = $('input[name=optionFinishApps]:checked').val();
+       switch (true) {
+          case  (status == 'send'):
+          window.location.href='../cohorts';
+            localStorage.setItem("apprentices.addedApprentices", JSON.stringify("sendProvider"));
+                //  localStorage.setItem("annualReport.aboutYou", JSON.stringify("done"));
+              //   window.location.href='./task-list';
+                break;
+
+        case  (status == 'save'):
+        localStorage.setItem("apprentices.addedApprentices", JSON.stringify("saveNoSend"));
+        window.location.href='../cohorts';
+          //   window.location.href='./neworganisation';
+            break
+
+        default:
+       case  (status == 'provider-1'):
+             console.log('gyahhhhhhhh, bork bork bork')
+            break;
+        }
+    }
+ </script>
+
+
+
+<div class="govuk-width-container">
+        <div style="width:66%; " id="deletedUserAlertMessage" class="info-summary">
+        <h1 class="govuk-heading-m" style="margin-bottom:10px">You can't approve this cohort until:
+
+</h1>
+        <p>All <a href="../cohorts/index">apprentice records</a> are complete</p>
+    </div>
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Choose an option
+        </h1>
+
+        <form method="get" >
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <div class="govuk-radios">
+                        <!--div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-approve" name="option" type="radio" value="approve">
+                            <label class="govuk-label govuk-radios__label" for="option-approve">Approve and send to training provider</label>
+                        </div-->
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-send" name="optionFinishApps" type="radio" value="send" checked>
+                            <label class="govuk-label govuk-radios__label" for="option-send">Send to training provider to review or add details</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-save" name="optionFinishApps" type="radio" value="save">
+                            <label class="govuk-label govuk-radios__label" for="option-save">Save but don't send to training provider</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+           <input class="govuk-button" id="saveAndContinue" type="button" onclick="whereNow()" value="Submit">
+
+            
+        </form>
+    </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

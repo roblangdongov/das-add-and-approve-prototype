@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "whatyoullneed"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<script>
+/*
+// putting this here so i don't forget it.
+
+  //store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+*/
+</script>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="confirm" method="get" class="form">
+
+     <h1 class="govuk-heading-xl">
+          Get set up as a user
+        </h1>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+          </legend>
+          <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-width-three-quarters bold-label" for="firstName">
+                 First name
+              </label>
+              <!--span id="email-hint" class="govuk-hint">
+              We’ll only use this to send you a receipt
+            </span-->
+              <input class="govuk-input govuk-!-width-three-quarters" id="firstName" name="firstName" type="text" aria-describedby="First Name">
+          </div>
+          <div class="govuk-form-group">
+              <label class="govuk-label bold-label govuk-!-width-three-quarters" for="lastName">
+                 Last name
+              </label>
+              <!--span id="email-hint" class="govuk-hint">
+              We’ll only use this to send you a receipt
+            </span-->
+              <input class="govuk-input govuk-!-width-three-quarters" id="lastName" name="lastName" type="text" aria-describedby="Last name">
+          </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label bold-label govuk-!-width-three-quarters" for="email">
+                 Email
+              </label>
+              <span id="email-hint" class="govuk-hint">
+              We'll send you an email to confirm your identity.
+            </span>
+              <input class="govuk-input govuk-!-width-three-quarters" id="email" name="email" type="email" aria-describedby="email">
+          </div>
+
+
+            <div class="govuk-form-group">
+              <label class="govuk-label bold-label govuk-!-width-three-quarters" for="password">
+                 Create new password
+              </label>
+              <span id="password-hint" class="govuk-hint">
+             Password requires upper and lowercase letters, a number and at least 8 characters.
+            </span>
+              <input class="govuk-input govuk-!-width-three-quarters" id="password" name="password" type="password" aria-describedby="password">
+          </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label bold-label govuk-!-width-three-quarters" for="confirmPassword">
+                 Confirm password
+              </label>
+              <!--span id="password-hint" class="govuk-hint">
+             Password requires upper and lowercase letters, a number and at least 8 characters.
+            </span-->
+              <input class="govuk-input govuk-!-width-three-quarters" id="confirmPassword" name="confirmPassword" type="password" aria-describedby="confirmPassword">
+          </div>
+
+          </fieldset>
+
+           <div class="govuk-inset-text">
+          By continuing you accept the <a href="../manage-apprenticeships/TermsAndConditions" target="_blank">terms of use</a>
+        </div>
+        </div>
+
+        <button class="govuk-button">Set me up</button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

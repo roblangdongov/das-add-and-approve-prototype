@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}
+  {% include "includes/version1/helpNav.html" %}
+{% endblock %}
+{% block content %}
+
+<script src="/public/javascripts/accordion.js"></script>
+<script>
+
+// uncomment this to turn on the accordions
+
+// if (
+   // 'addEventListener' in document &&
+   // document.querySelectorAll
+//) {
+  //  document.addEventListener('DOMContentLoaded', function() {
+    //    var accordions = document.querySelectorAll('.accordion')
+      //  for (var i = accordions.length - 1; i >= 0; i--) {
+        //    new Accordion(accordions[i])
+       // };
+    //})
+//}
+</script>
+<script>
+// uncomment this to turn on the accordions
+
+if (
+    'addEventListener' in document &&
+    document.querySelectorAll
+) {
+    document.addEventListener('DOMContentLoaded', function() {
+        var accordions = document.querySelectorAll('.accordion')
+        for (var i = accordions.length - 1; i >= 0; i--) {
+            new Accordion(accordions[i])
+        };
+    })
+}
+</script>
+<script>
+function whereNow() {
+  var status = $('input[name=radio-group]:checked').val();
+       switch (true) {
+          case  (status == 'yes'):
+                 window.location.href='levy/forecastStart';
+                break;
+
+        case  (status == 'no'):
+             window.location.href='./non-levy-list';
+            break
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+            break;
+        }
+    }
+ </script>
+
+ <script type="text/javascript">
+console.log("Remember to turn on the json server thing in terminal. - json-server -p 3004 db.json - in root of prototoype, where the db.json file is.")
+console.log("ENTER BUTTON. doesnt work, you have to click the search button")
+//event handlers for buttons - is in custom.js so not needed here.
+//ok, for some reason it is needed here....
+
+function searchKnowledge() {
+ /*
+  var status = $('input[name=radio-inline-group]:checked').val();
+       switch (true) {
+          case  (status == 'Users'):
+               // localStorage.setItem("support.searchType", JSON.stringify("Users"));
+                window.location.href='problem-solver/results';
+                break;
+        case  (status == 'Orgs'):
+           // localStorage.setItem("support.searchType", JSON.stringify("Organisations"));
+             window.location.href='problem-solver/results';
+            break
+        case  (status == 'Apprentices'):
+           //   localStorage.setItem("support.searchType", JSON.stringify("Apprentices"));
+             window.location.href='problem-solver/results';
+            break
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+             window.location.href='../problem-solver/results';
+            break;
+        }
+   }
+*/
+
+  var querySearch = $("#search-main").val();
+                localStorage.setItem("support.searchQuery", JSON.stringify(querySearch));
+                localStorage.setItem("support.searchBackRemove", JSON.stringify('remove'));
+
+                 window.location.href='../problem-solver/employer/results';
+};
+</script>
+
+<!-- include "includes/webchat/chatjsuser.html" 
+ -->
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+           <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl" >Get help</h1>
+<!-- <div>
+    <form id="" action="" >
+          <div class="form-group" style="margin-bottom:10px">
+           
+                <fieldset class="search-input">
+                    <label for="search-main" class="form-label-bold" style="margin-bottom:0" >Search for quick help  </label>
+                    <input class="form-control" type="text" name="" id="search-main" value="" style="width:75%">
+                </fieldset>
+           </div>
+                <fieldset class="search-submit">
+                      <input class="button" type="button" id="searchForm" onclick="searchKnowledge()" value='Search'>
+                </fieldset>
+    </form>
+</div> -->
+          <h2 class="heading-medium">Ask a question on our forum</h2>
+            <p><a target="_blank" href="http://feconnect.sfa.bis.gov.uk/">Join the FEconnect forum</a> to ask questions about funding and data issues.</p>
+
+
+ <h2 class="govuk-heading-m" style="margin-bottom:0">Contact us</h2>
+
+                <div class="accordion">
+                    <div class="accordion-section">
+                        <div class="accordion-section-header">
+                            <h2 class="govuk-heading-m">Send us an email</h2>
+                        </div>
+                        <div class="accordion-section-body">
+                            <div style="margin-top:25px"></div>
+                                     <p>Email us at: <a href="">support@esfadigital.com</a>
+                                      <p>We will reply via email in about 4 hours - between 8am and 10pm, 7 days a week.</p>
+                    </div>
+                </div>
+                <div class="accordion-section">
+                        <div class="accordion-section-header">
+                            <h2 class="govuk-heading-m">Chat with us</h2>
+                        </div>
+                        <div class="accordion-section-body">
+                                  <div style="margin-top:25px"></div>
+                           <p> <span class="looks-like-a-link-underline" style="cursor:pointer" onclick="openSesame()">Use our chat service</span> to get quick answers.</p>
+                            <p>Available 24 hours a day, 7 days a week</p>
+                    </div>
+                </div>
+                <div class="accordion-section">
+                        <div class="accordion-section-header">
+                           
+                            <h2 class="govuk-heading-m">Phone us</h2>
+                        </div>
+                        <div class="accordion-section-body">
+                           <div style="margin-top:25px"></div>
+                                        <p>Telephone: 08000 150 600</p>
+                                        <p>Current waiting time: about 1 minute</p>
+                                    
+                                        <p style="margin-bottom:0">Available 8am to 10pm, 7 days a week.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="column-one-third">
+          </div>
+</div>
+<!--  include "includes/webchat/chatbox.html" 
+ --></main>
+{% endblock %}

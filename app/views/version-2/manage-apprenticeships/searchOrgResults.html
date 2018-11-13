@@ -1,0 +1,119 @@
+{% extends "layout.html" %} {% block content %}
+<script>
+/*
+// putting this here so i don't forget it.
+
+  //store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+*/
+</script>
+
+<style>
+
+</style>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="searchOrgResults" method="get" class="form">
+            <h1 class="govuk-heading-xl" style="">Select your organisation</h1>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-!-width-three-quarters bold-label" for="firstName">
+                            Search results
+                        </label>
+                        <!--span id="email-hint" class="govuk-hint">
+                        We’ll only use this to send you a receipt
+                        </span-->
+                        <input class="govuk-input govuk-!-width-three-quarters-half" id="firstName" name="firstName" type="text" aria-describedby="First Name">
+                    </div>
+                    <p style="margin-top:10px">2 results found</p>
+                </fieldset>
+            </div>
+            <!--button class="govuk-button">Search</button-->
+        </form>
+    </div>
+</div>
+        <h2 class="govuk-heading-m" style="">Filter results</h2>
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <div id="" class="govuk-form-group filtersHolder">
+
+            <div class="filterHeader">
+                <h3 class="govuk-heading-s" style="">Article type</h3>
+            </div>
+
+          <fieldset class="govuk-fieldset">
+          <div class="govuk-radios ">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="needed-1" name="org" type="radio" value="true">
+              <label class="govuk-label govuk-radios__label" for="needed-1">
+               Company
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="needed-2" name="org" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="needed-2">
+                Charity
+              </label>
+            </div>
+
+              <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="needed-3" name="org" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="needed-3">
+               Public sector
+              </label>
+            </div>
+                          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="needed-4" name="org" type="radio" value="false" checked="checked"  >
+              <label class="govuk-label govuk-radios__label" for="needed-4">
+               Show all
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <div>
+            <h3 class="govuk-heading-s" style="margin-bottom:0"><a href="allowtaxdetails">DROP TABLE CONSULTANTS; LTD</a></h3>
+            <p style="margin-bottom:0"><span style="font-weight:700; ">Address</span> First Floor, Telecom House 125-135 Preston Road, Brighton, BN1 6AF</p>
+              <p><span style="font-weight:700">Type</span> Listed on Companies House</p>
+              <hr>
+        </div>
+          <div>
+            <h3 class="govuk-heading-s" style="margin-bottom:0; margin-top:15px"><a href="allowtaxdetails">; DROP TABLE "COMPANIES";-- LTD</a></h3>
+            <p style="margin-bottom:0"><span style="font-weight:700; ">Address</span> 1 Moyes Cottages Bentley Hall Road, Capel St. Mary, Ipswich, IP9 2JL</p>
+              <p><span style="font-weight:700">Type</span>  Listed on Companies House</p>
+              <hr>
+        </div>
+        <div>
+          <h4 class="govuk-heading-s">Can't find your organisation?</h4>
+          <p style="font-size:16px; margin:0 0 5px 0">Check the spelling and <a href="">search again.</a></p>
+          <p style="font-size:16px; margin:0">You can also <a href="">enter your details manually.</a></p>
+        </div>
+    </div>
+</div>    
+{% endblock %}

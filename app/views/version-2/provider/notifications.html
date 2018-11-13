@@ -1,0 +1,51 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "./home" }) }} 
+{% endblock %} 
+{% block content %}
+
+  
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row"">
+    <div class="govuk-grid-column-two-thirds">
+    </h1>
+    <h1 class="govuk-heading-xl">Notification Settings</h1>
+    <p>Choose whether you want to receive cohort and apprentice notification emails.</p>
+    <p>Changes to these settings won't affect service emails, such as password resets.</p>
+
+<form action="./home"  method="get">
+<table class="govuk-table">        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Account name </th>
+            <th class="govuk-table__header" scope="col">Emails </th>
+            <th class="govuk-table__header" scope="col">No emails</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">isp-dastest1d </td>
+                <td class="govuk-table__cell">
+                  <div class="govuk-radios__item"><input class="govuk-radios__input" id="emails" name="notifications" type="radio" value="email" checked>  <label class="govuk-label govuk-radios__label" for="emails"></label>
+                  </div>
+                </td>
+                 <td class="govuk-table__cell">
+                  <div class="govuk-radios__item"><input class="govuk-radios__input" id="no-emails" name="notifications" type="radio" value="no-email">  <label class="govuk-label govuk-radios__label" for="no-emails"></label>
+                  </div>
+                </td>
+            </tr>  
+        </tbody>
+      </table>
+  <button class="govuk-button">Update</button>
+  <a href="./home" class="govuk-button clear-button" >Cancel</a>
+</form>
+</div>
+</div>
+</main>
+</div>
+
+
+{% endblock %}

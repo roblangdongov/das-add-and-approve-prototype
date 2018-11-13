@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/financeNav.html" %}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+    <div style="width:66%; " id="deletedUserAlertMessage" class="success-summary">
+        <h1 class="govuk-heading-m" style="margin-bottom:10px">Apprenticeship Removed</h1>
+    </div>
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl" style="" id="company-Name">Estimated costs</h1>
+                 <div class="govuk-inset-text" style="margin-top:15px">
+                    <p>You have not selected any apprenticeships for your estimation. You need to select at least one apprenticeship to make an estimation.</p>
+                </div>
+                <form action="start">
+                    <button type="submit" class="govuk-button" style="">Add apprenticeships to your current estimate</button>
+                <form>
+                
+</div>
+</div>
+</main>
+</div>
+
+
+
+
+
+
+{% endblock %}

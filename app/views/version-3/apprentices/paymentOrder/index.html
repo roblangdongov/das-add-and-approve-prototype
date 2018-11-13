@@ -1,0 +1,62 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "../apprentices" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row" ">
+    <div class="govuk-grid-column-two-thirds ">
+
+
+        <form method="get " action="../apprentices ">
+ 
+            <h1 class="govuk-heading-xl ">Set payment order</h1>
+            <p>The training provider listed first will be paid first from your available funds.</p>
+     
+            <div class="govuk-form-group ">
+                <fieldset class="govuk-fieldset ">
+
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label " for="sort " style="display:inline-block ">
+                            1.
+                        </label>
+                         <select class="govuk-select " id="sort " name="sort " style="max-width:50% ">
+                            <option value="published " selected>Barnfield college</option>
+                            <option value="updated " >Train 4 Ltd</option>
+                        </select>
+                    </div>
+                    <div class="govuk-form-group ">
+                           <label class="govuk-label " for="sort " style="display:inline-block ">
+                            2.
+                        </label>
+                          <select class="govuk-select " id="sort " name="sort " style="max-width:50% ">
+                            <option value="published ">Barnfield college</option>
+                            <option value="updated " selected>Train 4 Ltd</option>
+                        </select>
+                    </div>
+
+
+                    </fieldset>
+                    </div>
+
+                   </div>
+                    </div>
+
+                </fieldset>
+            </div>
+            <button type="submit " class="govuk-button ">
+                Save and Continue
+            </button>
+             <a  class="govuk-button clear-button " href="../apprentices " >Cancel and return</a>
+        </form>
+    </div>
+</div>
+</main>
+</div>
+
+
+{% endblock %}

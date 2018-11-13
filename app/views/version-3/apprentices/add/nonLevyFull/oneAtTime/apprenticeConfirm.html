@@ -1,0 +1,176 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "confirm-training-provider" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row"">
+                <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="get" action="finish">
+            <h1 class="govuk-heading-xl">Confirm apprenticeship</h1>
+
+
+                  <dl class="app-check-your-answers app-check-your-answers--short">
+               <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style=" font-weight:400; ;">
+           
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ;">
+           
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#" style="font-weight:400; ;">
+            
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="width:45%; font-weight:400; ;">
+           Name
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           {{ data['FirstFirstName'] }} {{ data['FirstLastName'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseEntity" style="font-weight:400; ">
+              Change
+            </a>
+          </dd>
+        </div>
+
+          <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="width:45%; font-weight:400; ;">
+           Date of birth
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           {{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseEntity" style="font-weight:400; ">
+              Change
+            </a>
+          </dd>
+        </div>
+
+
+
+
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="width:45%; font-weight:400; ;">
+           Apprenticeship training course
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+            Aeronautical Engineer,<br /> Level 2 (standard)
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseEntity" style="font-weight:400; ">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="font-weight:400; ">
+           Planned training start date
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           August 2019
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseApp" style="font-weight:400; ">
+              Change<span class="govuk-visually-hidden"> </span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="font-weight:400; ">
+            Planned training end date
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           August 2021
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="numberOfApps" style="font-weight:400; ">
+              Change<span class="govuk-visually-hidden"> </span>
+            </a>
+          </dd>
+        </div>
+                <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="font-weight:400; ">
+             Total agreed apprenticeship price including government funding and your contribution (excluding VAT)
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           £9,000
+          </dd>
+
+          <dd class="app-check-your-answers__change">
+            <a href="numberOfApps" style="font-weight:400; ">
+              Change<span class="govuk-visually-hidden"> </span>
+            </a>
+          </dd>
+        </div>
+
+                <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="width:45%; font-weight:400; ;">
+           Organisation employing apprentice
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           ; DROP TABLE "COMPANIES";-- LTD
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseEntity" style="font-weight:400; ">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question" style="width:45%; font-weight:400; ;">
+           Training provider doing the thing
+          </dt>
+          <dd class="app-check-your-answers__answer" style="font-weight:700; ">
+           QA LIMITED
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="chooseEntity" style="font-weight:400; ">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </fieldset>
+</div>
+
+<!--             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <div class="govuk-form-group">
+                <label class="govuk-label   govuk-label--s" for="reference">
+                    Reference (optional)
+                </label>
+                <span id="reference-hint" class="govuk-hint">
+                    Add a reference, such as employee number or location - this won't be seen by the training provider
+                </span>
+                <input class="govuk-input" id="reference" name="reference" type="text" aria-describedby="reference-hint" />
+            </div> -->
+
+         <!--    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" /> -->
+
+            <button type="submit" class="govuk-button">Confirm apprentice </button>
+              <a  class="govuk-button clear-button" href="confirm-training-provider" >Cancel</a>
+        </form>
+    </div>
+</div>
+</main>
+</div>
+
+
+
+{% endblock %}

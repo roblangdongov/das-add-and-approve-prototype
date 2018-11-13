@@ -1,0 +1,42 @@
+{% extends "layout.html" %} {% block beforeContent %}  {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/financeNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "start" }
+) }} 
+{% endblock %} {% block content %}
+
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+        <!--form method="POST"-->
+             <form action="../../" method="get" class="form">
+
+
+            <h2 class="govuk-heading-xl">Confirm employer</h2>
+            <div class="govuk-form-group">
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-table__header" scope="col">Account Id</th>
+                            <th class="govuk-table__header" scope="col">Name</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">{{ data["apprenticeship_account_id"] }} ABC12345</td>
+                                <td class="govuk-table__cell">Test Employer 1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit" class="govuk-button ">
+                Confirm
+            </button>
+        </form>
+    </div>
+</div>
+</main>
+</div>
+{% endblock %}

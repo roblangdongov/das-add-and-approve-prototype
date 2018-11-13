@@ -1,0 +1,82 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+ {% include "includes/version1/provider/providerNav.html" %}
+  {% include "includes/version1/provider/cohortsNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "cohortView" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row"">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="get" action="providerDeleteCohort">
+            <input name="status" value="Stopped" type="hidden" />
+            <h1 class="govuk-heading-xl">Confirm cohort deletion</h1>
+<p class="  govuk-body-l">You are about to delete the following cohort:
+
+</p>
+            <div class="govuk-form-group">
+                <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Employer  </td>
+                            <td class="govuk-table__cell govuk-!-font-weight-bold">; DROP TABLE "COMPANIES";-- LTD</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Cohort reference  </td>
+                            <td class="govuk-table__cell govuk-!-font-weight-bold">M8N6BM</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Number of apprentices </td>
+                            <td class="govuk-table__cell govuk-!-font-weight-bold"> 1</td>
+                        </tr>
+                         <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Apprenticeships   </td>
+                            <td class="govuk-table__cell govuk-!-font-weight-bold">1 x Able seafarer (deck), Level: 2 (Standard)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                            Are you sure you want to delete this entire cohort and all the apprentices in it?
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-radios" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="deleteCohort-yes" name="deleteCohort" type="radio" value="true" />
+                            <label class="govuk-label govuk-radios__label" for="DateSelection-Today">
+                               Yes, delete cohort
+                            </label>
+                        </div>
+
+                     <div class="govuk-radios" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="deleteCohort-no" name="deleteCohort" type="radio" value="false" data-aria-controls="conditional-how-contacted-conditional-before-today" checked>
+                            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-before-today">
+                              No, don't delete cohort
+                            </label>
+                        </div>
+                         </div>
+                    </div>
+
+                </fieldset>
+            </div>
+            <button type="submit " class="govuk-button ">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+</main>
+</div>
+
+
+{% endblock %}

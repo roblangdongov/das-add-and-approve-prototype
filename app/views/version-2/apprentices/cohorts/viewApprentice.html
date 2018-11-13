@@ -1,0 +1,68 @@
+{% extends "layout.html" %} 
+{% block beforeContent %} 
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/apprenticesNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %} 
+{{ govukBackLink({ text: "Back", href: "withProviderDetails" }) }} 
+{% endblock %} 
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row"">
+                <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">View apprentice</h1>
+
+
+        <table class="govuk-table details-list" >
+<div style="margin-top:75px">
+
+        </div>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">First name</td>
+                        <td class="govuk-table__cell" scope="row">Rob</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Last name</td>
+                        <td class="govuk-table__cell" scope="row">Edwards</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Unique learner number</td>
+                        <td class="govuk-table__cell" scope="row">9021090210</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Apprenticeship training </br>course</td>
+                        <td class="govuk-table__cell" scope="row">Able seafarer (deck), Level: 2 (Standard)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Planned training start date</td>
+                        <td class="govuk-table__cell" scope="row">Jan 2018</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Training end date</td>
+                        <td class="govuk-table__cell" scope="row">Jan 2020</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Total agreed apprenticeship price</td>
+                        <td class="govuk-table__cell" scope="row">£9,000</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__header" scope="row">Reference</td>
+                        <td class="govuk-table__cell" scope="row">NGFBN</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</main>
+
+
+{% endblock %}

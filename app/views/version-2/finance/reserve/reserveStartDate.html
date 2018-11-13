@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}  {% include "includes/version1/financeNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "numberOfApps"
+}) }}
+{% endblock %}
+{% block content %}
+
+<script>
+/*
+// putting this here so i don't forget it.
+
+  //store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+*/
+</script>
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="numberOfApps" method="get" class="form">
+     <h1 class="govuk-heading-xl" style="">Apprentice start</h1>
+
+
+<!-- <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+        When would you like your apprentices to start?
+      </h1>
+        </legend>
+        <div class="govuk-date-input" id="">
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="stard-month">
+                        Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="stard-month" name="stard-month" type="number" pattern="[0-9]*">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="stard-year">
+                        Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="stard-year" name="stard-year" type="number" pattern="[0-9]*">
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<p>Your funding will be available for upto 3 months after this date</p>
+ -->
+<p>Apprenticeship funds can be reserved for use between the following dates.</p>
+                 <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h1 class="govuk-fieldset__heading">
+                       Choose when your apprentice will start
+                      </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="app-1" name="acceptedRecruit" type="radio" value="january2019">
+                        <label class="govuk-label govuk-radios__label" for="app-1" style="padding-bottom:0" >
+                          Between 1 Jan 2019 and 31 March 2019
+                        </label>
+           
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="app-2" name="acceptedRecruit" type="radio" value="april2019" >
+                        <label class="govuk-label govuk-radios__label" for="app-2" style="padding-bottom: 0" >
+                         Between 1 April 2019 and 30 June 2019
+                        </label>
+ <!--                              <label class="govuk-label govuk-radios__label" style="display:block; padding-top:0" for="app-1" >
+                          <span class="reserveLevel"> 5 May 2000</span>
+                        </label> -->
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="app-4" name="acceptedRecruit" type="radio" value="july2019">
+                        <label class="govuk-label govuk-radios__label" for="app-4">
+                          Between 1 July 2019 and 30 Sept 2019
+                        </label>
+                      </div>
+                       <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="app-4" name="acceptedRecruit" type="radio" value="oct2019">
+                        <label class="govuk-label govuk-radios__label" for="app-4">
+                          Between 1 Oct 2019 and 31 Dec 2019
+                        </label>
+                      </div>
+                  </fieldset>
+                </div>
+
+
+      <button class="govuk-button">Continue</button>
+      </form>
+</div>
+</main>
+</div>
+  </div>
+{% endblock %}

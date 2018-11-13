@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+ 
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}
+  {% include "includes/version1/homeNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Home",
+  href: "./home"
+}) }}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" style="padding-top:5px">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl" style="margin-top:25px" id="company-Name">Saved apprenticeships</h1>
+                <p class="govuk-body-l">Save apprenticeships to use later</p>
+            </div>
+            <form action="./find/appreticeshipsearch">
+                <div class="govuk-grid-column-one-third weird-floating-button">
+                    <button type="submit" class="govuk-button" style="">Find a new apprenticeship</button>
+                </div>
+            </form>
+        </div>
+        <div class="govuk-width-container">
+            <div class="" style="margin-top:35px">
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-table__header" scope="col" style="padding-top:0;  width:300px">Apprenticeship</th>
+                           
+                            <!--th scope="col" style="padding-top:0">Email address</th-->
+                            <th class="govuk-table__header" scope="col" class="" style="padding-top:0; min-width:400px">Overview</th>
+                             <th class="govuk-table__header" scope="col" style="padding-top:0">Reserved</th>
+                            <!--     <th class="govuk-table__header" scope="col" class="" style="padding-top:0; width:100px">Status</th> -->
+                            <th class="govuk-table__header" scope="col" " style="padding-top:0 "></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                             <tr class="govuk-table__row ">
+                              <!--quick hack, will fix -->
+                              <td class="govuk-table__cell "d >Financial services administrator, Level 3 <!-- <span class="teamEmail ">rob@acme.com</span>  --></td>
+                            
+                              <td class="govuk-table__cell ">Providing administrative support to a financial organisation, to provide a high quality and compliant service.
+
+</td>
+                                <td class="govuk-table__cell " style="text-align:center">2</td>
+                              <!--td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td>
+                              <td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td>
+                              <td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td-->
+                            <!--   <td class="govuk-table__cell ">Active</td> -->
+                              <td class="govuk-table__cell " name="trainingProviderName " value="Cyberdyne Training Ltd "><a href="./find/findSummary ">View</a></td>
+                            </tr>
+
+                            <tr class="govuk-table__row ">
+                              <!--quick hack, will fix -->
+                              <td class="govuk-table__cell "d >Aeronautical engineer, Level 2 <!-- <span class="teamEmail ">rob@acme.com</span>  --></td>
+                            
+                              <td class="govuk-table__cell ">Creating aircraft components and equipment, specialising in a specific engineering discipline (for example - airframe, design and stress, systems integration, support engineering or manufacturing engineering).</td>
+                                <td class="govuk-table__cell  " style="text-align:center">0</td>
+                              <!--td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td>
+                              <td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td>
+                              <td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td-->
+                            <!--   <td class="govuk-table__cell ">Active</td> -->
+                              <td class="govuk-table__cell " name="trainingProviderName " value="Cyberdyne Training Ltd "><a href="./savedProviders/cyberdyne ">View</a></td>
+                            </tr>
+
+                             <tr class="govuk-table__row ">
+                              <td class="govuk-table__cell ">Mechanical engineer, Level 3 <!-- <span class="teamEmail ">susan@acme.com</span> --></td>
+                             
+                              <td class="govuk-table__cell ">Carrying out a range of engineering work on mechanical things for mechanical thing operators.
+
+</td>
+                               <td class="govuk-table__cell " style="text-align:center">0</td>
+                              <!--td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td>
+                              <td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td>
+                              <td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td-->
+                            <!--    <td class="govuk-table__cell ">Active</td> -->
+                              <td class="govuk-table__cell ""><a href="#">View</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row ">
+                              <td class="govuk-table__cell ">Software engineer, Level 4 <!-- <span class="teamEmail ">susan@acme.com</span> --></td>
+                             
+                              <td class="govuk-table__cell ">Building and testing simple, high-quality code for software.
+
+</td>
+                               <td class="govuk-table__cell " style="text-align:center">0</td>
+                              <!--td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td>
+                              <td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td>
+                              <td class="align-center-columns "><i class="fa fa-check fa-2x "></i></td-->
+                            <!--    <td class="govuk-table__cell ">Active</td> -->
+                              <td class="govuk-table__cell ""><a href="#">View</a></td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+
+{% endblock %}

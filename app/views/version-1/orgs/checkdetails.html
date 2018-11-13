@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+ {% include "includes/version1/mainNav.html" %}   {% include "includes/version1/orgsNav.html" %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "searchOrgResults"
+}) }}
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl" style="" id="company-Name">Check details</h1>
+          
+            <table class="govuk-table">
+                <tbody>
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header">
+                        Organisation name</th>
+                        <td class="govuk-table__cell ">; DROP TABLE "COMPANIES";-- LTD</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header" style="min-width:110px">Organisation address</th>
+                        <td class="govuk-table__cell ">No 2 Lochrin Square, 96 Fountainbridge, Edinburgh, EH3 9QA</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header">Organisation number</th>
+                        <td class="govuk-table__cell ">10542519</td>
+                    </tr>
+                </tbody>
+            </table>
+           <div style="margin-bottom:30px"></div>
+            <h2 class="govuk-heading-m" style="" id="company-Name">Is this correct?</h2>
+            <div>
+            <form style="display:inline-block;" action="../orgs/add-confirm">
+                    <button type="submit" class="govuk-button" >Yes continue</button>
+            </form>
+            
+                    <a  class="govuk-button clear-button" href="../orgs/searchOrg" >No, search again</a>
+       
+          </div>
+
+
+
+             </div>
+        </div>
+    </main>
+</div>
+
+
+{% endblock %}
