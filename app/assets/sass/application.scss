@@ -13,4 +13,12 @@ $govuk-global-styles: true;
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 
+// MA Floating menu styles
+@import "components/ma-menu";
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.hidden, .js-enabled .js-hidden {
+    display: none;
+    visibility: hidden;
+   }
